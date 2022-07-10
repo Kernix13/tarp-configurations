@@ -395,7 +395,7 @@ const configObjects = [
         poles: 0,
         guylines: 0
       },
-      foldPoints: "Third and three-quarter points"
+      foldPoints: "Thirds, and maybe quarters"
     },
     {
       id: 24,
@@ -412,7 +412,7 @@ const configObjects = [
         poles: 0,
         guylines: 0
       },
-      foldPoints: "Third and three-quarter points"
+      foldPoints: "Thirds, and maybe quarters"
     },
     {
       id: 25,
@@ -429,7 +429,7 @@ const configObjects = [
         poles: 0,
         guylines: 0
       },
-      foldPoints: "Third and three-quarter points"
+      foldPoints: "Thirds, and maybe quarters"
     },
     {
       id: 26,
@@ -536,7 +536,7 @@ const configObjects = [
     {
       id: 32,
       name: "Bakers Wind Shed",
-      notes: "You can fold at the 1/4 and 3/4 or the 1/3 and 2/3 points. The 1/4 points gives a lean angle of 27.5 degrees.",
+      notes: "You can fold at the 1/4 and 3/4 or the 1/3 and 2/3 points. Lean angle of 27.5 degrees. Consider sleeping on the diagonal.",
       imgUrl: "",
       tarps: "Rectangle 1:2",
       angles: 27.5,

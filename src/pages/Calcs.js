@@ -1,4 +1,5 @@
 import AllCalcs from "../AllCalcs";
+import LeanTo2 from "../assets/images/lean-to2.png";
 // console.log(Object.keys(AllCalcs[0][0]));
 
 function Calcs() {
@@ -44,9 +45,9 @@ function Calcs() {
         1. <span className="italic">i (angle)</span> ranges from 30 to 50-degrees for all Lean-To configurations.
       </p>
       <p>2. Sleep Clearance = (tarp length - height) for all Lean-To and A-Frame configs.</p>
-      <div className="flex flex-col flex-wrap mt-6 mx-2 md:flex-row">
+      <div className="flex flex-col flex-wrap mt-6 md:flex-row">
         {AllCalcs[0].map((item, i) => (
-          <div key={i} className="basis-6/12 px-2">
+          <div key={i} className="basis-6/12 flex-1 px-2">
             <h3 className="text-2xl mt-4 mb-2">{item.name}</h3>
             <p className="text-base">Ridge Height = {item["Ridge Height"]}</p>
             <p className="text-base">Overhead Cover = {item["Overhead Cover"]}</p>
@@ -100,6 +101,7 @@ function Calcs() {
           </div>
         ))}
       </div>
+      <img src={LeanTo2} alt="test" />
     </div>
   );
 }

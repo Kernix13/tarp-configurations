@@ -1,8 +1,5 @@
-import React, { useState, useContext, useEffect } from "react";
+import React, { useContext } from "react";
 import TarpContext from "../TarpContext";
-
-// components
-import LeanToConfig from "../components/LeanToConfig";
 
 function Home() {
   const state = useContext(TarpContext);
@@ -10,13 +7,12 @@ function Home() {
   return (
     <div className="none">
       <h1 className="text-4xl mb-6 text-gray-500 text-center sm:text-6xl">Tarp Configuration Calculator</h1>
-      {/* <p className="text-xl">Enter the following values in inches:</p> */}
       <div className="flex flex-col sm:flex-row">
         <form id="user-form" className="shadow-lg shadow-slate-400 basis-5/12 bg-gradient-to-br from-slate-100 to-slate-400 p-4 xl:basis-5/12">
           <div className="flex flex-col justify-center lg:flex-row md:justify-between">
             <div className="user-dims flex flex-col">
               <label className="text-black" htmlFor="height">
-                Height in inches (in.):{" "}
+                Height in inches (in.):
               </label>
               <input type="number" className="border-solid border-2 border-slate-400 pl-2 w-40 mb-4 mt-2 placeholder:text-slate-500" placeholder="Your height" value={state.height} onChange={e => state.setHeight(e.target.value)} />
             </div>
@@ -113,9 +109,9 @@ function Home() {
           </ul>
         </div>
       </div>
-      <LeanToConfig />
     </div>
   );
 }
 
 export default Home;
+// export default React.memo(Home);

@@ -1,7 +1,5 @@
-import { useEffect } from "react";
-import AllConfigs from "../AllConfigs";
-import ConfigTypes from "../ConfigTypes";
-console.log(AllConfigs[0].angles);
+import AllConfigs from "../data/AllConfigs";
+import ConfigTypes from "../data/ConfigTypes";
 
 function Configs() {
   const categories = ["Lean-To", " A-Frame", " Diagonal", " Tent"];

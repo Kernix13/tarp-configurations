@@ -1,12 +1,12 @@
-import AllCalcs from "../AllCalcs";
+import AllCalcs from "../data/AllCalcs";
 import LeanTo2 from "../assets/images/lean-to2.png";
-// console.log(Object.keys(AllCalcs[0][0]));
 
 function Calcs() {
   return (
     <div>
       <h1 className="text-5xl text-center mb-12">Calculations used in the JavaScript Files</h1>
-      <p className="font-bold mb-2">Equaltions common to nearly all configurations:</p>
+      <p className="mb-2">My Javascript variable names do not match the names in the equations on this page.</p>
+      <p className="font-bold mb-2">Equations common to nearly all configurations:</p>
       <p className="mb-4">
         Some configurations (A-Frame, Flat Roofs, ...) do not use <span className="italic">Sit Cover</span>, <span className="italic">Sit Cover Tarp Height</span>, <span className="italic">Chair Cover</span>, and <span className="italic">Chair Cover Tarp Height</span>.
       </p>

@@ -26,8 +26,9 @@ For the time being I have a `Calcs` page which shows all the calculations for th
 1. Double check why configAngles differ for Hex Diamond from Diamond?
 1. Should the for loops and forEach be inside functions?
 1. Ask Geek37 to double check my Miners Tent equations since it has 3D geometry.
-1. `sleepClr` has to be calulated using the inner diagonal (Make a note)
+1. `sleepClr` has to be calulated using the inner diagonal (Make a note) for a config or two
 1. Make it pretty: Choice images, 33 Inkscape graphics, and fantastic Tailwind cards
+1. **CommonForLoop.js**: Looks like I don't know how to add the nested for loop into a function, export it, and then use it - got two empty arrays first time, then errors after that
 
 **MAIN TO-DO**: Get onSubmit and onChange to work and output EVERYTHING!
 

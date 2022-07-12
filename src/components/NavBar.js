@@ -16,6 +16,9 @@ function NavBar({ title }) {
             <Link to="/" className="btn btn-ghost btn-sm rounded-btn">
               Home
             </Link>
+            <Link to="/results" className="btn btn-ghost btn-sm rounded-btn">
+              Results
+            </Link>
             <Link to="/configs" className="btn btn-ghost btn-sm rounded-btn">
               Configs
             </Link>
@@ -30,7 +33,7 @@ function NavBar({ title }) {
 }
 
 NavBar.defaultProps = {
-  title: "Tarp Configuration"
+  title: "Tarp Set-Ups"
 };
 
 NavBar.propTypes = {

@@ -10,20 +10,20 @@ import Home from "./pages/Home";
 import Configs from "./pages/Configs";
 import Calcs from "./pages/Calcs";
 import NotFound from "./pages/NotFound";
+import Results from "./pages/Results";
 
 // Context
 import TarpContext from "./TarpContext";
 
 // Files
-// import TarpsArray from "./TarpsArray";
+// import TarpsArray from "./data/TarpsArray";
 
 function App() {
-  const [height, setHeight] = useState("");
-  console.log(height);
-  const [bodyWidth, setBodyWidth] = useState("");
-  const [chairHeight, setChairHeight] = useState("");
-  const [chairDepth, setChairDepth] = useState("");
-  const [tarps, setTarps] = useState([]);
+  const [height, setHeight] = useState(72);
+  const [bodyWidth, setBodyWidth] = useState(18);
+  const [chairHeight, setChairHeight] = useState(46);
+  const [chairDepth, setChairDepth] = useState(30);
+  const [tarps, setTarps] = useState("");
 
   return (
     <TarpContext.Provider value={{ height, setHeight, bodyWidth, setBodyWidth, chairHeight, setChairHeight, chairDepth, setChairDepth, tarps, setTarps }}>
@@ -35,6 +35,7 @@ function App() {
           <main className="container mx-auto px-3 pb-12">
             <Routes>
               <Route path="/" element={<Home />} />
+              <Route path="/results" element={<Results />} />
               <Route path="/configs" element={<Configs />} />
               <Route path="/calcs" element={<Calcs />} />
               <Route path="/notfound" element={<NotFound />} />

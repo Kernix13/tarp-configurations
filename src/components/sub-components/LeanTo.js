@@ -1,19 +1,14 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import TarpContext from "../../TarpContext";
 import { subset } from "../LeanToConfig";
-// import SleepWidthContext from "../../SleepWidthContext";
 
 function LeanTo() {
   const state = useContext(TarpContext);
-  // const height = state.height;
-  // const bodyWidth = state.bodyWidth;
-  // const chairHeight = state.chairHeight;
-  // const chairDepth = state.chairDepth;
 
-  // Calculated values from state.height & other constants
+  // Calculated values from state.height & angle related constants
   const sitHeight = state.height / 2;
-  console.log("Sitting Height: " + sitHeight);
   const sitDepth = (state.height * 7) / 32;
+
   const deg2Rad = Math.PI / 180;
   const configAngles = [30, 50];
 
@@ -34,7 +29,7 @@ function LeanTo() {
     let sleepClear = len - state.height;
 
     for (let i = configAngles[1]; i >= configAngles[0]; i--) {
-      ridgeHt = Math.trunc(Math.round(Math.sin(i * deg2Rad) * wid));
+      ridgeHt = Math.round(Math.sin(i * deg2Rad) * wid);
 
       // Reduce the ridgeHeight to (height + 6) for really big tarps
       ridgeHeight = Math.min(ridgeHt, state.height + 6);
@@ -53,10 +48,10 @@ function LeanTo() {
       let chairTarpHt = Math.round(Math.tan(i * deg2Rad) * chairCover);
 
       coverClear = cover - state.bodyWidth;
-      sitTarpHtClear = sitTarpHt - state.sitHeight;
+      sitTarpHtClear = sitTarpHt - sitHeight;
       chairTarpHtClear = chairTarpHt - state.chairHeight;
 
-      outputObj = item.concat({ sleepClear, cover, coverClear, ridgeHeight, sitTarpHtClear, chairTarpHtClear, angle: i, sitHeight });
+      outputObj = item.concat({ sleepClear, cover, coverClear, ridgeHeight, sitTarpHtClear, chairTarpHtClear, angle: i });
 
       if (sitTarpHtClear < 4 || chairTarpHtClear < 4) {
         break;
@@ -64,15 +59,29 @@ function LeanTo() {
     }
     finalObj.push(outputObj);
   });
-  // This logs for every onChange so rerenders? this is logging even more now that it is in LeanTo.js which is imported into LeanToConfig.js !!!!!
   console.log(finalObj);
-  //
+
   return (
     <div>
-      Lean-to
-      <p>Ridgeline height: {finalObj[16][2]["ridgeHeight"]}</p>
+      <h2 className="text-4xl">Lean-to</h2>
+      <div className="flex flex-wrap">
+        {finalObj.map((tarp, i) => (
+          <div key={i} className="p-3 m-2 bg-purple-50">
+            <div>
+              <p className="mb-3">
+                Tarp size: {tarp[0][0]} x {tarp[0][1]}
+              </p>
+              <p className="mb-3">Ridgeline height: {tarp[2]["ridgeHeight"]}</p>
+              <p className="mb-3">Sit clearance: {tarp[2]["sitTarpHtClear"]}</p>
+              <p className="mb-3">Chair Sit clearance: {tarp[2]["chairTarpHtClear"]}</p>
+              <p className="mb-3">Lean angle: {tarp[2]["angle"]}-degrees</p>
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
 
 export default LeanTo;
+// export default React.memo(LeanTo);

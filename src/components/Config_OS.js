@@ -12,7 +12,8 @@ function Config_OS() {
   let finalObj = [];
   let cover = 0;
 
-  const userTarp = [8, 10];
+  // const userTarp = [8, 10];
+  const userTarp = [state.tarpLength, state.tarpWidth];
 
   class Config_OS {
     constructor(configName, len, width, mult1, mult2) {
@@ -23,6 +24,7 @@ function Config_OS() {
       this.mult2 = mult2;
     }
 
+    // Change to 37, 75?
     alpha = 30;
     beta = 50;
 
@@ -64,7 +66,20 @@ function Config_OS() {
 
   return (
     <div>
-      <p>Configuration Name: {finalObj[0][2].configName}</p>
+      {finalObj.map((type, index) => (
+        <div key={index}>
+          <h3 className="font-bold">{type[2].configName}</h3>
+          {type[2].sleepDiagClr <= 0 && type[2].sleepClear <= 0 ? (
+            "Tarp length too small for sleeping based on your height."
+          ) : (
+            <p className="mb-3 text-base">
+              Ridgeline height: {type[2].ridgeHeight} inches. Lean angle: {type[2].angle}-degrees. {type[2].sitTarpHtClear > 0 ? " You can sit on the ground" : "There is not room to sit in this design (consider using guylines to stake to the ground)"}
+              {type[2].chairTarpHtClear > 0 ? " and in your chair." : "."}
+              <br /> {type[2].sleepClear <= 0 ? "Note: you have to sleep along the tarp diagonal because the length is too small." : null}
+            </p>
+          )}
+        </div>
+      ))}
     </div>
   );
 }

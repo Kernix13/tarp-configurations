@@ -65,7 +65,7 @@ function Config_FR_CFly() {
             "Tarp length too small for sleeping based on your height."
           ) : (
             <p className="mb-3 text-base">
-              Ridgeline height: {type[2].ridgeHeight} inches. Lean angle: {type[2].angle}-degrees. {type[2].sitTarpHtClear > 0 ? " You can sit on the ground" : "There is not room to sit in this design"}
+              Ridgeline height: {type[2].ridgeHeight} inches. Lean angle: {type[2].angle}-degrees. {type[2].sitTarpHtClear > 0 ? " You can sit on the ground" : "There is enough not height to sit in this design"}
               {type[2].chairTarpHtClear > 0 ? " and in your chair." : "."}
               <br /> {type[2].sleepClear <= 0 ? "Note: you have to sleep along the tarp diagonal because the length is too small." : null}
             </p>

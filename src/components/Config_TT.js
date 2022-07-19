@@ -5,14 +5,14 @@ function Config_TT() {
   const state = useContext(TarpContext);
 
   const sitHeight = state.height / 2;
-  const sitDepth = (state.height * 7) / 32;
 
   const deg2Rad = Math.PI / 180;
   let outputObj = [];
   let finalObj = [];
   let cover = 0;
 
-  const userTarp = [8, 16];
+  // const userTarp = [6, 12];
+  const userTarp = [state.tarpLength, state.tarpWidth];
 
   class Config_TT {
     constructor(configName, len, width, mult1, mult2) {
@@ -59,11 +59,32 @@ function Config_TT() {
 
   // console.log(finalObj);
 
-  return (
-    <div>
-      <p>Configuration Name: {finalObj[0][2].configName}</p>
-    </div>
-  );
+  if (finalObj.length === 0) {
+    return (
+      <div>
+        <h3 className="font-bold">Tube Tent</h3>
+        <p className="mb-3 text-base">This configuration requires a 1:2 ratio rectangular tarp.</p>
+      </div>
+    );
+  } else {
+    return (
+      <div>
+        {finalObj.map((type, index) => (
+          <div key={index}>
+            <h3 className="font-bold">{type[2].configName}</h3>
+            {type[2].coverClear <= 0 ? (
+              "Tarp width too small for sleeping based on your body width. Try a larger tarp or a different configuration."
+            ) : (
+              <p className="mb-3 text-base">
+                Ridgeline height: {type[2].ridgeHeight} inches. Lean angle: {type[2].angle}-degrees. {type[2].sitTarpHtClear > 0 ? " You can sit on the ground" : "There is not room to sit in this design (consider using guylines to stake to the ground)"}
+                {type[2].chairTarpHtClear > 0 ? " and in your chair." : "."}
+              </p>
+            )}
+          </div>
+        ))}
+      </div>
+    );
+  }
 }
 
 export default Config_TT;

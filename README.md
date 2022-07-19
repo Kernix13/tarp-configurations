@@ -6,7 +6,11 @@ This is a simple app that computes the tarp sizes you can use for 21 types of Ta
 
 Having a lot of issues - user has to enter tarp size in feet then it will return the configs that will cover your sleeping length and that you can sleep in
 
-Need to try OOP
+Redirect to `/results` on form submit:
+
+- this one uses `useNavigate`: https://bobbyhadz.com/blog/react-redirect-after-form-submit
+- https://stackoverflow.com/questions/70848130/how-to-redirect-to-another-page-with-passing-data-after-submitting-form-in-using
+- TRY DOING `action="/results"` in form tag | check out [codegrepper](https://www.codegrepper.com/code-examples/javascript/how+to+redirect+a+form+to+another+page+when+we+submitted+a+form+in+react+js)
 
 > WHAAAAAT?
 

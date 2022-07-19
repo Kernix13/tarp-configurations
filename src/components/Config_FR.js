@@ -5,7 +5,6 @@ function Config_FR() {
   const state = useContext(TarpContext);
 
   const sitHeight = state.height / 2;
-  const sitDepth = (state.height * 7) / 32;
 
   const deg2Rad = Math.PI / 180;
 

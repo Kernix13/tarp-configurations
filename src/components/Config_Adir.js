@@ -33,9 +33,9 @@ function Config_Adir() {
         const sleepClear = l - state.height;
         const ridgeHt = Math.round((Math.sin(i * deg2Rad) * diagonal) / 2);
 
-        const ridgeHeight = Math.min(ridgeHt, state.height + 6);
+        const ridgeHeight = Math.min(ridgeHt, state.height);
 
-        if (ridgeHeight === state.height + 6) {
+        if (ridgeHeight === state.height) {
           cover = Math.round(Math.sqrt(Math.pow(diagonal, 2) - Math.pow(ridgeHeight, 2)));
         } else {
           cover = Math.round(Math.cos(i * deg2Rad) * diagonal);
@@ -64,23 +64,28 @@ function Config_Adir() {
   if (userTarp[0] === userTarp[1]) {
     const Adirondack = new Config_Adir("Adirondack", userTarp[0], userTarp[1]);
     Adirondack.calcs();
-  } else {
-    return null;
   }
 
   // console.log(finalObj);
 
-  if (finalObj) {
-    return (
-      <div>
-        <p>Configuration Name: {finalObj[0][2].configName}</p>
-      </div>
-    );
-  } else {
+  return (
     <div>
-      <p>You need a square tarp for this configuration</p>
-    </div>;
-  }
+      {finalObj.map((type, index) => (
+        <div key={index}>
+          <h3 className="font-bold">{type[2].configName}</h3>
+          {type[2].coverClear <= 0 ? (
+            "Tarp width too small for sleeping based on your body width. Try a larger tarp or a different configuration."
+          ) : (
+            <p className="mb-3 text-base">
+              Set your <span className="font-bold">ridgeline height </span>
+              to {type[2].ridgeHeight} inches which results in a <span className="italic">lean angle</span> of {type[2].angle}-degrees. {type[2].sitTarpHtClear > 0 ? " You can sit under the tarp on the ground" : "There is not room to sit in this design (consider using guylines to stake to the ground)"}
+              {type[2].chairTarpHtClear > 0 ? " and in your chair assuming you fly out the end flap." : "."}
+            </p>
+          )}
+        </div>
+      ))}
+    </div>
+  );
 }
 
 export default Config_Adir;

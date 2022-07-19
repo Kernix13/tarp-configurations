@@ -23,8 +23,8 @@ function App() {
   const [bodyWidth, setBodyWidth] = useState(18.5);
   const [chairHeight, setChairHeight] = useState(46);
   const [chairDepth, setChairDepth] = useState(30);
-  const [tarpLength, setTarpLength] = useState(7);
-  const [tarpWidth, setTarpWidth] = useState(14);
+  const [tarpLength, setTarpLength] = useState(8);
+  const [tarpWidth, setTarpWidth] = useState(10);
 
   return (
     <TarpContext.Provider value={{ height, setHeight, bodyWidth, setBodyWidth, chairHeight, setChairHeight, chairDepth, setChairDepth, tarpLength, setTarpLength, tarpWidth, setTarpWidth }}>

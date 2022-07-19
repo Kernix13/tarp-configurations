@@ -5,7 +5,6 @@ function Config_FR_CFly() {
   const state = useContext(TarpContext);
 
   const sitHeight = state.height / 2;
-  const sitDepth = (state.height * 7) / 32;
 
   const deg2Rad = Math.PI / 180;
   let outputObj = [];
@@ -32,9 +31,9 @@ function Config_FR_CFly() {
 
       const ridgeHt = Math.round(Math.sin(this.alpha * deg2Rad) * (w * this.mult1));
 
-      const ridgeHeight = Math.min(ridgeHt, state.height + 6);
+      const ridgeHeight = Math.min(ridgeHt, state.height);
 
-      if (ridgeHeight === state.height + 6) {
+      if (ridgeHeight === state.height) {
         cover = Math.round(Math.sqrt(Math.pow(w * this.mult1 + w * this.mult1, 2) - Math.pow(ridgeHeight, 2)));
       } else {
         cover = Math.round(Math.cos(this.alpha * deg2Rad) * w * this.mult1 + w * this.mult1);
@@ -65,7 +64,8 @@ function Config_FR_CFly() {
             "Tarp length too small for sleeping based on your height."
           ) : (
             <p className="mb-3 text-base">
-              Ridgeline height: {type[2].ridgeHeight} inches. Lean angle: {type[2].angle}-degrees. {type[2].sitTarpHtClear > 0 ? " You can sit on the ground" : "There is enough not height to sit in this design"}
+              Set your <span className="font-bold">ridgeline height </span>
+              to {type[2].ridgeHeight} inches which results in a <span className="italic">lean angle</span> of {type[2].angle}-degrees. {type[2].sitTarpHtClear > 0 ? " You can sit under the tarp on the ground" : "There is not enough height to sit in this design"}
               {type[2].chairTarpHtClear > 0 ? " and in your chair." : "."}
               <br /> {type[2].sleepClear <= 0 ? "Note: you have to sleep along the tarp diagonal because the length is too small." : null}
             </p>

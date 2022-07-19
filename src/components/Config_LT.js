@@ -86,7 +86,8 @@ function Config_LT() {
             "Tarp length too small for sleeping based on your height."
           ) : (
             <p className="mb-3 text-base">
-              Ridgeline height: {type[2].ridgeHeight} inches. Lean angle: {type[2].angle}-degrees. {type[2].sitTarpHtClear > 0 ? " You can sit on the ground" : "Ridgeline too low to sit in this design (consider using guylines to raise the ridgeline)"}
+              Set your <span className="font-bold">ridgeline height </span>
+              to {type[2].ridgeHeight} inches which results in a <span className="italic">lean angle</span> of {type[2].angle}-degrees. {type[2].sitTarpHtClear > 0 ? " You can sit under the tarp on the ground" : "Ridgeline too low to sit in this design (consider using guylines to raise the ridgeline)"}
               {type[2].chairTarpHtClear > 0 ? " and in your chair." : "."}
               <br /> {type[2].sleepClear <= 0 ? "Note: you have to sleep along the tarp cover diagonal because the length is too small." : null}
             </p>

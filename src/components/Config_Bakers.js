@@ -12,8 +12,7 @@ function Config_Bakers() {
   let finalObj = [];
   let cover = 0;
 
-  // const userTarp = [state.tarpLength, state.tarpWidth];
-  const userTarp = [8, 16];
+  const userTarp = [state.tarpLength, state.tarpWidth];
 
   class Config_Bakers {
     constructor(configName, len, width) {
@@ -66,11 +65,34 @@ function Config_Bakers() {
 
   // console.log(finalObj);
 
-  return (
-    <div>
-      <p>Configuration Name: {finalObj[0][2].configName}</p>
-    </div>
-  );
+  if (finalObj.length === 0) {
+    return (
+      <div>
+        <h3 className="font-bold">Baker's Wind Shed</h3>
+        <p className="mb-3">The Baker's Wind Shed configuration requires a rectangle tarp.</p>
+      </div>
+    );
+  } else {
+    return (
+      <div>
+        {finalObj.map((type, index) => (
+          <div key={index}>
+            <h3 className="font-bold">{type[2].configName}</h3>
+            {type[2].sleepDiagClr <= 0 && type[2].sleepClear <= 0 ? (
+              "Tarp length too small for sleeping based on your height."
+            ) : (
+              <p className="mb-3 text-base">
+                Set your <span className="font-bold">ridgeline height </span>
+                to {type[2].ridgeHeight} inches for a <span className="italic">lean angle</span> of {type[2].angle}-degrees. {type[2].sitTarpHtClear > 0 ? " You can sit under the tarp on the ground" : "Ridgeline too low to sit in this design"}
+                {type[2].chairTarpHtClear > 0 ? " and in your chair." : "."}
+                <br /> {type[2].sleepClear <= 0 ? "Note: you have to sleep along the tarp cover diagonal because the length is too small." : null}
+              </p>
+            )}
+          </div>
+        ))}
+      </div>
+    );
+  }
 }
 
 export default Config_Bakers;

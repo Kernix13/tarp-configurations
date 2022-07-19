@@ -12,7 +12,7 @@ function Config_SWLT() {
   let finalObj = [];
   let cover = 0;
 
-  const userTarp = [9, 15];
+  const userTarp = [state.tarpLength, state.tarpWidth];
 
   class Config_SWLT {
     constructor(configName, len, width, alpha, beta) {
@@ -31,9 +31,9 @@ function Config_SWLT() {
 
       const ridgeHt = Math.round(Math.sin(this.beta * deg2Rad) * l);
 
-      const ridgeHeight = Math.min(ridgeHt, state.height + 6);
+      const ridgeHeight = Math.min(ridgeHt, state.height);
 
-      if (ridgeHeight === state.height + 6) {
+      if (ridgeHeight === state.height) {
         cover = Math.round(Math.sqrt(Math.pow(l, 2) - Math.pow(ridgeHeight, 2)));
       } else {
         cover = Math.round(Math.cos(this.beta * deg2Rad) * l);
@@ -91,13 +91,34 @@ function Config_SWLT() {
 
   // console.log(finalObj);
 
-  return (
-    <div>
-      {/* if ratio = 3:4 or 4:5, no Sidewall so I need to account for that */}
-      <p>Configuration Name: {finalObj[0][2].configName}</p>
-      <p>Configuration Name: {finalObj[1][2].configName}</p>
-    </div>
-  );
+  if (finalObj.length === 0) {
+    return (
+      <div>
+        <h3 className="font-bold">Side-Wall Configs</h3>
+        <p className="mb-3">The Side-Wall Lean-To configuration requires a rectangle tarp with a ratio of 1:2, 3:5, or 2:3. The Holden Tent requires the same but can also be 3:4 or 4:5 ratio tarps.</p>
+      </div>
+    );
+  } else {
+    return (
+      <div>
+        {finalObj.map((type, index) => (
+          <div key={index}>
+            <h3 className="font-bold">{type[2].configName}</h3>
+            {type[2].sleepDiagClr <= 0 && type[2].sleepClear <= 0 ? (
+              "Tarp length too small for sleeping based on your height."
+            ) : (
+              <p className="mb-3 text-base">
+                Set your {type[2].configName.split(" ")[0] === "Side-Wall" ? <span className="font-bold">ridgeline height </span> : <span className="font-bold">ridge pole height </span>}
+                to {type[2].ridgeHeight} inches for a <span className="italic">lean angle</span> of {type[2]["Lean angle"]}-degrees. {type[2].sitTarpHtClear > 0 ? " You can sit under the tarp on the ground" : type[2].configName.split(" ")[0] === "Side-Wall" ? "Ridgeline too low to sit in this design (consider using guylines to raise the ridgeline)" : "There is not enough height to sit in this design"}
+                {type[2].chairTarpHtClear > 0 ? " and in your chair." : "."}
+                <br /> {type[2].sleepClear <= 0 ? "Note: you have to sleep along the tarp cover diagonal because the length is too small." : null}
+              </p>
+            )}
+          </div>
+        ))}
+      </div>
+    );
+  }
 }
 
 export default Config_SWLT;

@@ -12,7 +12,7 @@ function Config_PP() {
   let finalObj = [];
   let cover = 0;
 
-  const userTarp = [8, 8];
+  const userTarp = [state.tarpLength, state.tarpWidth];
 
   class Config_PP {
     constructor(configName, len, width) {
@@ -33,9 +33,9 @@ function Config_PP() {
         const sleepClear = Math.round(Math.cos(i * deg2Rad) * diagonal - state.height);
         const ridgeHt = Math.round(Math.sin(i * deg2Rad) * diagonal);
 
-        const ridgeHeight = Math.min(ridgeHt, state.height + 6);
+        const ridgeHeight = Math.min(ridgeHt, state.height);
 
-        if (ridgeHeight === state.height + 6) {
+        if (ridgeHeight === state.height) {
           cover = Math.round(Math.sqrt(Math.pow(diagonal, 2) - Math.pow(ridgeHeight, 2)) * 2);
         } else {
           cover = Math.round(Math.cos(i * deg2Rad) * diagonal);
@@ -71,7 +71,20 @@ function Config_PP() {
 
   return (
     <div>
-      <p>Configuration Name: {finalObj[0][2].configName}</p>
+      {finalObj.map((type, index) => (
+        <div key={index}>
+          <h3 className="font-bold">{type[2].configName}</h3>
+          {type[2].coverClear <= 0 ? (
+            "Tarp width too small for sleeping based on your body width. Try a larger tarp or a different configuration."
+          ) : (
+            <p className="mb-3 text-base">
+              Set your end <span className="font-bold">ridgeline </span>
+              connection point to {type[2].ridgeHeight} inches which results in a <span className="italic">lean angle</span> of {type[2].angle}-degrees. {type[2].sitTarpHtClear > 0 ? " You can sit under the tarp on the ground" : "There is not room to sit in this design (consider using guylines to stake to the ground)"}
+              {type[2].chairTarpHtClear > 0 ? " and in your chair." : "."}
+            </p>
+          )}
+        </div>
+      ))}
     </div>
   );
 }

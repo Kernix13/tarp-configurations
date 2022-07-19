@@ -33,10 +33,10 @@ function Config_TT() {
 
       const ridgeHt = Math.round(Math.sin(this.alpha * deg2Rad) * (w * this.mult1));
 
-      const ridgeHeight = Math.min(ridgeHt, state.height + 6);
+      const ridgeHeight = Math.min(ridgeHt, state.height);
 
       // Should't cover be equal to wid / 3
-      if (ridgeHeight === state.height + 6) {
+      if (ridgeHeight === state.height) {
         cover = Math.round(Math.sqrt(Math.pow(w * this.mult2, 2) - Math.pow(ridgeHeight, 2)));
       } else {
         cover = Math.round(Math.cos(this.alpha * deg2Rad) * w * this.mult2);
@@ -76,7 +76,8 @@ function Config_TT() {
               "Tarp width too small for sleeping based on your body width. Try a larger tarp or a different configuration."
             ) : (
               <p className="mb-3 text-base">
-                Ridgeline height: {type[2].ridgeHeight} inches. Lean angle: {type[2].angle}-degrees. {type[2].sitTarpHtClear > 0 ? " You can sit on the ground" : "There is not room to sit in this design (consider using guylines to stake to the ground)"}
+                Set your <span className="font-bold">ridgeline height </span>
+                to {type[2].ridgeHeight} inches which results in a <span className="italic">lean angle</span> of {type[2].angle}-degrees. {type[2].sitTarpHtClear > 0 ? " You can sit under the tarp on the ground" : "There is not room to sit in this design (consider using guylines to stake to the ground)"}
                 {type[2].chairTarpHtClear > 0 ? " and in your chair." : "."}
               </p>
             )}

@@ -5,14 +5,13 @@ function Config_Lavvu() {
   const state = useContext(TarpContext);
 
   const sitHeight = state.height / 2;
-  const sitDepth = (state.height * 7) / 32;
 
   const deg2Rad = Math.PI / 180;
   let outputObj = [];
   let finalObj = [];
   let cover = 0;
 
-  const userTarp = [8, 16];
+  const userTarp = [state.tarpLength, state.tarpWidth];
 
   class Config_Lavvu {
     constructor(configName, len, width) {
@@ -48,18 +47,31 @@ function Config_Lavvu() {
     Lavvu.calcs();
   }
 
-  // console.log(finalObj);
+  console.log(finalObj);
 
-  if (finalObj[0][2].sleepClear > 0) {
+  if (finalObj.length === 0) {
     return (
       <div>
-        <p>Configuration Name: {finalObj[0][2].configName}</p>
+        <h3 className="font-bold">Lavvu</h3>
+        <p className="mb-3">The Lavvu configuration requires a rectangle tarp with a ratio of 1:2.</p>
       </div>
     );
   } else {
     return (
       <div>
-        <p>Your tarp is too small to sleep in a {finalObj[0][2].configName} configuration.</p>
+        {finalObj.map((type, index) => (
+          <div key={index}>
+            <h3 className="font-bold">{type[2].configName}</h3>
+            {type[2].sleepDiagClr <= 0 && type[2].sleepClear <= 0 ? (
+              "Tarp length too small for sleeping based on your height."
+            ) : (
+              <p className="mb-3 text-base">
+                Attach your tarp {type[2].ridgeHeight} inches high on your tripod for a 60-degree lean angle. This design has plenty of room to sit in a chair inside the tent during a storm.
+                <br /> {type[2].sleepClear <= 0 ? "Note: you have to pull out one of the tripod legs for room to sleep." : null}
+              </p>
+            )}
+          </div>
+        ))}
       </div>
     );
   }

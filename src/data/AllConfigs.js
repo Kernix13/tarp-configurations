@@ -70,6 +70,23 @@ const configObjects = [
     },
     {
       id: 5,
+      name: "Flat-Roof C-Fly",
+      notes: "Stake at the 1/3 point, add poles at the 2/3 mark.",
+      imgUrl: "",
+      tarps: "Rectangle",
+      angles: 60,
+      ridgelines: 1,
+      poles: 2,
+      tiePoints: {
+        stakes: 4,
+        ridgeline: 2,
+        poles: 2,
+        guylines: 0
+      },
+      foldPoints: "Thirds (or quarters)"
+    },
+    {
+      id: 6,
       name: "Back-Wall LT 25",
       notes: "Tie the poles to the 1/4 tie on the tarp for the back wall.",
       imgUrl: "",
@@ -86,7 +103,7 @@ const configObjects = [
       foldPoints: "First-quarter point"
     },
     {
-      id: 6,
+      id: 7,
       name: "Back-Wall LT 33",
       notes: "Tie the tarp to the poles at the 1/3rd points or use a rope.",
       imgUrl: "",
@@ -103,41 +120,7 @@ const configObjects = [
       foldPoints: "First-third point"
     },
     {
-      id: 7,
-      name: "A-Frame LT 66",
-      notes: "Attach your ridgline at the 2/3rds point then use guylines.",
-      imgUrl: "",
-      tarps: "All",
-      angles: [30, 50],
-      ridgelines: 1,
-      poles: 0,
-      tiePoints: {
-        stakes: 4,
-        ridgeline: 2,
-        poles: 0,
-        guylines: 2
-      },
-      foldPoints: "Two-thirds point"
-    },
-    {
       id: 8,
-      name: "A-Frame LT 75",
-      notes: "Attach your ridgline at the 3/4 points of your tarp.",
-      imgUrl: "",
-      tarps: "All",
-      angles: [30, 50],
-      ridgelines: 1,
-      poles: 0,
-      tiePoints: {
-        stakes: 4,
-        ridgeline: 2,
-        poles: 0,
-        guylines: 2
-      },
-      foldPoints: "Three-quarters point"
-    },
-    {
-      id: 9,
       name: "Back Wall Flat Roof LT 25",
       notes: "Tie your poles to the tarp at the 1/4 & 3/4 marks.",
       imgUrl: "",
@@ -154,7 +137,7 @@ const configObjects = [
       foldPoints: "Quarter and three-quarters"
     },
     {
-      id: 10,
+      id: 9,
       name: "Back Wall Flat Roof LT 33",
       notes: "You need tarp attachment points at the 1/3 & 2/3 marks.",
       imgUrl: "",
@@ -169,28 +152,11 @@ const configObjects = [
         guylines: 4
       },
       foldPoints: "Third and two-thirds"
-    },
-    {
-      id: 11,
-      name: "Open Stall",
-      notes: "Tie You need tie-outs at the 1/3, 1/2 & 2/3 marks.",
-      imgUrl: "",
-      tarps: "All",
-      angles: [30, 50],
-      ridgelines: 1,
-      poles: 2,
-      tiePoints: {
-        stakes: 6,
-        ridgeline: 2,
-        poles: 2,
-        guylines: 4
-      },
-      foldPoints: "Third, middle and two-thirds"
     }
   ],
   [
     {
-      id: 12,
+      id: 10,
       name: "A-Frame",
       notes: "Drape your tarp over the ridgeline at the mid-point.",
       imgUrl: "",
@@ -205,6 +171,40 @@ const configObjects = [
         guylines: 0
       },
       foldPoints: "Middle"
+    },
+    {
+      id: 11,
+      name: "A-Frame LT 66",
+      notes: "Attach your ridgline at the 2/3rds point then use guylines.",
+      imgUrl: "",
+      tarps: "All",
+      angles: [30, 50],
+      ridgelines: 1,
+      poles: 0,
+      tiePoints: {
+        stakes: 4,
+        ridgeline: 2,
+        poles: 0,
+        guylines: 2
+      },
+      foldPoints: "Two-thirds point"
+    },
+    {
+      id: 12,
+      name: "A-Frame LT 75",
+      notes: "Attach your ridgline at the 3/4 points of your tarp.",
+      imgUrl: "",
+      tarps: "All",
+      angles: [30, 50],
+      ridgelines: 1,
+      poles: 0,
+      tiePoints: {
+        stakes: 4,
+        ridgeline: 2,
+        poles: 0,
+        guylines: 2
+      },
+      foldPoints: "Three-quarters point"
     },
     {
       id: 13,
@@ -259,23 +259,6 @@ const configObjects = [
     },
     {
       id: 16,
-      name: "Flat-Roof C-Fly",
-      notes: "Stake at the 1/3 point, add poles at the 2/3 mark.",
-      imgUrl: "",
-      tarps: "Rectangle",
-      angles: 60,
-      ridgelines: 1,
-      poles: 2,
-      tiePoints: {
-        stakes: 4,
-        ridgeline: 2,
-        poles: 2,
-        guylines: 0
-      },
-      foldPoints: "Thirds (or quarters)"
-    },
-    {
-      id: 17,
       name: "A-Frame C-Fly",
       notes: "Stake at the 1/3 point, add the ridgeline at the 2/3 mark.",
       imgUrl: "",
@@ -290,6 +273,23 @@ const configObjects = [
         guylines: 2
       },
       foldPoints: "Thirds (or quarters)"
+    },
+    {
+      id: 17,
+      name: "Open Stall",
+      notes: "Tie You need tie-outs at the 1/3, 1/2 & 2/3 marks.",
+      imgUrl: "",
+      tarps: "All",
+      angles: [30, 50],
+      ridgelines: 1,
+      poles: 2,
+      tiePoints: {
+        stakes: 6,
+        ridgeline: 2,
+        poles: 2,
+        guylines: 4
+      },
+      foldPoints: "Third, middle and two-thirds"
     }
   ],
   [

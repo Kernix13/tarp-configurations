@@ -4,6 +4,10 @@ My 3rd portfolio project using React and Tailwind.
 
 This is a simple app that computes the tarp sizes you can use for 21 types of Tarp shelters. If you are not into Bushcraft, then I'm sure you are thinking...
 
+Having a lot of issues - user has to enter tarp size in feet then it will return the configs that will cover your sleeping length and that you can sleep in
+
+Need to try OOP
+
 > WHAAAAAT?
 
 This is another project for myself since I practice bushcraft and wilderness survival techniques.
@@ -28,7 +32,8 @@ For the time being I have a `Calcs` page which shows all the calculations for th
 1. Ask Geek37 to double check my Miners Tent equations since it has 3D geometry.
 1. `sleepClr` has to be calulated using the inner diagonal (Make a note) for a config or two
 1. Make it pretty: Choice images, 33 Inkscape graphics, and fantastic Tailwind cards
-1. **CommonForLoop.js**: Looks like I don't know how to add the nested for loop into a function, export it, and then use it - got two empty arrays first time, then errors after that
+1. **CommonForLoop.js**: Looks like I don't know how to add the nested for loop into a function, export it, and then use it - got two empty arrays first time, then errors after that: DELETED
+1. added Config.js as a ES6 class
 
 **MAIN TO-DO**: Get onSubmit and onChange to work and output EVERYTHING!
 

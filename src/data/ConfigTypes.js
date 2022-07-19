@@ -2,17 +2,17 @@ const ConfigTypes = [
   [
     ["Lean-To (LT)", "lean-to"],
     ["Flat-Roof LT", "flatroof-lt"],
+    ["Flat-Roof C-Fly", "flat-roof-cfly"],
     ["Back-Wall LT", "backwall-lt"],
-    ["A-Frame LT", "aframe-lt"],
-    ["BWFR LT", "bwfr-lt"],
-    ["Open Stall", "open-stall"]
+    ["BWFR LT", "bwfr-lt"]
   ],
   [
     ["A-Frame (AF)", "aframe"],
+    ["A-Frame LT", "aframe-lt"],
     ["Side-Wall AF", "sidewall-af"],
     ["Tube Tent", "tube-tent"],
-    ["Flat-Roof C-Fly", "flat-roof-cfly"],
-    ["A-Frame C-Fly", "aframe-cfly"]
+    ["A-Frame C-Fly", "aframe-cfly"],
+    ["Open Stall", "open-stall"]
   ],
   [
     ["Diamond", "diamond"],

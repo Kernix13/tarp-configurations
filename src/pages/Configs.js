@@ -11,7 +11,7 @@ function Configs() {
         All <span className="italic">practical</span> tarp configurations fall into 1 of 4 categories: 1. <span className="text-lg font-semibold">{categories[0]}</span>, 2. <span className="text-lg font-semibold">{categories[1]}</span>, 3. <span className="text-lg font-semibold">{categories[2]}</span>, or 4. <span className="text-lg font-semibold">{categories[3]}</span>. There are 33 total tarp variations on this page for the following 21 types:
       </p>
 
-      <div className="grid grid-cols-1 gap-4 justify-items-center items-center sm:grid-cols-2 md:grid-cols-4">
+      <div className="grid grid-cols-1 gap-4 justify-items-center items-start sm:grid-cols-2 md:grid-cols-4">
         <div>
           <p className="text-2xl mt-6 mb-4 text-gray-500">Lean-To</p>
           <ol className="list-decimal mt-4 ml-4">
@@ -88,7 +88,7 @@ function Configs() {
         <span className="font-bold">Ridgeline heights</span> (the most important calculation) are calculated at the point where the sitting height is at least 3-4 inches below the tarp, or else that tarp size is not returned as viable. You may either raise the ridgeline or opt not to stake your tarp at ground level if sitting conditions are "<em>tight</em>".
       </p>
       <p className="mb-3">
-        For almost every configuration on this page, an alternate ridgeline height is calculated for large tarps. In that case the ridgeline height is set to <span className="italic font-bold">your height + 6 inches</span>.
+        For almost every configuration on this page, an alternate ridgeline height is calculated for large tarps. In that case the ridgeline height is set to <span className="italic font-bold">your height.</span>.
       </p>
       <p className="mb-3">Also, some configurations require either more than 1 ridgeline or 1 ridgeline and poles. It's up to you what combination of poles and ridgelines you want to use but if you do not have tie-out points where required then you will need an additional ridgeline or two. The configurations below uses poles where additional ridgelines are required.</p>
 
@@ -112,22 +112,20 @@ function Configs() {
         Flat-Roof Lean-To
       </h3>
       <p className="mb-3">This is a great config for large tarps and the 2nd most common lean-to. There are 3 variations requiring poles for the start of the roof: 1) the flat fold at the halfway point (50%), 2) the flat fold at the 2/3rds mark (66%), and 3) the fold at the 3/4 point (75%). Run your guylines towards the back corners.</p>
+      <h3 id="flat-roof-cfly" className="text-2xl mt-6 mb-4 text-gray-500 font-semibold">
+        Flat Roof C-Fly
+      </h3>
+      <p className="mb-3">This is also called an Open Tube tent and is basically a Flat-Roof Lean-To with a floor. It's a good way to open the shelter up for air-flow and scenery.</p>
       <h3 id="backwall-lt" className="text-2xl mt-6 mb-4 text-gray-500 font-semibold">
         Back-Wall Lean-To
       </h3>
       <p className="mb-3">This config is the opposite of a Flat Roof Lean-To: a vertical wall into the lean vs. the lean into a horizontal roof. The back-wall folds occur at the bottom 1/4 or 1/3 points of the tarp. This design gets you to a sitting height faster than other configs. Run your guylines to the back of the shelter.</p>
-      <h3 id="aframe-lt" className="text-2xl mt-6 mb-4 text-gray-500 font-semibold">
-        A-Frame Lean-To
-      </h3>
-      <p className="mb-3">This is similar to a Flat-Roof except the roof is at an angle resembling an A-Frame config. Note that the opposite lean at the ridgleline which may obstruct your view. Fold the tarp at either 1) the 2/3rds or 2) the 3/4ths point of the tarp.</p>
+
       <h3 id="bwfr-lt" className="text-2xl mt-6 mb-4 text-gray-500 font-semibold">
         Back-Wall Flat-Roof Lean-To (BWFRLT)
       </h3>
       <p className="mb-3">A Back-Wall / Flat-Roof combination. You need a large tarp for this design since the 'lean' is only 1/3 or 1/2 the width of your tarp There are 2 variations: 1) the folds at the 1/4 and 3/4 points, or 2) the folds at the 1/3 and 2/3 points. Run the guylines of each side towards the back of the shelter.</p>
-      <h3 id="open-stall" className="text-2xl mt-6 mb-4 text-gray-500 font-semibold">
-        Open Stall
-      </h3>
-      <p className="mb-3">You can look at this design as either an A-Frame Lean-To with a back-wall or a BWFRLT with the "roof" at an angle. The 2nd lean for this design, and for the A-Frame Lean-To designs, are set to the first lean angle. Vary that 2nd angle to whatever you want. Run your backwall guylines straight back.</p>
+
       <p className="mb-6">Here are the details of the types listed above:</p>
 
       <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
@@ -169,6 +167,10 @@ function Configs() {
         A-Frame
       </h3>
       <p className="mb-3">This is the old-timey boy scout or infantry tent you would see in movies or paintings. It provides excellent cover in bad conditions but the max height is cut in half due to the fold at the center of the tarp.</p>
+      <h3 id="aframe-lt" className="text-2xl mt-6 mb-4 text-gray-500 font-semibold">
+        A-Frame Lean-To
+      </h3>
+      <p className="mb-3">This is similar to a Flat-Roof except the roof is at an angle resembling an A-Frame config. Note that the opposite lean at the ridgleline which may obstruct your view. Fold the tarp at either 1) the 2/3rds or 2) the 3/4ths point of the tarp.</p>
       <h3 id="sidewall-af" className="text-2xl mt-6 mb-4 text-gray-500 font-semibold">
         Side-Wall A-Frame
       </h3>
@@ -177,14 +179,14 @@ function Configs() {
         Tube Tent
       </h3>
       <p className="mb-3">This config requires folds at the 1/3 and 2/3rd points so you will need a tarp with tie-outs at the 1/3 point for staking to the ground, and at 2/3rds for the ridgeline. It's a config with a floor and could be in the tent category as well.</p>
-      <h3 id="flat-roof-cfly" className="text-2xl mt-6 mb-4 text-gray-500 font-semibold">
-        Flat Roof C-Fly
-      </h3>
-      <p className="mb-3">This is also called an Open Tube tent and is basically a Flat-Roof Lean-To with a floor. It's a good way to open the shelter up for air-flow and scenery.</p>
       <h3 id="aframe-cfly" className="text-2xl mt-6 mb-4 text-gray-500 font-semibold">
         A-Frame C-Fly
       </h3>
       <p className="mb-3">This is similar to the Flat Roof C-Fly but the roof is pitched at an angle. That reduces visibility but may be prefable for rain or harsh sunlight.</p>
+      <h3 id="open-stall" className="text-2xl mt-6 mb-4 text-gray-500 font-semibold">
+        Open Stall
+      </h3>
+      <p className="mb-3">You can look at this design as either an A-Frame Lean-To with a back-wall or a BWFRLT with the "roof" at an angle. The 2nd lean for this design, and for the A-Frame Lean-To designs, are set to the first lean angle. Vary that 2nd angle to whatever you want. Run your backwall guylines straight back.</p>
       <p className="mb-6">Here are the details of the types listed above:</p>
 
       <div className="grid grid-cols-1 gap-4 md:grid-cols-2">

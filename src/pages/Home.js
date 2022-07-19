@@ -1,45 +1,89 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import TarpContext from "../TarpContext";
 
 function Home() {
   const state = useContext(TarpContext);
 
+  const [height, setHeight] = useState("");
+  const [bodyWidth, setBodyWidth] = useState("");
+  const [chairHeight, setChairHeight] = useState("");
+  const [chairDepth, setChairDepth] = useState("");
+  const [tarpLength, setTarpLength] = useState("");
+  const [tarpWidth, setTarpWidth] = useState("");
+
+  // const handleHeight = e => {
+  //   setHeight(e.target.value);
+  // };
+
+  const handleSubmit = e => {
+    e.preventDefault();
+
+    if (height === "" || bodyWidth === "" || chairHeight === "" || chairDepth === "" || tarpLength === "" || tarpWidth === "") {
+      alert("Please fill out ALL the fields");
+    } else {
+      setHeight("");
+      setBodyWidth("");
+      setChairHeight("");
+      setChairDepth("");
+      setTarpLength("");
+      setTarpWidth("");
+      console.log(height, bodyWidth, chairHeight, chairDepth, tarpLength, tarpWidth);
+    }
+  };
+
   return (
     <div className="none">
-      <h1 className="text-4xl mb-6 text-gray-500 text-center sm:text-6xl">Tarp Configuration Calculator</h1>
+      <h1 className="text-3xl mb-6 text-gray-500 text-center sm:text-5xl">
+        Tarp Configuration <span className="italic">Calculator</span>
+      </h1>
       <div className="flex flex-col sm:flex-row">
-        <form id="user-form" className="shadow-lg shadow-slate-400 basis-5/12 bg-gradient-to-br from-slate-100 to-slate-400 p-4 xl:basis-5/12">
+        <form onSubmit={handleSubmit} id="user-form" className="shadow-lg shadow-slate-400 basis-5/12 bg-gradient-to-br from-slate-100 to-slate-400 p-4 xl:basis-5/12">
           <div className="flex flex-col justify-center lg:flex-row md:justify-between">
             <div className="user-dims flex flex-col">
-              <label className="text-black" htmlFor="height">
+              <label className="text-black text-base" htmlFor="height">
                 Height in inches (in.):
               </label>
-              <input type="number" className="border-solid border-2 border-slate-400 pl-2 w-40 mb-4 mt-2 placeholder:text-slate-500" placeholder="Your height" value={state.height} onChange={e => state.setHeight(e.target.value)} />
+              <input type="number" className="border-solid border-2 border-slate-400 pl-2 w-40 mb-4 mt-1 placeholder:text-slate-500" placeholder="Your height" value={height} onChange={e => setHeight(e.target.value)} />
             </div>
             <div className="user-dims flex flex-col">
-              <label className="text-black" htmlFor="body-width">
+              <label className="text-black text-base" htmlFor="body-width">
                 Body width (in.):{" "}
               </label>
-              <input type="number" className="border-solid border-2 border-slate-400 pl-2 w-40 mb-4 mt-2 placeholder:text-slate-500" placeholder="Shoulders or hips" value={state.bodyWidth} onChange={e => state.setBodyWidth(e.target.value)} />
+              <input type="number" className="border-solid border-2 border-slate-400 pl-2 w-40 mb-4 mt-1 placeholder:text-slate-500" placeholder="Shoulders or hips" value={bodyWidth} onChange={e => setBodyWidth(e.target.value)} />
             </div>
           </div>
           <div className="flex flex-col justify-center lg:flex-row md:justify-between">
             <div className="user-dims flex flex-col">
-              <label className="text-black" htmlFor="chair-height">
+              <label className="text-black text-base" htmlFor="chair-height">
                 Chair sit height (in.):
               </label>
-              <input type="number" className="border-solid border-2 border-slate-400 pl-2 w-40 mb-4 mt-2 placeholder:text-slate-500" placeholder="Height in chair" value={state.chairHeight} onChange={e => state.setChairHeight(e.target.value)} />
+              <input type="number" className="border-solid border-2 border-slate-400 pl-2 w-40 mb-4 mt-1 placeholder:text-slate-500" placeholder="Height in chair" value={chairHeight} onChange={e => setChairHeight(e.target.value)} />
             </div>
             <div className="user-dims flex flex-col">
-              <label className="text-black" htmlFor="chair-depth">
+              <label className="text-black text-base" htmlFor="chair-depth">
                 Chair sit depth (in.):{" "}
               </label>
-              <input type="number" className="border-solid border-2 border-slate-400 pl-2 w-40 mb-4 mt-2 placeholder:text-slate-500" placeholder="Chair depth" value={state.chairDepth} onChange={e => state.setChairDepth(e.target.value)} />
+              <input type="number" className="border-solid border-2 border-slate-400 pl-2 w-40 mb-4 mt-1 placeholder:text-slate-500" placeholder="Chair depth" value={chairDepth} onChange={e => setChairDepth(e.target.value)} />
             </div>
           </div>
+          <div className="flex flex-col justify-center lg:flex-row md:justify-between">
+            <div className="user-dims flex flex-col">
+              <label className="text-black text-base" htmlFor="tarp-length">
+                Tarp Length (ft.):
+              </label>
+              <input type="number" className="border-solid border-2 border-slate-400 pl-2 w-40 mb-2 mt-1 placeholder:text-slate-500" placeholder="Short side in feet" value={tarpLength} onChange={e => setTarpLength(e.target.value)} />
+            </div>
+            <div className="user-dims flex flex-col">
+              <label className="text-black text-base" htmlFor="tarp-width">
+                Tarp Width (ft.):
+              </label>
+              <input type="number" className="border-solid border-2 border-slate-400 pl-2 w-40 mb-2 mt-1 placeholder:text-slate-500" placeholder="Long side in feet" value={tarpWidth} onChange={e => setTarpWidth(e.target.value)} />
+            </div>
+          </div>
+          {/* 
           <div className="user-dims flex flex-col">
             <label htmlFor="tarp-size">Select tarp size: </label>
-            <select id="tarp-select" className="form-select border border-info w-28 mb-4 mt-2" aria-label="Default select example" value={state.tarps} onChange={e => state.setTarps(e.target.value)}>
+            <select id="tarp-select" className="form-select border border-info w-28 mb-4 mt-2" aria-label="Default select example">
               <option value="0" defaultValue={"All"}>
                 All
               </option>
@@ -91,16 +135,19 @@ function Home() {
               </optgroup>
             </select>
           </div>
+           */}
           <div>
             <button id="user-submit" type="submit" className="bg-transparent hover:bg-cyan-700 text-cyan-700 font-semibold hover:text-white py-2 px-4 mr-4 border border-cyan-700 hover:border-transparent rounded">
               Submit
             </button>
-            <button id="user-clear" type="submit" className="bg-transparent hover:bg-cyan-700 text-cyan-700 font-semibold hover:text-white py-2 px-4 mr-4 border border-cyan-700 hover:border-transparent rounded">
-              Clear
-            </button>
+            {height !== "" && (
+              <button id="user-clear" type="submit" className="bg-transparent hover:bg-cyan-700 text-cyan-700 font-semibold hover:text-white py-2 px-4 mr-4 border border-cyan-700 hover:border-transparent rounded">
+                Won't Clear
+              </button>
+            )}
           </div>
         </form>
-        <div className="basis-8/12 p-2 ml-4 xl:basis-7/12">
+        <div className="basis-8/12 px-2 ml-4 xl:basis-7/12">
           <p className="mb-3">Enter your dimensions in inches in the form to get the ridgeline height in inches to use for the 33 tarp configurations for all the tarp sizes in the list. Or select a specific tarp size to see the configurations where you can at least sit on the ground with clearance between your head and the tarp.</p>
           <ul className="list-disc mt-4 ml-4">
             <li>Body width: measure the widest part of your body in inches.</li>

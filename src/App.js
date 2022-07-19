@@ -19,14 +19,15 @@ import TarpContext from "./TarpContext";
 // import TarpsArray from "./data/TarpsArray";
 
 function App() {
-  const [height, setHeight] = useState(72);
-  const [bodyWidth, setBodyWidth] = useState(18);
+  const [height, setHeight] = useState(74);
+  const [bodyWidth, setBodyWidth] = useState(18.5);
   const [chairHeight, setChairHeight] = useState(46);
   const [chairDepth, setChairDepth] = useState(30);
-  const [tarps, setTarps] = useState("");
+  const [tarpLength, setTarpLength] = useState(7);
+  const [tarpWidth, setTarpWidth] = useState(7);
 
   return (
-    <TarpContext.Provider value={{ height, setHeight, bodyWidth, setBodyWidth, chairHeight, setChairHeight, chairDepth, setChairDepth, tarps, setTarps }}>
+    <TarpContext.Provider value={{ height, setHeight, bodyWidth, setBodyWidth, chairHeight, setChairHeight, chairDepth, setChairDepth, tarpLength, setTarpLength, tarpWidth, setTarpWidth }}>
       <Router>
         {/* need a larger font-size */}
         <div className="text-lg flex flex-col justify-between h-screen">

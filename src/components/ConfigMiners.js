@@ -69,13 +69,18 @@ function Config_Miners() {
           <div key={index}>
             <h3 className="font-bold">{type[2].configName}</h3>
             {type[2].sleepDiagClr <= 0 && type[2].sleepClear <= 0 ? (
-              "Tarp length too small for sleeping based on your height."
+              <p className="mb-3">Tarp length is too small for sleeping based on your height.</p>
             ) : (
               <p className="mb-3 text-base">
                 Attach your tarp to a <span className="font-bold">ridge pole </span>
-                {type[2].ridgeHeight} inches above the ground for a <span className="italic">lean angle</span> of {type[2].angle}-degrees. {type[2].sitTarpHtClear > 0 ? " You can sit under the tarp on the ground" : "Ridgeline too low to sit in this design (consider using guylines to raise the ridgeline)"}
+                {type[2].ridgeHeight} inches above the ground for a <span className="italic">lean angle</span> of {type[2].angle}-degrees. {type[2].sitTarpHtClear > 0 ? " You can sit under the tarp on the ground" : "Ridgeline is too low to sit in this design"}
                 {type[2].chairTarpHtClear > 0 ? " and in your chair." : "."}
-                <br /> {type[2].sleepClear <= 0 ? "Note: you have to sleep along the tarp cover diagonal because the length is too small." : null}
+                <br />{" "}
+                {type[2].sleepClear <= 0 ? (
+                  <p className="mb-3">
+                    <span className="font-semibold">Note</span>: You have to sleep along the diagonal of the tarp shadow because the length is too small.
+                  </p>
+                ) : null}
               </p>
             )}
           </div>

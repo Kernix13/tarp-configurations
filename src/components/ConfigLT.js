@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import TarpContext from "../TarpContext";
 
-function Config_LT() {
+function ConfigLT() {
   const state = useContext(TarpContext);
 
   const sitHeight = state.height / 2;
@@ -77,25 +77,30 @@ function Config_LT() {
 
   // console.log(finalObj);
 
+  // Old jsx at bottom of NOTES.md but this is good
   return (
     <div>
-      {finalObj.map((type, index) => (
-        <div key={index}>
-          <h3 className="font-bold">{type[2].configName}</h3>
-          {type[2].sleepDiagClr <= 0 && type[2].sleepClear <= 0 ? (
-            "Tarp length too small for sleeping based on your height."
-          ) : (
+      {finalObj[0][2].sleepDiagClr <= 0 ? <p className="mb-3">Your tarp is too small for these configurations.</p> : null}
+      {finalObj.map((type, index) =>
+        type[2].sleepClear <= 0 && type[2].sleepDiagClr < 6 ? null : (
+          <div key={index}>
+            <h3 className="font-bold">{type[2].configName}</h3>
             <p className="mb-3 text-base">
               Set your <span className="font-bold">ridgeline height </span>
               to {type[2].ridgeHeight} inches which results in a <span className="italic">lean angle</span> of {type[2].angle}-degrees. {type[2].sitTarpHtClear > 0 ? " You can sit under the tarp on the ground" : "Ridgeline too low to sit in this design (consider using guylines to raise the ridgeline)"}
               {type[2].chairTarpHtClear > 0 ? " and in your chair." : "."}
-              <br /> {type[2].sleepClear <= 0 ? "Note: you have to sleep along the tarp cover diagonal because the length is too small." : null}
+              <br />{" "}
+              {type[2].sleepClear <= 0 ? (
+                <p className="mb-3">
+                  <span className="font-semibold">Note</span>: You have to sleep along the diagonal of the tarp shadow because the length is too small.
+                </p>
+              ) : null}
             </p>
-          )}
-        </div>
-      ))}
+          </div>
+        )
+      )}
     </div>
   );
 }
 
-export default Config_LT;
+export default ConfigLT;

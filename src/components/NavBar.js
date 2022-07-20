@@ -22,9 +22,9 @@ function NavBar({ title }) {
             <Link to="/configs" className="btn btn-ghost btn-sm rounded-btn">
               Configs
             </Link>
-            <Link to="/calcs" className="btn btn-ghost btn-sm rounded-btn">
+            {/* <Link to="/calcs" className="btn btn-ghost btn-sm rounded-btn">
               Calcs
-            </Link>
+            </Link> */}
           </div>
         </div>
       </div>

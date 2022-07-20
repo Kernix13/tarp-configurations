@@ -105,11 +105,11 @@ function Config_SWLT() {
           <div key={index}>
             <h3 className="font-bold">{type[2].configName}</h3>
             {type[2].sleepDiagClr <= 0 && type[2].sleepClear <= 0 ? (
-              "Tarp length too small for sleeping based on your height."
+              <p className="mb-3">Tarp length is too small for sleeping based on your height.</p>
             ) : (
               <p className="mb-3 text-base">
                 Set your {type[2].configName.split(" ")[0] === "Side-Wall" ? <span className="font-bold">ridgeline height </span> : <span className="font-bold">ridge pole height </span>}
-                to {type[2].ridgeHeight} inches for a <span className="italic">lean angle</span> of {type[2]["Lean angle"]}-degrees. {type[2].sitTarpHtClear > 0 ? " You can sit under the tarp on the ground" : type[2].configName.split(" ")[0] === "Side-Wall" ? "Ridgeline too low to sit in this design (consider using guylines to raise the ridgeline)" : "There is not enough height to sit in this design"}
+                to {type[2].ridgeHeight} inches for a <span className="italic">lean angle</span> of {type[2]["Lean angle"]}-degrees. {type[2].sitTarpHtClear > 0 ? " You can sit under the tarp on the ground" : type[2].configName.split(" ")[0] === "Side-Wall" ? "Ridgeline is too low to sit in this design" : "There is not enough height to sit in this design"}
                 {type[2].chairTarpHtClear > 0 ? " and in your chair." : "."}
                 <br /> {type[2].sleepClear <= 0 ? "Note: you have to sleep along the tarp cover diagonal because the length is too small." : null}
               </p>

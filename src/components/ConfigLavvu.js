@@ -47,7 +47,7 @@ function Config_Lavvu() {
     Lavvu.calcs();
   }
 
-  console.log(finalObj);
+  // console.log(finalObj);
 
   if (finalObj.length === 0) {
     return (
@@ -62,14 +62,7 @@ function Config_Lavvu() {
         {finalObj.map((type, index) => (
           <div key={index}>
             <h3 className="font-bold">{type[2].configName}</h3>
-            {type[2].sleepDiagClr <= 0 && type[2].sleepClear <= 0 ? (
-              "Tarp length too small for sleeping based on your height."
-            ) : (
-              <p className="mb-3 text-base">
-                Attach your tarp {type[2].ridgeHeight} inches high on your tripod for a 60-degree lean angle. This design has plenty of room to sit in a chair inside the tent during a storm.
-                <br /> {type[2].sleepClear <= 0 ? "Note: you have to pull out one of the tripod legs for room to sleep." : null}
-              </p>
-            )}
+            {type[2].sleepClear <= 0 ? <p className="mb-3">Tarp length is too small for sleeping based on your height.</p> : <p className="mb-3 text-base">Attach your tarp {type[2].ridgeHeight} inches high on your tripod for a 60-degree lean angle. This design has plenty of room to sit in a chair inside the tent during a storm.</p>}
           </div>
         ))}
       </div>

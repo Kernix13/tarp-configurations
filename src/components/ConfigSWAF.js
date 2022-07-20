@@ -42,11 +42,13 @@ function Config_SWAF() {
           cover = Math.round(Math.cos(i * deg2Rad) * w * this.mult2);
         }
 
+        const sleepDiagClr = Math.floor(Math.sqrt(Math.pow(l, 2) + Math.pow(cover, 2))) - state.height;
+
         const coverClear = Math.round(cover - state.bodyWidth);
         const sitTarpHtClear = ridgeHeight - sitHeight;
         const chairTarpHtClear = ridgeHeight - state.chairHeight;
 
-        outputObj = tarpSize.concat({ sleepClear, cover, coverClear, ridgeHeight, sitTarpHtClear, chairTarpHtClear, angle: i, configName: this.configName, ridgeHt });
+        outputObj = tarpSize.concat({ sleepClear, cover, coverClear, ridgeHeight, sitTarpHtClear, chairTarpHtClear, angle: i, configName: this.configName, ridgeHt, sleepDiagClr });
 
         if (sitTarpHtClear < 7 || chairTarpHtClear < 7) {
           break;
@@ -66,20 +68,22 @@ function Config_SWAF() {
 
   return (
     <div>
-      {finalObj.map((type, index) => (
-        <div key={index}>
-          <h3 className="font-bold">{type[2].configName}</h3>
-          {type[2].coverClear <= 0 ? (
-            "Tarp width too small for sleeping based on your body width. Try a larger tarp or a different configuration."
-          ) : (
-            <p className="mb-3 text-base">
-              Set your <span className="font-bold">ridgeline height </span>
-              to {type[2].ridgeHeight} inches which results in a <span className="italic">lean angle</span> of {type[2].angle}-degrees. {type[2].sitTarpHtClear > 0 ? " You can sit under the tarp on the ground" : "There is not room to sit in this design (consider using guylines to stake to the ground)"}
-              {type[2].chairTarpHtClear > 0 ? " and in your chair." : "."}
-            </p>
-          )}
-        </div>
-      ))}
+      {finalObj.map((type, index) =>
+        type[2].sleepClear <= 0 && type[2].sleepDiagClr < 6 ? null : (
+          <div key={index}>
+            <h3 className="font-bold">{type[2].configName}</h3>
+            {type[2].coverClear <= 0 ? (
+              <p className="mb-3">Tarp width is too small for sleeping based on your body measurements. Try a larger tarp or a different configuration.</p>
+            ) : (
+              <p className="mb-3 text-base">
+                Set your <span className="font-bold">ridgeline height </span>
+                to {type[2].ridgeHeight} inches which results in a <span className="italic">lean angle</span> of {type[2].angle}-degrees. {type[2].sitTarpHtClear > 0 ? " You can sit under the tarp on the ground" : "There is not room to sit in this design (consider using guylines to raise the ridgeline)"}
+                {type[2].chairTarpHtClear > 0 ? " and in your chair." : "."}
+              </p>
+            )}
+          </div>
+        )
+      )}
     </div>
   );
 }

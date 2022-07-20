@@ -312,7 +312,7 @@ const configObjects = [
     },
     {
       id: 19,
-      name: "Plow Point 33",
+      name: "Plow Point",
       notes: "Run the ridgeline along the diagonal from the ground to a tree or branch.",
       imgUrl: "",
       tarps: "Square",
@@ -329,7 +329,7 @@ const configObjects = [
     },
     {
       id: 20,
-      name: "Adirondack 45",
+      name: "Adirondack",
       notes: "Lean on the diagonal, bottom and sides folded at the half-way points.",
       imgUrl: "",
       tarps: "Square",

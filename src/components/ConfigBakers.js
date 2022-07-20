@@ -79,11 +79,11 @@ function Config_Bakers() {
           <div key={index}>
             <h3 className="font-bold">{type[2].configName}</h3>
             {type[2].sleepDiagClr <= 0 && type[2].sleepClear <= 0 ? (
-              "Tarp length too small for sleeping based on your height."
+              <p className="mb-3">Tarp length is too small for sleeping based on your height.</p>
             ) : (
               <p className="mb-3 text-base">
                 Set your <span className="font-bold">ridgeline height </span>
-                to {type[2].ridgeHeight} inches for a <span className="italic">lean angle</span> of {type[2].angle}-degrees. {type[2].sitTarpHtClear > 0 ? " You can sit under the tarp on the ground" : "Ridgeline too low to sit in this design"}
+                to {type[2].ridgeHeight} inches for a <span className="italic">lean angle</span> of {type[2].angle}-degrees. {type[2].sitTarpHtClear > 0 ? " You can sit under the tarp on the ground" : "The ridgeline is too low to sit in this design"}
                 {type[2].chairTarpHtClear > 0 ? " and in your chair." : "."}
                 <br /> {type[2].sleepClear <= 0 ? "Note: you have to sleep along the tarp cover diagonal because the length is too small." : null}
               </p>

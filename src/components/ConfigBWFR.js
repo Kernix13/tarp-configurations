@@ -67,21 +67,28 @@ function Config_BWFR() {
 
   return (
     <div>
-      {finalObj.map((type, index) => (
-        <div key={index}>
-          <h3 className="font-bold">{type[2].configName}</h3>
-          {type[2].sleepDiagClr <= 0 && type[2].sleepClear <= 0 ? (
-            "Tarp length too small for sleeping based on your height."
-          ) : (
-            <p className="mb-3 text-base">
-              Set your <span className="font-bold">ridgeline height </span>
-              to {type[2].ridgeHeight} inches which results in a <span className="italic">lean angle</span> of {type[2].angle}-degrees. {type[2].sitTarpHtClear > 0 ? " You can sit under the tarp on the ground" : "There is not room to sit in this design (consider using guylines to stake to the ground)"}
-              {type[2].chairTarpHtClear > 0 ? " and in your chair." : "."}
-              <br /> {type[2].sleepClear <= 0 ? "Note: you have to sleep along the tarp diagonal because the length is too small." : null}
-            </p>
-          )}
-        </div>
-      ))}
+      {finalObj.map((type, index) =>
+        type[2].sleepClear <= 0 && type[2].sleepDiagClr < 6 ? null : (
+          <div key={index}>
+            <h3 className="font-bold">{type[2].configName}</h3>
+            {type[2].sleepDiagClr <= 0 && type[2].sleepClear <= 0 ? (
+              "Tarp length too small for sleeping based on your height."
+            ) : (
+              <p className="mb-3 text-base">
+                Set your <span className="font-bold">ridgeline height </span>
+                to {type[2].ridgeHeight} inches which results in a <span className="italic">lean angle</span> of {type[2].angle}-degrees. {type[2].sitTarpHtClear > 0 ? " You can sit under the tarp on the ground" : "There is not enough room to sit in this design (consider using guylines to stake to the ground)"}
+                {type[2].chairTarpHtClear > 0 ? " and in your chair." : "."}
+                <br />{" "}
+                {type[2].sleepClear <= 0 ? (
+                  <p className="mb-3">
+                    <span className="font-semibold">Note</span>: You have to sleep along the diagonal of the tarp shadow because the length is too small.
+                  </p>
+                ) : null}
+              </p>
+            )}
+          </div>
+        )
+      )}
     </div>
   );
 }

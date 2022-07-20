@@ -75,7 +75,7 @@ function Config_Dia() {
           <div key={index}>
             <h3 className="font-bold">{type[2].configName}</h3>
             {type[2].coverClear <= 0 ? (
-              "Tarp width too small for sleeping based on your body width. Try a larger tarp or a different configuration."
+              <p className="mb-3">Tarp width too small for sleeping based on your body measurements. Try a larger tarp or a different configuration.</p>
             ) : (
               <p className="mb-3 text-base">
                 Set your <span className="font-bold">ridgeline height </span>

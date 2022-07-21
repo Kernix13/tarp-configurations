@@ -43,7 +43,7 @@ function Home() {
               <label className="text-black text-base" htmlFor="height">
                 Height in inches (in.):
               </label>
-              <input type="number" className="border-solid border-2 border-slate-400 pl-2 w-40 mb-4 mt-1 placeholder:text-slate-500" placeholder="Your height" value={height} onChange={e => setHeight(e.target.value)} />
+              <input type="number" className="border-solid border-2 border-slate-400 pl-2 w-40 mb-4 mt-1 placeholder:text-slate-500" placeholder="Your height" value={height} onChange={e => setHeight(e.target.value)} required />
             </div>
             <div className="user-dims flex flex-col">
               <label className="text-black text-base" htmlFor="body-width">

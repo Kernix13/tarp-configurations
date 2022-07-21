@@ -68,25 +68,26 @@ function Config_AF() {
 
   console.log(finalObj);
 
+  const outputMap = (
+    <div key={index}>
+      <h3 className="font-bold">{type[2].configName}</h3>
+      {type[2].coverClear <= 0 ? (
+        <p className="mb-3">Tarp length is too small for sleeping based on your body mesurements. Try a larger tarp or a different configuration.</p>
+      ) : (
+        <p className="mb-3 text-base">
+          Set your <span className="font-bold">ridgeline height </span>
+          to {type[2].ridgeHeight} inches which results in a <span className="italic">lean angle</span> of {type[2].angle}-degrees. {type[2].sitTarpHtClear > 0 ? " You can sit under the tarp on the ground" : "There is not enough room to sit in this design (consider using guylines to stake to the ground)"}
+          {type[2].chairTarpHtClear > 0 ? " and in your chair." : "."}
+        </p>
+      )}
+    </div>
+  );
+
   return (
     <div>
-      {finalObj[0][2].sleepDiagClr <= 0 ? <p className="mb-3">Your tarp is too small for these configurations.</p> : null}
-      {finalObj.map((type, index) =>
-        type[2].sleepClear <= 0 && type[2].sleepDiagClr < 6 ? null : (
-          <div key={index}>
-            <h3 className="font-bold">{type[2].configName}</h3>
-            {type[2].coverClear <= 0 ? (
-              <p className="mb-3">Tarp length is too small for sleeping based on your body mesurements. Try a larger tarp or a different configuration.</p>
-            ) : (
-              <p className="mb-3 text-base">
-                Set your <span className="font-bold">ridgeline height </span>
-                to {type[2].ridgeHeight} inches which results in a <span className="italic">lean angle</span> of {type[2].angle}-degrees. {type[2].sitTarpHtClear > 0 ? " You can sit under the tarp on the ground" : "There is not enough room to sit in this design (consider using guylines to stake to the ground)"}
-                {type[2].chairTarpHtClear > 0 ? " and in your chair." : "."}
-              </p>
-            )}
-          </div>
-        )
-      )}
+      {finalObj[0][2].sleepDiagClr <= 0 && <p className="mb-3">Your tarp is too small for these configurations.</p>}
+
+      {finalObj.map((type, index) => type[2].sleepClear <= 0 && type[2].sleepDiagClr < 6 && outputMap)}
     </div>
   );
 }

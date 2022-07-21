@@ -1,3 +1,6 @@
+import React, { useContext } from "react";
+import TarpContext from "../TarpContext";
+
 import Config_LT from "../components/ConfigLT";
 import Config_FR from "../components/ConfigFR";
 import Config_BWFR from "../components/ConfigBWFR";
@@ -20,8 +23,8 @@ import Config_Bakers from "../components/ConfigBakers";
 function Results() {
   return (
     <div>
+      <p className="mb-3">If you do not see any configurations under any of the category types, then the tarp you chose is too small for those configurations.</p>
       <div>
-        <p className="mb-3">If you do not see any configurations under any of the category types, then the tarp you chose is too small for those configurations.</p>
         <h2 className="text-3xl m-6 text-gray-500 text-center sm:text-4xl">Lean-To Configurations</h2>
         <Config_LT />
         <Config_FR />
@@ -51,6 +54,9 @@ function Results() {
         <Config_Miners />
         <Config_Bakers />
       </div>
+      <Link to="/" className="btn btn-ghost btn-sm rounded-btn">
+        Back to Home
+      </Link>
     </div>
   );
 }

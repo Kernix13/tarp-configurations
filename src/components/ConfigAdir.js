@@ -1,6 +1,8 @@
 import React, { useContext } from "react";
 import TarpContext from "../TarpContext";
 
+import AdirondackImg from "../assets/images/Adirondack.png";
+
 function Config_Adir() {
   const state = useContext(TarpContext);
 
@@ -15,10 +17,11 @@ function Config_Adir() {
   const userTarp = [state.tarpLength, state.tarpWidth];
 
   class Config_Adir {
-    constructor(configName, len, width) {
+    constructor(configName, len, width, img) {
       this.configName = configName;
       this.len = len;
       this.width = width;
+      this.img = img;
     }
 
     alpha = 30;
@@ -28,6 +31,7 @@ function Config_Adir() {
       const l = this.len * 12;
       const diagonal = Math.round(Math.sqrt(Math.pow(l, 2) * 2));
       const tarpSize = [this.len, this.width];
+      const configImg = this.img;
 
       for (let i = this.beta; i >= this.alpha; i--) {
         const sleepClear = l - state.height;
@@ -51,7 +55,7 @@ function Config_Adir() {
         const sitTarpHtClear = sitTarpHt - sitHeight;
         const chairTarpHtClear = chairTarpHt - state.chairHeight;
 
-        outputObj = tarpSize.concat({ sleepClear, cover, coverClear, ridgeHeight, sitTarpHtClear, chairTarpHtClear, angle: i, configName: this.configName, ridgeHt, diagonal });
+        outputObj = tarpSize.concat({ sleepClear, cover, coverClear, ridgeHeight, sitTarpHtClear, chairTarpHtClear, angle: i, configName: this.configName, ridgeHt, diagonal, configImg });
 
         if (sitTarpHtClear < 7 || chairTarpHtClear < 7) {
           break;
@@ -62,7 +66,7 @@ function Config_Adir() {
   }
 
   if (userTarp[0] === userTarp[1]) {
-    const Adirondack = new Config_Adir("Adirondack", userTarp[0], userTarp[1]);
+    const Adirondack = new Config_Adir("Adirondack", userTarp[0], userTarp[1], AdirondackImg);
     Adirondack.calcs();
   }
 
@@ -71,17 +75,20 @@ function Config_Adir() {
   return (
     <div>
       {finalObj.map((type, index) => (
-        <div key={index}>
-          <h3 className="font-bold">{type[2].configName}</h3>
-          {type[2].coverClear <= 0 ? (
-            <p className="mb-3">Tarp length is too small for sleeping based on your body measurements. Try a larger tarp or a different configuration.</p>
-          ) : (
-            <p className="mb-3 text-base">
-              Set your <span className="font-bold">ridgeline height </span>
-              to {type[2].ridgeHeight} inches which results in a <span className="italic">lean angle</span> of {type[2].angle}-degrees. {type[2].sitTarpHtClear > 0 ? " You can sit under the tarp on the ground" : "There is not enough room to sit in this design"}
-              {type[2].chairTarpHtClear > 0 ? " and in your chair assuming you fly out the end flap." : "."}
-            </p>
-          )}
+        <div key={index} className="flex">
+          <img src={type[2].configImg} alt={type[2].configName + ` configuration`} />
+          <div>
+            <h3 className="font-bold">{type[2].configName}</h3>
+            {type[2].coverClear <= 0 ? (
+              <p className="mb-3">Tarp length is too small for sleeping based on your body measurements. Try a larger tarp or a different configuration.</p>
+            ) : (
+              <p className="mb-3 text-base">
+                Set your <span className="font-bold">ridgeline height </span>
+                to {type[2].ridgeHeight} inches which results in a <span className="italic">lean angle</span> of {type[2].angle}-degrees. {type[2].sitTarpHtClear > 0 ? " You can sit under the tarp on the ground" : "There is not enough room to sit in this design"}
+                {type[2].chairTarpHtClear > 0 ? " and in your chair assuming you fly out the end flap." : "."}
+              </p>
+            )}
+          </div>
         </div>
       ))}
     </div>

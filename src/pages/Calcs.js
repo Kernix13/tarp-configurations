@@ -1,5 +1,4 @@
 import AllCalcs from "../data/AllCalcs";
-import LeanTo2 from "../assets/images/lean-to2.png";
 
 function Calcs() {
   return (
@@ -101,7 +100,6 @@ function Calcs() {
           </div>
         ))}
       </div>
-      <img src={LeanTo2} alt="test" />
     </div>
   );
 }

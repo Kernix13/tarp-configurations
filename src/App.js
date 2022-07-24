@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 // Components
@@ -25,9 +25,10 @@ function App() {
   const [chairDepth, setChairDepth] = useState("");
   const [tarpLength, setTarpLength] = useState("");
   const [tarpWidth, setTarpWidth] = useState("");
+  const [buttonText, setButtonText] = useState("Submit");
 
   return (
-    <TarpContext.Provider value={{ height, setHeight, bodyWidth, setBodyWidth, chairHeight, setChairHeight, chairDepth, setChairDepth, tarpLength, setTarpLength, tarpWidth, setTarpWidth }}>
+    <TarpContext.Provider value={{ height, setHeight, bodyWidth, setBodyWidth, chairHeight, setChairHeight, chairDepth, setChairDepth, tarpLength, setTarpLength, tarpWidth, setTarpWidth, buttonText, setButtonText }}>
       <Router>
         {/* need a larger font-size */}
         <div className="text-lg flex flex-col justify-between h-screen">

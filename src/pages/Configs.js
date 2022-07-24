@@ -11,7 +11,7 @@ function Configs() {
         All <span className="italic">practical</span> tarp configurations fall into 1 of 4 categories: 1. <span className="text-lg font-semibold">{categories[0]}</span>, 2. <span className="text-lg font-semibold">{categories[1]}</span>, 3. <span className="text-lg font-semibold">{categories[2]}</span>, or 4. <span className="text-lg font-semibold">{categories[3]}</span>. There are 33 total tarp variations on this page for the following 21 types:
       </p>
 
-      <div className="grid grid-cols-1 gap-4 justify-items-center items-start sm:grid-cols-2 md:grid-cols-4">
+      <div className="grid grid-cols-2 gap-4 justify-items-center items-start md:grid-cols-4">
         <div>
           <p className="text-2xl mt-6 mb-4 text-gray-500">Lean-To</p>
           <ol className="list-decimal mt-4 ml-4">
@@ -92,7 +92,7 @@ function Configs() {
       </p>
       <p className="mb-3">Also, some configurations require either more than 1 ridgeline or 1 ridgeline and poles. It's up to you what combination of poles and ridgelines you want to use but if you do not have tie-out points where required then you will need an additional ridgeline or two. The configurations below uses poles where additional ridgelines are required.</p>
 
-      <h2 className="text-3xl mt-12 mb-4 text-gray-500 text-center">
+      <h2 id="lean-to-configuration" className="text-3xl mt-12 mb-4 text-gray-500 text-center">
         <span className="font-bold">Lean-To</span> Configurations
       </h2>
       <p className="mb-3">The configs in this section are variations of the standard Lean-To set-up. All configurations ("configs") in this category:</p>
@@ -151,7 +151,7 @@ function Configs() {
         ))}
       </div>
 
-      <h2 className="text-3xl mt-12 mb-4 text-gray-500 text-center">
+      <h2 id="aframe-configuration" className="text-3xl mt-12 mb-4 text-gray-500 text-center">
         <span className="font-bold">A-Frame</span> Configurations
       </h2>
       <p className="mb-3">The classic "pup" tent is another name for the A-Frame set-up.</p>
@@ -212,7 +212,7 @@ function Configs() {
         ))}
       </div>
 
-      <h2 className="text-3xl mt-12 mb-4 text-gray-500 text-center">
+      <h2 id="diagonal-configuration" className="text-3xl mt-12 mb-4 text-gray-500 text-center">
         <span className="font-bold">Diagonal</span> Configurations
       </h2>
       <p className="mb-3">All diagonal tarp configurations require a square tarp, or a length-to-width ratio of 1:1, although you may be able to use a 4:5 ratio tarp like an 8' x 10'. The benefit of diagonal configs is the increase length you gain from the diagonal axis. The angles vary for these set-ups.</p>
@@ -264,7 +264,7 @@ function Configs() {
         ))}
       </div>
 
-      <h2 className="text-3xl mt-12 mb-4 text-gray-500 text-center">
+      <h2 id="tent-configuration" className="text-3xl mt-12 mb-4 text-gray-500 text-center">
         <span className="font-bold">Tent</span> Configurations
       </h2>
       <p className="mb-3">My rule for a tarp tent is that 4+ "points" of cover are required. That means the roof plus 3 walls, and preferably a portion of the 4th wall. Given that definition, the Plow Point and Tube Tent set-ups from above would also fit into this category.</p>

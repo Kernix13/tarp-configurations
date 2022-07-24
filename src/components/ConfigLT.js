@@ -1,6 +1,10 @@
 import React, { useContext } from "react";
 import TarpContext from "../TarpContext";
 
+import LEANTOImg from "../assets/images/LeanTo.png";
+import BWLT25Img from "../assets/images/BWLT25.png";
+import BWLT33Img from "../assets/images/BWLT33.png";
+
 function ConfigLT() {
   const state = useContext(TarpContext);
 
@@ -17,12 +21,13 @@ function ConfigLT() {
   const userTarp = [state.tarpLength, state.tarpWidth];
 
   class Config_LT {
-    constructor(configName, len, width, mult1, mult2) {
+    constructor(configName, len, width, mult1, mult2, img) {
       this.configName = configName;
       this.len = len;
       this.width = width;
       this.mult1 = mult1;
       this.mult2 = mult2;
+      this.img = img;
     }
 
     alpha = 30;
@@ -33,6 +38,7 @@ function ConfigLT() {
       const w = this.width * 12;
       const tarpSize = [this.len, this.width];
       const sleepClear = l - state.height;
+      const configImg = this.img;
 
       for (let i = this.beta; i >= this.alpha; i--) {
         const ridgeHt = Math.round(Math.sin(i * deg2Rad) * (w * this.mult1) + w * this.mult2);
@@ -56,7 +62,7 @@ function ConfigLT() {
         const sitTarpHtClear = sitTarpHt - sitHeight;
         const chairTarpHtClear = chairTarpHt - state.chairHeight;
 
-        outputObj = tarpSize.concat({ sleepClear, cover, coverClear, ridgeHeight, sitTarpHtClear, chairTarpHtClear, angle: i, configName: this.configName, ridgeHt, sleepDiagClr });
+        outputObj = tarpSize.concat({ sleepClear, cover, coverClear, ridgeHeight, sitTarpHtClear, chairTarpHtClear, angle: i, configName: this.configName, ridgeHt, sleepDiagClr, configImg });
 
         if (sitTarpHtClear < 4 || chairTarpHtClear < 4) {
           break;
@@ -66,13 +72,13 @@ function ConfigLT() {
     }
   }
 
-  const Lean_To = new Config_LT("Lean-To", userTarp[0], userTarp[1], 1, 0);
+  const Lean_To = new Config_LT("Lean-To", userTarp[0], userTarp[1], 1, 0, LEANTOImg);
   Lean_To.calcs();
 
-  const BWLT_25 = new Config_LT("Back-Wall LT 25", userTarp[0], userTarp[1], 0.75, 0.25);
+  const BWLT_25 = new Config_LT("Back-Wall LT 25", userTarp[0], userTarp[1], 0.75, 0.25, BWLT25Img);
   BWLT_25.calcs();
 
-  const BWLT_33 = new Config_LT("Back-Wall LT 33", userTarp[0], userTarp[1], 0.667, 0.333);
+  const BWLT_33 = new Config_LT("Back-Wall LT 33", userTarp[0], userTarp[1], 0.667, 0.333, BWLT33Img);
   BWLT_33.calcs();
 
   // console.log(finalObj);
@@ -83,19 +89,22 @@ function ConfigLT() {
       {finalObj[0][2].sleepDiagClr <= 0 ? <p className="mb-3">Your tarp is too small for these configurations.</p> : null}
       {finalObj.map((type, index) =>
         type[2].sleepClear <= 0 && type[2].sleepDiagClr < 6 ? null : (
-          <div key={index}>
-            <h3 className="font-bold">{type[2].configName}</h3>
-            <p className="mb-3 text-base">
-              Set your <span className="font-bold">ridgeline height </span>
-              to {type[2].ridgeHeight} inches which results in a <span className="italic">lean angle</span> of {type[2].angle}-degrees. {type[2].sitTarpHtClear > 0 ? " You can sit under the tarp on the ground" : "Ridgeline too low to sit in this design (consider using guylines to raise the ridgeline)"}
-              {type[2].chairTarpHtClear > 0 ? " and in your chair." : "."}
-              <br />{" "}
-              {type[2].sleepClear <= 0 ? (
-                <p className="mb-3">
-                  <span className="font-semibold">Note</span>: You have to sleep along the diagonal of the tarp shadow because the length is too small.
-                </p>
-              ) : null}
-            </p>
+          <div key={index} className="flex">
+            <img src={type[2].configImg} alt={type[2].configName + ` configuration`} />
+            <div>
+              <h3 className="font-bold">{type[2].configName}</h3>
+              <p className="mb-3 text-base">
+                Set your <span className="font-bold">ridgeline height </span>
+                to {type[2].ridgeHeight} inches which results in a <span className="italic">lean angle</span> of {type[2].angle}-degrees. {type[2].sitTarpHtClear > 0 ? " You can sit under the tarp on the ground" : "Ridgeline too low to sit in this design (consider using guylines to raise the ridgeline)"}
+                {type[2].chairTarpHtClear > 0 ? " and in your chair." : "."}
+                <br />{" "}
+                {type[2].sleepClear <= 0 ? (
+                  <p className="mb-3">
+                    <span className="font-semibold">Note</span>: You have to sleep along the diagonal of the tarp shadow because the length is too small.
+                  </p>
+                ) : null}
+              </p>
+            </div>
           </div>
         )
       )}

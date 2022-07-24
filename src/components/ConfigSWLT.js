@@ -1,6 +1,9 @@
 import React, { useContext } from "react";
 import TarpContext from "../TarpContext";
 
+import SideWallLTImg from "../assets/images/SideWallLT.png";
+import HoldenTentImg from "../assets/images/HoldenTent.png";
+
 function Config_SWLT() {
   const state = useContext(TarpContext);
 
@@ -15,12 +18,13 @@ function Config_SWLT() {
   const userTarp = [state.tarpLength, state.tarpWidth];
 
   class Config_SWLT {
-    constructor(configName, len, width, alpha, beta) {
+    constructor(configName, len, width, alpha, beta, img) {
       this.configName = configName;
       this.len = len;
       this.width = width;
       this.alpha = alpha;
       this.beta = beta;
+      this.img = img;
     }
 
     calcs() {
@@ -28,6 +32,7 @@ function Config_SWLT() {
       const w = this.width * 12;
       const tarpSize = [this.len, this.width];
       const sleepClear = Math.round(w - (0.375 * state.height) / (Math.tan(this.alpha) * 2) - state.height);
+      const configImg = this.img;
 
       const ridgeHt = Math.round(Math.sin(this.beta * deg2Rad) * l);
 
@@ -49,43 +54,43 @@ function Config_SWLT() {
       const sitTarpHtClear = sitTarpHt - sitHeight;
       const chairTarpHtClear = chairTarpHt - state.chairHeight;
 
-      outputObj = tarpSize.concat({ sleepClear, cover, coverClear, ridgeHeight, sitTarpHtClear, chairTarpHtClear, "Wall angle": this.alpha, "Lean angle": this.beta, configName: this.configName, ridgeHt });
+      outputObj = tarpSize.concat({ sleepClear, cover, coverClear, ridgeHeight, sitTarpHtClear, chairTarpHtClear, "Wall angle": this.alpha, "Lean angle": this.beta, configName: this.configName, ridgeHt, configImg });
 
       finalObj.push(outputObj);
     }
   }
 
   if (userTarp[0] / userTarp[1] === 0.5) {
-    const SWLT_1to2 = new Config_SWLT("Side-Wall LT 1:2", userTarp[0], userTarp[1], 60, 33.3);
+    const SWLT_1to2 = new Config_SWLT("Side-Wall LT 1:2", userTarp[0], userTarp[1], 60, 33.3, SideWallLTImg);
     SWLT_1to2.calcs();
 
-    const Holden_1to2 = new Config_SWLT("Holden Tent 1:2", userTarp[0], userTarp[1], 50, 45);
+    const Holden_1to2 = new Config_SWLT("Holden Tent 1:2", userTarp[0], userTarp[1], 50, 45, HoldenTentImg);
     Holden_1to2.calcs();
   }
 
   if (userTarp[0] / userTarp[1] === 0.6) {
-    const SWLT_3to5 = new Config_SWLT("Side-Wall LT 3:5", userTarp[0], userTarp[1], 50, 29);
+    const SWLT_3to5 = new Config_SWLT("Side-Wall LT 3:5", userTarp[0], userTarp[1], 50, 29, SideWallLTImg);
     SWLT_3to5.calcs();
 
-    const Holden_3to5 = new Config_SWLT("Holden Tent 3:5", userTarp[0], userTarp[1], 45, 40);
+    const Holden_3to5 = new Config_SWLT("Holden Tent 3:5", userTarp[0], userTarp[1], 45, 40, HoldenTentImg);
     Holden_3to5.calcs();
   }
 
   if (userTarp[1] / userTarp[0] === 1.5) {
-    const SWLT_2to3 = new Config_SWLT("Side-Wall LT 2:3", userTarp[0], userTarp[1], 58, 27);
+    const SWLT_2to3 = new Config_SWLT("Side-Wall LT 2:3", userTarp[0], userTarp[1], 58, 27, SideWallLTImg);
     SWLT_2to3.calcs();
 
-    const Holden_2to3 = new Config_SWLT("Holden Tent 2:3", userTarp[0], userTarp[1], 56, 38);
+    const Holden_2to3 = new Config_SWLT("Holden Tent 2:3", userTarp[0], userTarp[1], 56, 38, HoldenTentImg);
     Holden_2to3.calcs();
   }
 
   if (userTarp[0] / userTarp[1] === 0.75) {
-    const Holden_3to4 = new Config_SWLT("Holden Tent 3:4", userTarp[0], userTarp[1], 55, 33);
+    const Holden_3to4 = new Config_SWLT("Holden Tent 3:4", userTarp[0], userTarp[1], 55, 33, HoldenTentImg);
     Holden_3to4.calcs();
   }
 
   if (userTarp[0] / userTarp[1] === 0.8) {
-    const Holden_4to5 = new Config_SWLT("Holden Tent 4:5", userTarp[0], userTarp[1], 58, 30);
+    const Holden_4to5 = new Config_SWLT("Holden Tent 4:5", userTarp[0], userTarp[1], 58, 30, HoldenTentImg);
     Holden_4to5.calcs();
   }
 
@@ -102,18 +107,21 @@ function Config_SWLT() {
     return (
       <div>
         {finalObj.map((type, index) => (
-          <div key={index}>
-            <h3 className="font-bold">{type[2].configName}</h3>
-            {type[2].sleepDiagClr <= 0 && type[2].sleepClear <= 0 ? (
-              <p className="mb-3">Tarp length is too small for sleeping based on your height.</p>
-            ) : (
-              <p className="mb-3 text-base">
-                Set your {type[2].configName.split(" ")[0] === "Side-Wall" ? <span className="font-bold">ridgeline height </span> : <span className="font-bold">ridge pole height </span>}
-                to {type[2].ridgeHeight} inches for a <span className="italic">lean angle</span> of {type[2]["Lean angle"]}-degrees. {type[2].sitTarpHtClear > 0 ? " You can sit under the tarp on the ground" : type[2].configName.split(" ")[0] === "Side-Wall" ? "Ridgeline is too low to sit in this design" : "There is not enough height to sit in this design"}
-                {type[2].chairTarpHtClear > 0 ? " and in your chair." : "."}
-                <br /> {type[2].sleepClear <= 0 ? "Note: you have to sleep along the tarp cover diagonal because the length is too small." : null}
-              </p>
-            )}
+          <div key={index} className="flex">
+            <img src={type[2].configImg} alt={type[2].configName + ` configuration`} />
+            <div>
+              <h3 className="font-bold">{type[2].configName}</h3>
+              {type[2].sleepDiagClr <= 0 && type[2].sleepClear <= 0 ? (
+                <p className="mb-3">Tarp length is too small for sleeping based on your height.</p>
+              ) : (
+                <p className="mb-3 text-base">
+                  Set your {type[2].configName.split(" ")[0] === "Side-Wall" ? <span className="font-bold">ridgeline height </span> : <span className="font-bold">ridge pole height </span>}
+                  to {type[2].ridgeHeight} inches for a <span className="italic">lean angle</span> of {type[2]["Lean angle"]}-degrees. {type[2].sitTarpHtClear > 0 ? " You can sit under the tarp on the ground" : type[2].configName.split(" ")[0] === "Side-Wall" ? "Ridgeline is too low to sit in this design" : "There is not enough height to sit in this design"}
+                  {type[2].chairTarpHtClear > 0 ? " and in your chair." : "."}
+                  <br /> {type[2].sleepClear <= 0 ? "Note: you have to sleep along the tarp cover diagonal because the length is too small." : null}
+                </p>
+              )}
+            </div>
           </div>
         ))}
       </div>

@@ -1,6 +1,8 @@
 import React, { useContext } from "react";
 import TarpContext from "../TarpContext";
 
+import LavvuImg from "../assets/images/Lavvu.png";
+
 function Config_Lavvu() {
   const state = useContext(TarpContext);
 
@@ -14,10 +16,11 @@ function Config_Lavvu() {
   const userTarp = [state.tarpLength, state.tarpWidth];
 
   class Config_Lavvu {
-    constructor(configName, len, width) {
+    constructor(configName, len, width, img) {
       this.configName = configName;
       this.len = len;
       this.width = width;
+      this.img = img;
     }
 
     alpha = 60;
@@ -27,6 +30,7 @@ function Config_Lavvu() {
       const w = this.width * 12;
       const sleepClear = w / 3 - state.height;
       const tarpSize = [this.len, this.width];
+      const configImg = this.img;
 
       const ridgeHeight = Math.round(Math.sin(this.alpha * deg2Rad) * l);
 
@@ -36,14 +40,14 @@ function Config_Lavvu() {
       const sitTarpHtClear = ridgeHeight - sitHeight;
       const chairTarpHtClear = ridgeHeight - state.chairHeight;
 
-      outputObj = tarpSize.concat({ sleepClear, cover, coverClear, ridgeHeight, sitTarpHtClear, chairTarpHtClear, angle: this.alpha, configName: this.configName, height: state.height });
+      outputObj = tarpSize.concat({ sleepClear, cover, coverClear, ridgeHeight, sitTarpHtClear, chairTarpHtClear, angle: this.alpha, configName: this.configName, height: state.height, configImg });
 
       finalObj.push(outputObj);
     }
   }
 
   if (userTarp[0] / userTarp[1] === 0.5) {
-    const Lavvu = new Config_Lavvu("Lavvu", userTarp[0], userTarp[1]);
+    const Lavvu = new Config_Lavvu("Lavvu", userTarp[0], userTarp[1], LavvuImg);
     Lavvu.calcs();
   }
 
@@ -60,9 +64,12 @@ function Config_Lavvu() {
     return (
       <div>
         {finalObj.map((type, index) => (
-          <div key={index}>
-            <h3 className="font-bold">{type[2].configName}</h3>
-            {type[2].sleepClear <= 0 ? <p className="mb-3">Tarp length is too small for sleeping based on your height.</p> : <p className="mb-3 text-base">Attach your tarp {type[2].ridgeHeight} inches high on your tripod for a 60-degree lean angle. This design has plenty of room to sit in a chair inside the tent during a storm.</p>}
+          <div key={index} className="flex">
+            <img src={type[2].configImg} alt={type[2].configName + ` configuration`} />
+            <div>
+              <h3 className="font-bold">{type[2].configName}</h3>
+              {type[2].sleepClear <= 0 ? <p className="mb-3">Tarp length is too small for sleeping based on your height.</p> : <p className="mb-3 text-base">Attach your tarp {type[2].ridgeHeight} inches high on your tripod for a 60-degree lean angle. This design has plenty of room to sit in a chair inside the tent during a storm.</p>}
+            </div>
           </div>
         ))}
       </div>

@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 function NavBar({ title }) {
   return (
-    <nav className="navbar mb-12 shadow-lg bg-gradient-to-br from-blue-500 to-gray-700 text-neutral-content">
+    <nav className="navbar mb-12 shadow-lg bg-gradient-to-br from-teal-500 to-teal-900 text-neutral-content">
       <div className="container mx-auto">
         <div className="flex-none px-2 mx-2">
           <Link to="/" className="text-lg font-bold align-middle">

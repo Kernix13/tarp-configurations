@@ -1,6 +1,8 @@
 import React, { useContext } from "react";
 import TarpContext from "../TarpContext";
 
+import MinersTentImg from "../assets/images/Miners_Tent.png";
+
 function Config_Miners() {
   const state = useContext(TarpContext);
 
@@ -15,10 +17,11 @@ function Config_Miners() {
   const userTarp = [state.tarpLength, state.tarpWidth];
 
   class Config_Miners {
-    constructor(configName, len, width) {
+    constructor(configName, len, width, img) {
       this.configName = configName;
       this.len = len;
       this.width = width;
+      this.img = img;
     }
 
     alpha = 67.5;
@@ -28,6 +31,7 @@ function Config_Miners() {
       const w = this.width * 12;
       const sleepClear = Math.round(0.75 * w - state.height);
       const tarpSize = [this.len, this.width];
+      const configImg = this.img;
 
       const ridgeHeight = Math.round(0.857 * l);
       const cover = Math.round(0.678 * l);
@@ -42,14 +46,14 @@ function Config_Miners() {
       const sitTarpHtClear = sitTarpHt - sitHeight;
       const chairTarpHtClear = chairTarpHt - state.chairHeight;
 
-      outputObj = tarpSize.concat({ sleepClear, cover, coverClear, ridgeHeight, sitTarpHtClear, chairTarpHtClear, angle: this.alpha, configName: this.configName });
+      outputObj = tarpSize.concat({ sleepClear, cover, coverClear, ridgeHeight, sitTarpHtClear, chairTarpHtClear, angle: this.alpha, configName: this.configName, configImg });
 
       finalObj.push(outputObj);
     }
   }
 
   if (userTarp[0] / userTarp[1] === 0.5) {
-    const Miners_tent = new Config_Miners("Miners Tent", userTarp[0], userTarp[1]);
+    const Miners_tent = new Config_Miners("Miners Tent", userTarp[0], userTarp[1], MinersTentImg);
     Miners_tent.calcs();
   }
 
@@ -66,23 +70,26 @@ function Config_Miners() {
     return (
       <div>
         {finalObj.map((type, index) => (
-          <div key={index}>
-            <h3 className="font-bold">{type[2].configName}</h3>
-            {type[2].sleepDiagClr <= 0 && type[2].sleepClear <= 0 ? (
-              <p className="mb-3">Tarp length is too small for sleeping based on your height.</p>
-            ) : (
-              <p className="mb-3 text-base">
-                Attach your tarp to a <span className="font-bold">ridge pole </span>
-                {type[2].ridgeHeight} inches above the ground for a <span className="italic">lean angle</span> of {type[2].angle}-degrees. {type[2].sitTarpHtClear > 0 ? " You can sit under the tarp on the ground" : "Ridgeline is too low to sit in this design"}
-                {type[2].chairTarpHtClear > 0 ? " and in your chair." : "."}
-                <br />{" "}
-                {type[2].sleepClear <= 0 ? (
-                  <p className="mb-3">
-                    <span className="font-semibold">Note</span>: You have to sleep along the diagonal of the tarp shadow because the length is too small.
-                  </p>
-                ) : null}
-              </p>
-            )}
+          <div key={index} className="flex">
+            <img src={type[2].configImg} alt={type[2].configName + ` configuration`} />
+            <div>
+              <h3 className="font-bold">{type[2].configName}</h3>
+              {type[2].sleepDiagClr <= 0 && type[2].sleepClear <= 0 ? (
+                <p className="mb-3">Tarp length is too small for sleeping based on your height.</p>
+              ) : (
+                <p className="mb-3 text-base">
+                  Attach your tarp to a <span className="font-bold">ridge pole </span>
+                  {type[2].ridgeHeight} inches above the ground for a <span className="italic">lean angle</span> of {type[2].angle}-degrees. {type[2].sitTarpHtClear > 0 ? " You can sit under the tarp on the ground" : "Ridgeline is too low to sit in this design"}
+                  {type[2].chairTarpHtClear > 0 ? " and in your chair." : "."}
+                  <br />{" "}
+                  {type[2].sleepClear <= 0 ? (
+                    <p className="mb-3">
+                      <span className="font-semibold">Note</span>: You have to sleep along the diagonal of the tarp shadow because the length is too small.
+                    </p>
+                  ) : null}
+                </p>
+              )}
+            </div>
           </div>
         ))}
       </div>

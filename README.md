@@ -22,6 +22,17 @@ For the time being I have a `Calcs` page which shows all the calculations for th
 
 ## To-Do Items
 
+DONE:
+
+1. focus height field on clear (DONE) - useRef and useEffect - cleanup?
+1. useNavigate to go back to `/results` - (DONE)
+1. `sleepClr` has to be calulated using the inner diagonal (Make a note) for a config or two (DONE)
+
+STILL LEFTT TO DO:
+
+1. useEffect **cleanup!!!** - yes, stop the focus when you are on another page? https://dmitripavlutin.com/react-useref-guide/ -
+1. SHIT - a page reload loses state and therefore configs content -
+1. if user does not enter other fields, then calculate them and make a note to the user maybe - nee notes in App.js
 1. Double check the 2 angles for all Side-Wall LT and Holden Tent configs.
 1. Double check the constants used in the Miners Tent calculations.
 1. Double check Adirondack sleep clearance calculation.
@@ -32,10 +43,10 @@ For the time being I have a `Calcs` page which shows all the calculations for th
 1. Include 4:5 ratio in Diagonal configs? If so, how? New file for square and 4:5?
 1. Double check why configAngles differ for Hex Diamond from Diamond?
 1. Ask Geek37 to double check my Miners Tent equations since it has 3D geometry.
-1. `sleepClr` has to be calulated using the inner diagonal (Make a note) for a config or two
 1. Make it pretty: Choice images, 33 Inkscape graphics, and fantastic Tailwind cards
 1. **CommonForLoop.js**: Looks like I don't know how to add the nested for loop into a function, export it, and then use it - got two empty arrays first time, then errors after that: DELETED
-1. added Config.js as a ES6 class
+1. no DaisyUI clsses?
+1. added Config.js as a ES6 class - why?
 
 **MAIN TO-DO**: Get onSubmit and onChange to work and output EVERYTHING!
 
@@ -51,3 +62,8 @@ For the time being I have a `Calcs` page which shows all the calculations for th
 ## License
 
 ...later
+
+- LT, BWLT25, BWLT33, FRLT25, FRLT33, FRLT50, FR CFLY, BWFRLT25, BWFRLT33 (9)
+- AF, AFLT66, AFLT75, AFCFly, TubeTent, SWAF25, SWAF33, OpenStall (8, 17)
+- Diamond, HexDiamond, Arrowhead, PlowPoint, Adirondack ()
+- Bakers, Lavvu, Miners, SWLT, Holden ()

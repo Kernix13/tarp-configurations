@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 // Components
@@ -19,15 +19,16 @@ import TarpContext from "./TarpContext";
 // import TarpsArray from "./data/TarpsArray";
 
 function App() {
-  const [height, setHeight] = useState(74);
-  const [bodyWidth, setBodyWidth] = useState(18.5);
-  const [chairHeight, setChairHeight] = useState(46);
-  const [chairDepth, setChairDepth] = useState(30);
-  const [tarpLength, setTarpLength] = useState(7);
-  const [tarpWidth, setTarpWidth] = useState(14);
+  const [height, setHeight] = useState("");
+  const [bodyWidth, setBodyWidth] = useState("");
+  const [chairHeight, setChairHeight] = useState("");
+  const [chairDepth, setChairDepth] = useState("");
+  const [tarpLength, setTarpLength] = useState("");
+  const [tarpWidth, setTarpWidth] = useState("");
+  const [buttonText, setButtonText] = useState("Submit");
 
   return (
-    <TarpContext.Provider value={{ height, setHeight, bodyWidth, setBodyWidth, chairHeight, setChairHeight, chairDepth, setChairDepth, tarpLength, setTarpLength, tarpWidth, setTarpWidth }}>
+    <TarpContext.Provider value={{ height, setHeight, bodyWidth, setBodyWidth, chairHeight, setChairHeight, chairDepth, setChairDepth, tarpLength, setTarpLength, tarpWidth, setTarpWidth, buttonText, setButtonText }}>
       <Router>
         {/* need a larger font-size */}
         <div className="text-lg flex flex-col justify-between h-screen">

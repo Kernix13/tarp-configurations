@@ -67,9 +67,9 @@ function Config_TT() {
 
   if (finalObj.length === 0) {
     return (
-      <div>
-        <h3 className="font-bold">Tube Tent</h3>
-        <p className="mb-3 text-base">The Tube Tend config requires a 1:2 ratio rectangular tarp.</p>
+      <div className="border border-solid border-slate-400 p-4">
+        <h3 className="text-2xl font-bold mb-4 mt-2">Tube Tent</h3>
+        <p className="mb-3 text-base-lg lg:text-xl">The Tube Tent config requires a 1:2 ratio rectangular tarp.</p>
       </div>
     );
   } else {
@@ -77,14 +77,14 @@ function Config_TT() {
       <div>
         {finalObj.map((type, index) =>
           type[2].sleepClear <= 0 && type[2].sleepDiagClr < 6 ? null : (
-            <div key={index} className="flex">
-              <img src={type[2].configImg} alt={type[2].configName + ` configuration`} />
-              <div>
-                <h3 className="font-bold">{type[2].configName}</h3>
+            <div key={index} className="flex flex-col justify-center items-center my-8 bg-slate-100 border border-solid border-slate-400 sm:flex-row">
+              <img src={type[2].configImg} alt={type[2].configName + ` configuration`} className="w-11/12 border-2 boder-solid border-slate-400 sm:m-4 sm:w-1/3 md:w-1/2" />
+              <div className="p-4">
+                <h3 className="text-2xl font-bold mb-4 mt-2 md:text-3xl">{type[2].configName}</h3>
                 {type[2].coverClear <= 0 ? (
-                  <p className="mb-3">Tarp width is too small for sleeping based on your body measurements. Try a larger tarp or a different configuration.</p>
+                  <p className="mb-3 text-base-lg lg:text-xl">Tarp width is too small for sleeping based on your body measurements. Try a larger tarp or a different configuration.</p>
                 ) : (
-                  <p className="mb-3 text-base">
+                  <p className="mb-3 text-base-lg lg:text-xl">
                     Set your <span className="font-bold">ridgeline height </span>
                     to {type[2].ridgeHeight} inches which results in a <span className="italic">lean angle</span> of {type[2].angle}-degrees. {type[2].sitTarpHtClear > 0 ? " You can sit under the tarp on the ground" : "There is not enough room to sit in this design"}
                     {type[2].chairTarpHtClear > 0 ? " and in your chair." : "."}

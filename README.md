@@ -24,6 +24,8 @@ DONE:
 
 STILL LEFTT TO DO:
 
+1. button colors need to change
+1. the error from `npm run build`
 1. useEffect **cleanup!!!** - yes, stop the focus when you are on another page? https://dmitripavlutin.com/react-useref-guide/ -
 1. SHIT - a page reload loses state and therefore configs content -
 1. if user does not enter other fields, then calculate them and make a note to the user maybe - nee notes in App.js
@@ -33,13 +35,10 @@ STILL LEFTT TO DO:
 1. Remove `plowPointCover` from Plow Point forEach?
 1. Double check why configAngles differ for Hex Diamond from Diamond?
 1. Ask Geek37 to double check my Miners Tent equations since it has 3D geometry.
-   <<<<<<< HEAD
-   =======
 1. Make it pretty: Choice images, 33 Inkscape graphics, and fantastic Tailwind cards
-1. **CommonForLoop.js**: Looks like I don't know how to add the nested for loop into a function, export it, and then use it - got two empty arrays first time, then errors after that: DELETED
+1. Consider adding Half-Pyramid and Forest Tent into A-Frame category, and Trapezoid and Tetra into Tents. Which means I need to add at least 1 more into Lean-To (Envelope?) and Diagonal (Octagon? Forrester?)
 1. no DaisyUI clsses?
 1. added Config.js as a ES6 class - why?
-   > > > > > > > form/basics
 
 **MAIN TO-DO**: Get onSubmit and onChange to work and output EVERYTHING!
 

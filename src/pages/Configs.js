@@ -83,7 +83,7 @@ function Configs() {
         <li>Chair sitting depth should be measured from the center of your body (your head) to whatever part of your body sticks out past your chair (your knees or feet).</li>
       </ul>
       <h3 className="text-2xl mb-2 mt-5">Miscellaneous Notes</h3>
-      <p className="my-3">For rectagle tarps, the short side is used as the length, the long side as the width. For example, an 8' x 10' tarp has a length of 8 feet, and a width of 10 feet.</p>
+      <p className="my-3">For rectangle tarps, the short side is used as the length, the long side as the width. For example, an 8' x 10' tarp has a length of 8 feet, and a width of 10 feet.</p>
       <p className="my-3">
         <span className="font-bold">Ridgeline heights</span> (the most important calculation) are calculated at the point where the sitting height is at least 3-4 inches below the tarp, or else that tarp size is not returned as viable. You may either raise the ridgeline or opt not to stake your tarp at ground level if sitting conditions are "<em>tight</em>".
       </p>
@@ -132,7 +132,7 @@ function Configs() {
         {/* lose the index # - I need to output notes */}
         {AllConfigs[0].map((config, i) => (
           <div key={i} className="border border-solid border-orange-400 bg-purple-50">
-            <div className="border border-solid border-slate-400">CONFIG IMAGE GOES HERE</div>
+            {/* <div className="border border-solid border-slate-400">CONFIG IMAGE GOES HERE</div> */}
             <div className="p-2">
               <h4 id="lean-to" className="text-2xl my-2 text-gray-500">
                 {config.name}

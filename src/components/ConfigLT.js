@@ -89,11 +89,24 @@ function ConfigLT() {
       {finalObj[0][2].sleepDiagClr <= 0 ? <p className="mb-3">Your tarp is too small for these configurations.</p> : null}
       {finalObj.map((type, index) =>
         type[2].sleepClear <= 0 && type[2].sleepDiagClr < 6 ? null : (
-          <div key={index} className="flex">
-            <img src={type[2].configImg} alt={type[2].configName + ` configuration`} />
-            <div>
-              <h3 className="font-bold">{type[2].configName}</h3>
-              <p className="mb-3 text-base">
+          <div key={index} className="flex flex-col justify-center items-center my-8 bg-slate-100 border border-solid border-slate-400 sm:flex-row">
+            <img src={type[2].configImg} alt={type[2].configName + ` configuration`} className="w-11/12 border-2 boder-solid border-slate-400 sm:m-4 sm:w-1/3 md:w-1/2" />
+            <div className="p-4">
+              <h3 className="text-2xl font-bold mb-4 mt-2 md:text-3xl">{type[2].configName}</h3>
+              <li className="mb-3 text-base-lg lg:text-xl">
+                Set your <span className="font-bold">ridgeline height </span>
+                to {type[2].ridgeHeight} inches.
+              </li>
+              <li className="mb-3 text-base-lg lg:text-xl">
+                Resulting <span className="italic">lean angle</span> is {type[2].angle}-deg.
+              </li>
+              <li className="mb-3 text-base-lg lg:text-xl">
+                Sit under tarp: <span className="font-bold italic">{type[2].sitTarpHtClear > 0 ? " YES" : "NO (consider using guylines to raise the ridgeline)"}</span>.
+              </li>
+              <li className="mb-3 text-base-lg lg:text-xl">
+                Sit in chair under tarp: <span className="font-bold italic">{type[2].chairTarpHtClear > 0 ? "YES" : "NO"}</span>.
+              </li>
+              <p className="mb-3 text-base-lg lg:text-xl">
                 Set your <span className="font-bold">ridgeline height </span>
                 to {type[2].ridgeHeight} inches which results in a <span className="italic">lean angle</span> of {type[2].angle}-degrees. {type[2].sitTarpHtClear > 0 ? " You can sit under the tarp on the ground" : "Ridgeline too low to sit in this design (consider using guylines to raise the ridgeline)"}
                 {type[2].chairTarpHtClear > 0 ? " and in your chair." : "."}

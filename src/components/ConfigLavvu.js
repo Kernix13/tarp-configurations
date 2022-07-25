@@ -55,20 +55,20 @@ function Config_Lavvu() {
 
   if (finalObj.length === 0) {
     return (
-      <div>
-        <h3 className="font-bold">Lavvu</h3>
-        <p className="mb-3">The Lavvu configuration requires a rectangle tarp with a ratio of 1:2.</p>
+      <div className="border border-solid border-slate-400 mt-4 p-4">
+        <h3 className="text-2xl font-bold mb-4 mt-2">Lavvu</h3>
+        <p className="mb-3 text-base-lg lg:text-xl">The Lavvu configuration requires a rectangle tarp with a ratio of 1:2.</p>
       </div>
     );
   } else {
     return (
       <div>
         {finalObj.map((type, index) => (
-          <div key={index} className="flex">
-            <img src={type[2].configImg} alt={type[2].configName + ` configuration`} />
-            <div>
-              <h3 className="font-bold">{type[2].configName}</h3>
-              {type[2].sleepClear <= 0 ? <p className="mb-3">Tarp length is too small for sleeping based on your height.</p> : <p className="mb-3 text-base">Attach your tarp {type[2].ridgeHeight} inches high on your tripod for a 60-degree lean angle. This design has plenty of room to sit in a chair inside the tent during a storm.</p>}
+          <div key={index} className="flex flex-col justify-center items-center my-8 bg-slate-100 border border-solid border-slate-400 sm:flex-row">
+            <img src={type[2].configImg} alt={type[2].configName + ` configuration`} className="w-11/12 border-2 boder-solid border-slate-400 sm:m-4 sm:w-1/3 md:w-1/2" />
+            <div className="p-4">
+              <h3 className="text-2xl font-bold mb-4 mt-2 md:text-3xl">{type[2].configName}</h3>
+              {type[2].sleepClear <= 0 ? <p className="mb-3 text-base-lg lg:text-xl">Tarp length is too small for sleeping based on your height.</p> : <p className="mb-3 text-base-lg lg:text-xl">Attach your tarp {type[2].ridgeHeight} inches high on your tripod for a 60-degree lean angle. This design has plenty of room to sit in a chair inside the tent during a storm.</p>}
             </div>
           </div>
         ))}

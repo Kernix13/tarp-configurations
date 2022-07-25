@@ -98,23 +98,23 @@ function Config_SWLT() {
 
   if (finalObj.length === 0) {
     return (
-      <div>
-        <h3 className="font-bold">Side-Wall Configs</h3>
-        <p className="mb-3">The Side-Wall Lean-To configuration requires a rectangle tarp with a ratio of 1:2, 3:5, or 2:3. The Holden Tent requires the same but can also be 3:4 or 4:5 ratio tarps.</p>
+      <div className="border border-solid border-slate-400 mt-4 p-4">
+        <h3 className="text-2xl font-bold mb-4 mt-2">Side-Wall Configs</h3>
+        <p className="mb-3 text-base-lg lg:text-xl">The Side-Wall Lean-To configuration requires a rectangle tarp with a ratio of 1:2, 3:5, or 2:3. The Holden Tent requires the same but can also be 3:4 or 4:5 ratio tarps.</p>
       </div>
     );
   } else {
     return (
       <div>
         {finalObj.map((type, index) => (
-          <div key={index} className="flex">
-            <img src={type[2].configImg} alt={type[2].configName + ` configuration`} />
-            <div>
-              <h3 className="font-bold">{type[2].configName}</h3>
+          <div key={index} className="flex flex-col justify-center items-center my-8 bg-slate-100 border border-solid border-slate-400 sm:flex-row">
+            <img src={type[2].configImg} alt={type[2].configName + ` configuration`} className="w-11/12 border-2 boder-solid border-slate-400 sm:m-4 sm:w-1/3 md:w-1/2" />
+            <div className="p-4">
+              <h3 className="text-2xl font-bold mb-4 mt-2 md:text-3xl">{type[2].configName}</h3>
               {type[2].sleepDiagClr <= 0 && type[2].sleepClear <= 0 ? (
-                <p className="mb-3">Tarp length is too small for sleeping based on your height.</p>
+                <p className="mb-3 text-base-lg lg:text-xl">Tarp length is too small for sleeping based on your height.</p>
               ) : (
-                <p className="mb-3 text-base">
+                <p className="mb-3 text-base-lg lg:text-xl">
                   Set your {type[2].configName.split(" ")[0] === "Side-Wall" ? <span className="font-bold">ridgeline height </span> : <span className="font-bold">ridge pole height </span>}
                   to {type[2].ridgeHeight} inches for a <span className="italic">lean angle</span> of {type[2]["Lean angle"]}-degrees. {type[2].sitTarpHtClear > 0 ? " You can sit under the tarp on the ground" : type[2].configName.split(" ")[0] === "Side-Wall" ? "Ridgeline is too low to sit in this design" : "There is not enough height to sit in this design"}
                   {type[2].chairTarpHtClear > 0 ? " and in your chair." : "."}

@@ -42,65 +42,73 @@ function Results() {
   } else {
     return (
       <div>
-        <div>
-          <p className="mb-3">If you do not see any configurations under any of the category types, then the tarp you chose is too small for those configurations.</p>
-          <h2 className="text-3xl m-6 text-gray-500 text-center sm:text-4xl">Lean-To Configurations</h2>
+        <section>
+          <p className="mb-3">If you do not see any configurations under a category type, then the tarp you chose is too small for those configurations.</p>
+          <div className="bg-img lt-bg-img">
+            <h2 className="config-heading text-3xl m-6 text-black font-semibold text-center sm:text-4xl">Lean-To Configurations</h2>
+          </div>
           <Config_LT />
           <Config_FR />
           <Config_FR_CFly />
           <Config_BWFR />
-          <p className="mb-3">
+          <p className="mt-1 text-center">
             Go to{" "}
             <Link to="/configs#lean-to-configuration" className="font-bold text-blue-600 hover:text-blue-800 hover:underline hover:underline-offset-2">
               Configs page
             </Link>{" "}
-            for more details.
+            for more details on the Lean-To set-ups.
           </p>
-        </div>
-        <div>
-          <h2 className="text-3xl m-6 text-gray-500 text-center sm:text-4xl">A-Frame Configurations</h2>
+        </section>
+        <section>
+          <div className="bg-img af-bg-img">
+            <h2 className="config-heading text-3xl m-6 text-black text-center sm:text-4xl">A-Frame Configurations</h2>
+          </div>
           <Config_AF />
+          <Config_AF_CFly />
           <Config_SWAF />
           <Config_OS />
           <Config_TT />
-          <Config_AF_CFly />
-          <p className="mb-3">
+          <p className="mt-2 text-center">
             Go to{" "}
             <Link to="/configs#aframe-configuration" className="font-bold text-blue-600 hover:text-blue-800 hover:underline hover:underline-offset-2">
               Configs page
             </Link>{" "}
-            for more details.
+            for more details on the A-Frame set-ups.
           </p>
-        </div>
-        <div>
-          <h2 className="text-3xl m-6 text-gray-500 text-center sm:text-4xl">Diagonal Configurations</h2>
+        </section>
+        <section>
+          <div className="bg-img diag-bg-img">
+            <h2 className="config-heading text-3xl m-6 text-black text-center sm:text-4xl">Diagonal Configurations</h2>
+          </div>
           <Config_Dia />
           <Config_HexDia />
           <Config_Arrowhead />
           <Config_PP />
           <Config_Adir />
-          <p className="mb-3">
+          <p className="mt-3 text-center">
             Go to{" "}
             <Link to="/configs#diagonal-configuration" className="font-bold text-blue-600 hover:text-blue-800 hover:underline hover:underline-offset-2">
               Configs page
             </Link>{" "}
-            for more details.
+            for more details on the Diagonal set-ups.
           </p>
-        </div>
-        <div>
-          <h2 className="text-3xl m-6 text-gray-500 text-center sm:text-4xl">Tent Configurations</h2>
+        </section>
+        <section>
+          <div className="bg-img tent-bg-img">
+            <h2 className="config-heading text-3xl m-6 text-black text-center sm:text-4xl">Tent Configurations</h2>
+          </div>
           <Config_SWLT />
           <Config_Lavvu />
           <Config_Miners />
           <Config_Bakers />
-          <p className="mb-3">
+          <p className="mt-3 text-center">
             Go to{" "}
             <Link to="/configs#tent-configuration" className="font-bold text-blue-600 hover:text-blue-800 hover:underline hover:underline-offset-2">
               Configs page
             </Link>{" "}
-            for more details.
+            for more details on the Tent set-ups.
           </p>
-        </div>
+        </section>
         <div className="text-left mt-6">
           <button id="user-submit" type="submit" className="bg-transparent hover:bg-cyan-700 text-cyan-700 font-semibold hover:text-white py-2 px-4 mr-4 border border-cyan-700 hover:border-transparent rounded">
             <Link to="/" className="btn btn-ghost btn-sm rounded-btn">

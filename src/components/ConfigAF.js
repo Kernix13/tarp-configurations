@@ -66,42 +66,27 @@ function Config_AF() {
   const A_Frame = new Config_AF("A-Frame", userTarp[0], userTarp[1], 0.5, AFrameImg);
   A_Frame.calcs();
 
-  const AFLT_66 = new Config_AF("A-Frame LT 66", userTarp[0], userTarp[1], 0.667, AFLT66Img);
-  AFLT_66.calcs();
+  const AFLT_33 = new Config_AF("A-Frame LT 33", userTarp[0], userTarp[1], 0.667, AFLT66Img);
+  AFLT_33.calcs();
 
-  const AFLT_75 = new Config_AF("A-Frame LT 75", userTarp[0], userTarp[1], 0.75, AFLT75Img);
-  AFLT_75.calcs();
+  const AFLT_25 = new Config_AF("A-Frame LT 25", userTarp[0], userTarp[1], 0.75, AFLT75Img);
+  AFLT_25.calcs();
 
   // console.log(finalObj);
-
-  const outputMap = (
-    <div key={index}>
-      <h3 className="font-bold">{type[2].configName}</h3>
-      {type[2].coverClear <= 0 ? (
-        <p className="mb-3">Tarp length is too small for sleeping based on your body mesurements. Try a larger tarp or a different configuration.</p>
-      ) : (
-        <p className="mb-3 text-base">
-          Set your <span className="font-bold">ridgeline height </span>
-          to {type[2].ridgeHeight} inches which results in a <span className="italic">lean angle</span> of {type[2].angle}-degrees. {type[2].sitTarpHtClear > 0 ? " You can sit under the tarp on the ground" : "There is not enough room to sit in this design (consider using guylines to stake to the ground)"}
-          {type[2].chairTarpHtClear > 0 ? " and in your chair." : "."}
-        </p>
-      )}
-    </div>
-  );
 
   return (
     <div>
       {finalObj[0][2].sleepDiagClr <= 0 ? <p className="mb-3">Your tarp is too small for these configurations.</p> : null}
       {finalObj.map((type, index) =>
         type[2].sleepClear <= 0 && type[2].sleepDiagClr < 6 ? null : (
-          <div key={index} className="flex">
-            <img src={type[2].configImg} alt={type[2].configName + ` configuration`} />
-            <div>
-              <h3 className="font-bold">{type[2].configName}</h3>
+          <div key={index} className="flex flex-col justify-center items-center my-8 bg-slate-100 border border-solid border-slate-400 sm:flex-row">
+            <img src={type[2].configImg} alt={type[2].configName + ` configuration`} className="w-11/12 border-2 boder-solid border-slate-400 sm:m-4 sm:w-1/3 md:w-1/2" />
+            <div className="p-4">
+              <h3 className="text-2xl font-bold mb-4 mt-2 md:text-3xl">{type[2].configName}</h3>
               {type[2].coverClear <= 0 ? (
-                <p className="mb-3">Tarp length is too small for sleeping based on your body mesurements. Try a larger tarp or a different configuration.</p>
+                <p className="mb-3 text-base-lg lg:text-xl">Tarp length is too small for sleeping based on your body mesurements. Try a larger tarp or a different configuration.</p>
               ) : (
-                <p className="mb-3 text-base">
+                <p className="mb-3 text-base-lg lg:text-xl">
                   Set your <span className="font-bold">ridgeline height </span>
                   to {type[2].ridgeHeight} inches which results in a <span className="italic">lean angle</span> of {type[2].angle}-degrees. {type[2].sitTarpHtClear > 0 ? " You can sit under the tarp on the ground" : "There is not enough room to sit in this design (consider using guylines to stake to the ground)"}
                   {type[2].chairTarpHtClear > 0 ? " and in your chair." : "."}

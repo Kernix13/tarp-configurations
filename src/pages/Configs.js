@@ -95,7 +95,7 @@ function Configs() {
       <h2 id="lean-to-configuration" className="text-3xl mt-12 mb-4 text-gray-500 text-center">
         <span className="font-bold">Lean-To</span> Configurations
       </h2>
-      <p className="mb-3">The configs in this section are variations of the standard Lean-To set-up. All configurations ("configs") in this category:</p>
+      <p className="mb-3">The configurations ("configs") in this section are variations of the standard Lean-To set-up. All "configs" in this category:</p>
 
       <ul className="list-disc ml-4 mt-2 mb-6">
         <li>

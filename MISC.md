@@ -1,6 +1,5 @@
 # Traversy Feedback app
 
-- make a new branch and try just state
 - lessons 10 Dynamic values, 11 jsx conditionals, 12 component & props, 14 state and useState,
 
 ```
@@ -39,29 +38,7 @@ With a ternary it's `{condition ? something : null}` but you can also do `{condi
         <Config_FR_CFly />
         <Config_BWFR />
       </div>
-      <div>
-        <h2 className="text-3xl m-6 text-gray-500 text-center sm:text-4xl">A-Frame Configurations</h2>
-        <Config_AF />
-        <Config_SWAF />
-        <Config_OS />
-        <Config_TT />
-        <Config_AF_CFly />
-      </div>
-      <div>
-        <h2 className="text-3xl m-6 text-gray-500 text-center sm:text-4xl">Diagonal Configurations</h2>
-        <Config_Dia />
-        <Config_HexDia />
-        <Config_Arrowhead />
-        <Config_PP />
-        <Config_Adir />
-      </div>
-      <div>
-        <h2 className="text-3xl m-6 text-gray-500 text-center sm:text-4xl">Tent Configurations</h2>
-        <Config_SWLT />
-        <Config_Lavvu />
-        <Config_Miners />
-        <Config_Bakers />
-      </div>
+      // and other blocks
     </div>
   );
 )}
@@ -114,7 +91,23 @@ const [formValues, setFormValues] = useState({
 
 app/global level state: gets passed down to any component that needs it -
 
-STOPPED ON LESSON 15 - REMEMBER i AM IN A NEW BRANCH `git branch` and `git checkout form/basics`
+STOPPED ON LESSON 15 - REMEMBER NEW BRANCH `git branch` and `git checkout form/basics`
+
+## Alerts
+
+- react-toastify in TRaversy 10) user profile & alerts or Schiff's context alerts?
+- or should I just create my own?
+
+### useRef
+
+- Traversy lessons 70-74, 98,
+- Schiff lesson 66
+- used it with `useEffect` to add focus to the height field - https://bosctechlabs.com/set-focus-on-input-field-after-rendering-react/ and https://bobbyhadz.com/blog/react-focus-input-on-element - searched for "how to focus an input field in react"
+
+### useNavigate
+
+- Schiff: 38 – view single post screen - React browser is managing the browser history for us – and it has a Fx where we can navigate to route/url called useNavigate – but we need to redirect to the id of the newly created post - AND 55 – quick attention... import from react-router-dom
+- 39 – flash messages
 
 ## Forms
 
@@ -124,16 +117,6 @@ STOPPED ON LESSON 15 - REMEMBER i AM IN A NEW BRANCH `git branch` and `git check
 - https://bobbyhadz.com/blog/react-get-form-input-value-on-submit
 - https://thewebdev.info/2020/04/29/how-to-add-a-react-input-with-a-required-attribute/
 - https://engineering.udacity.com/mastering-the-art-of-forms-in-react-1bd65fb664d7
-
-### useRef
-
-- Traversy lessons 70-74, 98,
-- Schiff lesson 66
-
-### useNavigate
-
-- Schiff: 38 – view single post screen - React browser is managing the browser history for us – and it has a Fx where we can navigate to route/url called useNavigate – but we need to redirect to the id of the newly created post - AND 55 – quick attention... import from react-router-dom
-- 39 – flash messages
 
 ```jsx
 // Home page
@@ -149,6 +132,7 @@ function Home() {
   const [chairDepth, setChairDepth] = useState("");
   const [tarpLength, setTarpLength] = useState("");
   const [tarpWidth, setTarpWidth] = useState("");
+  const [buttonText, setButtonText] = useState("");
 
   const handleSubmit = e => {
     e.preventDefault();
@@ -298,12 +282,3 @@ function Home() {
 export default Home;
 // export default React.memo(Home);
 ```
-
-### useRef
-
-- used it with `useEffect` to add focus to the height field - https://bosctechlabs.com/set-focus-on-input-field-after-rendering-react/ and https://bobbyhadz.com/blog/react-focus-input-on-element - searched for "how to focus an input field in react"
-
-## Alerts
-
-- react-toastify in TRaversy 10) user profile & alerts or Schiff's context alerts?
-- or should I just create my own?

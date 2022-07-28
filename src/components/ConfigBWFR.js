@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import TarpContext from "../TarpContext";
+import { FaTimes, FaCheck } from "react-icons/fa";
 
 import BWFRLT25Img from "../assets/images/BWFRLT_25.png";
 import BWFRLT33Img from "../assets/images/BWFRLT_33.png";
@@ -77,20 +78,51 @@ function Config_BWFR() {
           <div key={index} className="flex flex-col justify-center items-center my-8 bg-slate-100 border border-solid border-slate-400 sm:flex-row">
             <img src={type[2].configImg} alt={type[2].configName + ` configuration`} className="w-11/12 border-2 boder-solid border-slate-400 sm:m-4 sm:w-1/3 md:w-1/2" />
             <div className="p-4">
-              <h3 className="text-2xl font-bold mb-4 mt-2 md:text-3xl">{type[2].configName}</h3>
-              {type[2].sleepDiagClr <= 0 && type[2].sleepClear <= 0 ? (
-                "Tarp length too small for sleeping based on your height."
-              ) : (
-                <p className="mb-3 text-base-lg lg:text-xl">
-                  Set your <span className="font-bold">ridgeline height </span>
-                  to {type[2].ridgeHeight} inches which results in a <span className="italic">lean angle</span> of {type[2].angle}-degrees. {type[2].sitTarpHtClear > 0 ? " You can sit under the tarp on the ground" : "There is not enough room to sit in this design (consider using guylines to stake to the ground)"}
-                  {type[2].chairTarpHtClear > 0 ? " and in your chair." : "."}
-                  <br />{" "}
-                  {type[2].sleepClear <= 0 ? (
-                    <p className="mb-3">
-                      <span className="font-semibold">Note</span>: You have to sleep along the diagonal of the tarp shadow because the length is too small.
-                    </p>
-                  ) : null}
+              <h3 className="text-2xl font-bold text-teal-600 mb-4 mt-2 md:text-3xl">{type[2].configName}</h3>
+              <p className="mb-1 text-base lg:text-xl">
+                Set your <span className="italic">ridgeline height </span>
+                to <span className="font-bold">{type[2].ridgeHeight}</span> inches. The resulting <span className="italic">lean angle</span> is {type[2].angle}&deg;.
+              </p>
+              <p className="mb-1 text-base lg:text-xl">
+                Sit under tarp?{" "}
+                <span className="text-lg">
+                  {type[2].sitTarpHtClear > 0 ? (
+                    <>
+                      {" "}
+                      <FaCheck className="inline-flex h-5 w-5 mb-1  text-green-600" />
+                      {"  Yes "}
+                    </>
+                  ) : (
+                    <>
+                      {" "}
+                      <FaTimes className="inline-flex h-5 w-5 mb-1  text-red-700" />
+                      {"  No "}
+                    </>
+                  )}
+                </span>
+              </p>
+              <p className="mb-1 text-base lg:text-xl">
+                Sit in chair under tarp?{" "}
+                <span className="text-lg">
+                  {type[2].chairTarpHtClear > 0 ? (
+                    <>
+                      {" "}
+                      <FaCheck className="inline-flex h-5 w-5 mb-1  text-green-600" />
+                      {" Yes "}
+                    </>
+                  ) : (
+                    <>
+                      {" "}
+                      <FaTimes className="inline-flex h-5 w-5 mb-1 text-red-700" />
+                      {"  No "}
+                    </>
+                  )}
+                </span>
+              </p>
+              {type[2].sleepDiagClr <= 0 && type[2].sleepClear <= 0 && <p className="mb-3 text-base lg:text-xl">Tarp length is too small for sleeping based on your height.</p>}
+              {type[2].sleepClear <= 0 && (
+                <p className="mb-3">
+                  <span className="font-semibold">Note</span>: You have to sleep along the diagonal of the tarp shadow because the length is too small.
                 </p>
               )}
             </div>

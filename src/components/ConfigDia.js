@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import TarpContext from "../TarpContext";
+import { FaTimes, FaCheck } from "react-icons/fa";
 
 import DiamondImg from "../assets/images/Diamond.png";
 
@@ -16,11 +17,10 @@ function Config_Dia() {
   const userTarp = [state.tarpLength, state.tarpWidth];
 
   class Config_Dia {
-    constructor(configName, len, width, mult1, img) {
+    constructor(configName, len, width, img) {
       this.configName = configName;
       this.len = len;
       this.width = width;
-      this.mult1 = mult1;
       this.img = img;
     }
 
@@ -35,7 +35,7 @@ function Config_Dia() {
       const configImg = this.img;
 
       for (let i = this.beta; i >= this.alpha; i--) {
-        const ridgeHt = Math.round(Math.sin(i * deg2Rad) * (diagonal * this.mult1));
+        const ridgeHt = Math.round(Math.sin(i * deg2Rad) * (diagonal * 0.5));
 
         const ridgeHeight = Math.min(ridgeHt, state.height);
 
@@ -49,7 +49,7 @@ function Config_Dia() {
         const sitTarpHtClear = ridgeHeight - sitHeight;
         const chairTarpHtClear = ridgeHeight - state.chairHeight;
 
-        outputObj = tarpSize.concat({ sleepClear, cover, coverClear, ridgeHeight, sitTarpHtClear, chairTarpHtClear, angle: i, configName: this.configName, ridgeHt, configImg });
+        outputObj = tarpSize.concat({ sleepClear, cover, coverClear, ridgeHeight, sitTarpHtClear, chairTarpHtClear, angle: i, configName: this.configName, ridgeHt, configImg, diagonal });
 
         if (sitTarpHtClear < 7 || chairTarpHtClear < 7) {
           break;
@@ -60,7 +60,7 @@ function Config_Dia() {
   }
 
   if (userTarp[0] === userTarp[1]) {
-    const Diamond = new Config_Dia("Diamond", userTarp[0], userTarp[1], 0.5, DiamondImg);
+    const Diamond = new Config_Dia("Diamond", userTarp[0], userTarp[1], DiamondImg);
     Diamond.calcs();
   }
 
@@ -68,30 +68,66 @@ function Config_Dia() {
 
   if (finalObj.length === 0) {
     return (
-      <div className="border border-solid border-slate-400 mt-4 px-4 pb-1 pt-4">
-        <p className="text-center mb-3 text-base-lg lg:text-xl">Diagonal configurations require a square tarp.</p>
+      <div className="border border-dotted border-slate-600 bg-slate-100 mt-4 px-4 pb-1 pt-4">
+        <p className="text-center mb-3 text-base lg:text-xl">Diagonal configurations require a square tarp.</p>
       </div>
     );
   } else {
     return (
       <div>
-        {finalObj.map((type, index) => (
-          <div key={index} className="flex flex-col justify-center items-center my-8 bg-slate-100 border border-solid border-slate-400 sm:flex-row">
-            <img src={type[2].configImg} alt={type[2].configName + ` configuration`} className="w-11/12 border-2 boder-solid border-slate-400 sm:m-4 sm:w-1/3 md:w-1/2" />
-            <div className="p-4">
-              <h3 className="text-2xl font-bold mb-4 mt-2 md:text-3xl">{type[2].configName}</h3>
-              {type[2].coverClear <= 0 ? (
-                <p className="mb-3 text-base-lg lg:text-xl">Tarp width too small for sleeping based on your body measurements. Try a larger tarp or a different configuration.</p>
-              ) : (
-                <p className="mb-3 text-base-lg lg:text-xl">
-                  Set your <span className="font-bold">ridgeline height </span>
-                  to {type[2].ridgeHeight} inches which results in a <span className="italic">lean angle</span> of {type[2].angle}-degrees for the side walls. {type[2].sitTarpHtClear > 0 ? " You can sit under the tarp on the ground" : "There is not room to sit in this design (consider using guylines to stake to the ground)"}
-                  {type[2].chairTarpHtClear > 0 ? " and in your chair." : "."}
+        {finalObj[0][2].sleepClear <= 0 ? <p className="mt-5 mb-3 text-center">Your tarp is too small for these configurations.</p> : null}
+        {finalObj.map((type, index) =>
+          // BINGO - CHECK OTHER DIAGONALS
+          type[2].sleepClear <= 0 ? null : (
+            <div key={index} className="flex flex-col justify-center items-center my-8 bg-slate-100 border border-solid border-slate-400 sm:flex-row">
+              <img src={type[2].configImg} alt={type[2].configName + ` configuration`} className="w-11/12 border-2 boder-solid border-slate-400 sm:m-4 sm:w-1/3 md:w-1/2" />
+              <div className="p-4">
+                <h3 className="text-2xl font-bold text-teal-600 mb-4 mt-2 md:text-3xl">{type[2].configName}</h3>
+                <p className="mb-1 text-base lg:text-xl">
+                  Set your <span className="italic">ridgeline height </span>
+                  to <span className="font-bold">{type[2].ridgeHeight}</span> inches. The resulting <span className="italic">lean angle</span> is {type[2].angle}&deg;.
                 </p>
-              )}
+                <p className="mb-1 text-base lg:text-xl">
+                  Sit under tarp?{" "}
+                  <span className="text-lg">
+                    {type[2].sitTarpHtClear > 0 ? (
+                      <>
+                        {" "}
+                        <FaCheck className="inline-flex h-5 w-5 mb-1  text-green-600" />
+                        {"  Yes "}
+                      </>
+                    ) : (
+                      <>
+                        {" "}
+                        <FaTimes className="inline-flex h-5 w-5 mb-1  text-red-700" />
+                        {"  No "}
+                      </>
+                    )}
+                  </span>
+                </p>
+                <p className="mb-1 text-base lg:text-xl">
+                  Sit in chair under tarp?{" "}
+                  <span className="text-lg">
+                    {type[2].chairTarpHtClear > 0 ? (
+                      <>
+                        {" "}
+                        <FaCheck className="inline-flex h-5 w-5 mb-1  text-green-600" />
+                        {" Yes "}
+                      </>
+                    ) : (
+                      <>
+                        {" "}
+                        <FaTimes className="inline-flex h-5 w-5 mb-1 text-red-700" />
+                        {"  No "}
+                      </>
+                    )}
+                  </span>
+                </p>
+                {type[2].sleepClear <= 0 && <p className="mb-3 text-base lg:text-xl">Tarp length is too small for sleeping based on your height.</p>}
+              </div>
             </div>
-          </div>
-        ))}
+          )
+        )}
       </div>
     );
   }

@@ -14,7 +14,7 @@ function Home() {
   const handleSubmit = e => {
     e.preventDefault();
 
-    if (state.height === "" || state.chairHeight === "" || state.chairDepth === "" || state.tarpLength === "" || state.tarpWidth === "") {
+    if (state.height === "" || state.bodyWidth === "" || state.chairHeight === "" || state.chairDepth === "" || state.tarpLength === "" || state.tarpWidth === "") {
       // need to use toastify or custom
       alert("Please fill out ALL the fields");
     } else {
@@ -22,8 +22,9 @@ function Home() {
     }
 
     if (state.buttonText === "Submit") {
-      state.setButtonText("Clear");
       navigate("/results");
+      // I need additional conditional in the event the user only wants to change the tarp size
+      state.setButtonText("Clear");
     } else if (state.buttonText === "Clear") {
       state.setHeight("");
       state.setBodyWidth("");

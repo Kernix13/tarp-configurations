@@ -43,9 +43,19 @@ function Results() {
     return (
       <div>
         <section>
-          <p className="mb-3">If you do not see any configurations under a category type, then the tarp you chose is too small for those configurations.</p>
+          <p className="mb-3 text-slate-500 italic">If your tarp is too small you may not see any configurations under a category type.</p>
+          <h3 className="mb-3 text-3xl">Your Dimensions</h3>
+          <p className="mb-3">
+            <span>Height: {state.height}" | </span>
+            <span>Body width: {state.bodyWidth}" | </span>
+            <span>Chair height: {state.chairHeight}" | </span>
+            <span>Chair depth: {state.chairDepth}" | </span>
+            <span>
+              Tarp dimensions: {state.tarpLength} x {state.tarpWidth}
+            </span>
+          </p>
           <div className="bg-img lt-bg-img">
-            <h2 className="config-heading text-3xl m-6 text-black font-semibold text-center sm:text-4xl">Lean-To Configurations</h2>
+            <h2 className="config-heading text-3xl m-6 text-teal-700 font-semibold text-center sm:text-4xl">Lean-To Configurations</h2>
           </div>
           <Config_LT />
           <Config_FR />
@@ -56,12 +66,12 @@ function Results() {
             <Link to="/configs#lean-to-configuration" className="font-bold text-blue-600 hover:text-blue-800 hover:underline hover:underline-offset-2">
               Configs page
             </Link>{" "}
-            for more details on the Lean-To set-ups.
+            for more details on Lean-To set-ups.
           </p>
         </section>
         <section>
           <div className="bg-img af-bg-img">
-            <h2 className="config-heading text-3xl m-6 text-black text-center sm:text-4xl">A-Frame Configurations</h2>
+            <h2 className="config-heading text-3xl m-6 text-teal-700 font-semibold text-center sm:text-4xl">A-Frame Configurations</h2>
           </div>
           <Config_AF />
           <Config_AF_CFly />
@@ -73,12 +83,12 @@ function Results() {
             <Link to="/configs#aframe-configuration" className="font-bold text-blue-600 hover:text-blue-800 hover:underline hover:underline-offset-2">
               Configs page
             </Link>{" "}
-            for more details on the A-Frame set-ups.
+            for more details on A-Frame set-ups.
           </p>
         </section>
         <section>
           <div className="bg-img diag-bg-img">
-            <h2 className="config-heading text-3xl m-6 text-black text-center sm:text-4xl">Diagonal Configurations</h2>
+            <h2 className="config-heading text-3xl m-6 text-teal-700 font-semibold text-center sm:text-4xl">Diagonal Configurations</h2>
           </div>
           <Config_Dia />
           <Config_HexDia />
@@ -90,12 +100,12 @@ function Results() {
             <Link to="/configs#diagonal-configuration" className="font-bold text-blue-600 hover:text-blue-800 hover:underline hover:underline-offset-2">
               Configs page
             </Link>{" "}
-            for more details on the Diagonal set-ups.
+            for more details on Diagonal set-ups.
           </p>
         </section>
         <section>
           <div className="bg-img tent-bg-img">
-            <h2 className="config-heading text-3xl m-6 text-black text-center sm:text-4xl">Tent Configurations</h2>
+            <h2 className="config-heading text-3xl m-6 text-teal-700 font-semibold text-center sm:text-4xl">Tent Configurations</h2>
           </div>
           <Config_SWLT />
           <Config_Lavvu />
@@ -106,7 +116,7 @@ function Results() {
             <Link to="/configs#tent-configuration" className="font-bold text-blue-600 hover:text-blue-800 hover:underline hover:underline-offset-2">
               Configs page
             </Link>{" "}
-            for more details on the Tent set-ups.
+            for more details on Tent set-ups.
           </p>
         </section>
         <div className="text-left mt-6">

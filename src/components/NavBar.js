@@ -5,7 +5,8 @@ function NavBar({ title }) {
   return (
     <nav className="navbar mb-12 shadow-lg bg-gradient-to-br from-teal-500 to-teal-900 text-neutral-content">
       <div className="container mx-auto">
-        <div className="flex-none px-2 mx-2">
+        {/* Need hover class */}
+        <div className="flex-none px-2">
           <Link to="/" className="text-lg font-bold align-middle">
             {title}
           </Link>

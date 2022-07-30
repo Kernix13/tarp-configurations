@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import TarpContext from "../TarpContext";
 import { FaTimes, FaCheck } from "react-icons/fa";
 
-import LavvuImg from "../assets/images/Lavvu.png";
+import LavvuImg from "../assets/images/Lavvu2.png";
 
 function Config_Lavvu() {
   const state = useContext(TarpContext);

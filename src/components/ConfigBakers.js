@@ -44,7 +44,7 @@ function Config_Bakers() {
       }
 
       const innerDiag = Math.round(Math.sqrt(Math.pow(w / 2, 2) + Math.pow(cover, 2)));
-      // const sleepClear = w / 2 - height;
+      // const sleepClear = w / 2 - state.height;
       const sleepClear = innerDiag - state.height;
 
       const sitCover = Math.round(cover - (sitDepth + 3));

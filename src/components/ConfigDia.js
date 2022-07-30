@@ -68,8 +68,8 @@ function Config_Dia() {
 
   if (finalObj.length === 0) {
     return (
-      <div className="border border-dotted border-slate-600 bg-slate-100 mt-4 px-4 pb-1 pt-4">
-        <p className="text-center mb-3 text-base lg:text-xl">Diagonal configurations require a square tarp.</p>
+      <div className="p-0 border border-dotted border-slate-600 bg-slate-100 mt-6 px-4 py-8">
+        <p className="text-center mb-3 text-xl lg:text-2xl">Diagonal configurations require a square tarp.</p>
       </div>
     );
   } else {

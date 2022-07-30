@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import TarpContext from "../TarpContext";
 import { FaTimes, FaCheck } from "react-icons/fa";
 
-import MinersTentImg from "../assets/images/Miners_Tent.png";
+import MinersTentImg from "../assets/images/Miners_Tent2.png";
 
 function Config_Miners() {
   const state = useContext(TarpContext);

@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import TarpContext from "../TarpContext";
 import { FaTimes, FaCheck } from "react-icons/fa";
 
-import HexDiamondImg from "../assets/images/HexDiamond.png";
+import HexDiamondImg from "../assets/images/HexDiamond2.png";
 
 function Config_HexDia() {
   const state = useContext(TarpContext);

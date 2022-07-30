@@ -23,7 +23,9 @@ import Config_Bakers from "../components/ConfigBakers";
 
 function Results() {
   const state = useContext(TarpContext);
-  console.log(state);
+  const sitHeight = state.height / 2;
+  const sitDepth = Math.round((state.height * 7) / 32);
+  // console.log(state);
 
   if (state.height === "") {
     return (
@@ -43,15 +45,18 @@ function Results() {
     return (
       <div>
         <section>
-          <p className="mb-3 text-slate-500 italic">If your tarp is too small you may not see any configurations under a category type.</p>
+          <h1 className="text-5xl mb-6 text-gray-500 text-center">Trap Configuration Results</h1>
+          <p className="mb-3 text-slate-500 italic text-center">If your tarp is too small you may not see any configurations under a category type.</p>
           <h3 className="mb-3 text-3xl">Your Dimensions</h3>
           <p className="mb-3">
             <span>Height: {state.height}" | </span>
             <span>Body width: {state.bodyWidth}" | </span>
             <span>Chair height: {state.chairHeight}" | </span>
             <span>Chair depth: {state.chairDepth}" | </span>
+            <span>Sitting height: {sitHeight}" | </span>
+            <span>Sitting depth: {sitDepth}" | </span>
             <span>
-              Tarp dimensions: {state.tarpLength} x {state.tarpWidth}
+              Tarp size: {state.tarpLength} x {state.tarpWidth}
             </span>
           </p>
           <div className="bg-img lt-bg-img">
@@ -95,7 +100,7 @@ function Results() {
           <Config_Arrowhead />
           <Config_PP />
           <Config_Adir />
-          <p className="mt-3 text-center">
+          <p className="mt-6 text-center">
             Go to{" "}
             <Link to="/configs#diagonal-configuration" className="font-bold text-blue-600 hover:text-blue-800 hover:underline hover:underline-offset-2">
               Configs page
@@ -120,7 +125,7 @@ function Results() {
           </p>
         </section>
         <div className="text-left mt-6">
-          <button id="user-submit" type="submit" className="bg-transparent hover:bg-cyan-700 text-cyan-700 font-semibold hover:text-white py-2 px-4 mr-4 border border-cyan-700 hover:border-transparent rounded">
+          <button id="user-submit" type="submit" className="bg-transparent hover:bg-cyan-700 text-cyan-700 font-semibold hover:text-white py-2 px-4 mr-4 my-2 border border-cyan-700 hover:border-transparent rounded">
             <Link to="/" className="btn btn-ghost btn-sm rounded-btn">
               Back to Home Page Form
             </Link>

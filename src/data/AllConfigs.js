@@ -3,8 +3,8 @@ const configObjects = [
     {
       id: 1,
       name: "Lean-To",
-      notes: "Simple to setup and best used for good weather or light rain.",
-      imgUrl: "",
+      notes: "Stake C & D to the ground, tie A & B on the ridgeline.",
+      imgUrl: "../assets/images/Fold_LT.png",
       tarps: "All",
       angles: [30, 50],
       ridgelines: 1,
@@ -20,8 +20,8 @@ const configObjects = [
     {
       id: 2,
       name: "Flat Roof LT 50",
-      notes: "Tie poles to tarp at the mid-points.",
-      imgUrl: "",
+      notes: "Stake C & D, tie poles to E & F, tie A & B to the ridgeline.",
+      imgUrl: "abc",
       tarps: "All",
       angles: [30, 50],
       ridgelines: 1,
@@ -32,13 +32,13 @@ const configObjects = [
         poles: 2,
         guylines: 2
       },
-      foldPoints: "Middle"
+      foldPoints: "Centerline"
     },
     {
       id: 3,
-      name: "Flat Roof LT 66",
-      notes: "You need to tie the poles to the tarp at the 2/3rds point.",
-      imgUrl: "",
+      name: "Flat Roof LT 33",
+      notes: "Stake C & D, tie poles to E & F, tie A & B to the ridgeline.",
+      imgUrl: "../assets/images/Fold_LT.png",
       tarps: "All",
       angles: [30, 50],
       ridgelines: 1,
@@ -53,9 +53,9 @@ const configObjects = [
     },
     {
       id: 4,
-      name: "Flat Roof LT 75",
-      notes: "Tie the poles to the tarp at the 3/4ths point.",
-      imgUrl: "",
+      name: "Flat Roof LT 25",
+      notes: "Stake C & D, tie poles to E & F, tie A & B to the ridgeline.",
+      imgUrl: "../assets/images/Fold_LT.png",
       tarps: "All",
       angles: [30, 50],
       ridgelines: 1,
@@ -71,8 +71,8 @@ const configObjects = [
     {
       id: 5,
       name: "Flat-Roof C-Fly",
-      notes: "Stake at the 1/3 point, add poles at the 2/3 mark.",
-      imgUrl: "",
+      notes: "Stake C, D, G & H, tie poles to A & B, tie E & F to the ridgeline.",
+      imgUrl: "../assets/images/Fold_LT.png",
       tarps: "Rectangle",
       angles: 60,
       ridgelines: 1,
@@ -88,8 +88,8 @@ const configObjects = [
     {
       id: 6,
       name: "Back-Wall LT 25",
-      notes: "Tie the poles to the 1/4 tie on the tarp for the back wall.",
-      imgUrl: "",
+      notes: "Stake C & D, tie poles to E & F, tie A & B to the ridgeline.",
+      imgUrl: "../assets/images/Fold_LT.png",
       tarps: "All",
       angles: [30, 50],
       ridgelines: 1,
@@ -105,8 +105,8 @@ const configObjects = [
     {
       id: 7,
       name: "Back-Wall LT 33",
-      notes: "Tie the tarp to the poles at the 1/3rd points or use a rope.",
-      imgUrl: "",
+      notes: "Stake C & D, tie poles to E & F, tie A & B to the ridgeline.",
+      imgUrl: "../assets/images/Fold_LT.png",
       tarps: "All",
       angles: [30, 50],
       ridgelines: 1,
@@ -122,8 +122,8 @@ const configObjects = [
     {
       id: 8,
       name: "Back Wall Flat Roof LT 25",
-      notes: "Tie your poles to the tarp at the 1/4 & 3/4 marks.",
-      imgUrl: "",
+      notes: "Stake C & D, tie poles to G & H for back wall and E & F for flat roof, tie A & B to the ridgeline.",
+      imgUrl: "../assets/images/Fold_LT.png",
       tarps: "All",
       angles: [30, 50],
       ridgelines: 1,
@@ -139,8 +139,8 @@ const configObjects = [
     {
       id: 9,
       name: "Back Wall Flat Roof LT 33",
-      notes: "You need tarp attachment points at the 1/3 & 2/3 marks.",
-      imgUrl: "",
+      notes: "Stake C & D, tie poles to G & H for back wall and E & F for flat roof, tie A & B to the ridgeline.",
+      imgUrl: "../assets/images/Fold_LT.png",
       tarps: "All",
       angles: [30, 50],
       ridgelines: 1,
@@ -158,7 +158,7 @@ const configObjects = [
     {
       id: 10,
       name: "A-Frame",
-      notes: "Drape your tarp over the ridgeline at the mid-point.",
+      notes: "Stake A, B, C & D to the ground, tie E & F on the ridgeline.",
       imgUrl: "",
       tarps: "All",
       angles: [37, 75],
@@ -174,8 +174,8 @@ const configObjects = [
     },
     {
       id: 11,
-      name: "A-Frame LT 66",
-      notes: "Attach your ridgline at the 2/3rds point then use guylines.",
+      name: "A-Frame LT 33",
+      notes: "Stake C & D to the ground, tie E & F on the ridgeline, tie guylines at A & B.",
       imgUrl: "",
       tarps: "All",
       angles: [30, 50],
@@ -191,8 +191,8 @@ const configObjects = [
     },
     {
       id: 12,
-      name: "A-Frame LT 75",
-      notes: "Attach your ridgline at the 3/4 points of your tarp.",
+      name: "A-Frame LT 25",
+      notes: "Stake C & D to the ground, tie E & F on the ridgeline, tie guylines at A & B.",
       imgUrl: "",
       tarps: "All",
       angles: [30, 50],
@@ -209,7 +209,7 @@ const configObjects = [
     {
       id: 13,
       name: "Side-Wall AF 25",
-      notes: "Attach your poles at the 1/4 and 3/4 points of your tarp.",
+      notes: "Stake A, B, C & D, tie G & H to center ridgeline, use poles and guylines for E, F, I & J.",
       imgUrl: "",
       tarps: "All",
       angles: [37, 75],
@@ -226,7 +226,7 @@ const configObjects = [
     {
       id: 14,
       name: "Side-Wall AF 33",
-      notes: "Attach your poles at the 1/3 and 2/3 points of your tarp.",
+      notes: "Stake A, B, C & D, tie G & H to center ridgeline, use poles and guylines for E, F, I & J.",
       imgUrl: "",
       tarps: "Rectangle",
       angles: [37, 75],
@@ -238,12 +238,12 @@ const configObjects = [
         poles: 4,
         guylines: 4
       },
-      foldPoints: "Thirds"
+      foldPoints: "Third, half, two-thirds"
     },
     {
       id: 15,
       name: "Tube tent",
-      notes: "Stake the ends together and at the 1/3 point, then add the ridgeline.",
+      notes: "Stake G & H, tie E & F to the ridgeline, stake A & C together as well as and B & D to the ground.",
       imgUrl: "",
       tarps: "Rectangle 1:2",
       angles: 60,
@@ -259,8 +259,8 @@ const configObjects = [
     },
     {
       id: 16,
-      name: "A-Frame C-Fly",
-      notes: "Stake at the 1/3 point, add the ridgeline at the 2/3 mark.",
+      name: "AF C-Fly",
+      notes: "Stake C, D, G & H, tie E & F to ridgeline, use guylines at A & B. ",
       imgUrl: "",
       tarps: "Rectangle",
       angles: [75, 30],
@@ -272,31 +272,31 @@ const configObjects = [
         poles: 0,
         guylines: 2
       },
-      foldPoints: "Thirds (or quarters)"
+      foldPoints: "Third and two-thirds"
     },
     {
       id: 17,
       name: "Open Stall",
-      notes: "Tie You need tie-outs at the 1/3, 1/2 & 2/3 marks.",
+      notes: "Stake C & D, use poles and guylines for G, H, A & B, tie E & F to ridgeline.",
       imgUrl: "",
       tarps: "All",
       angles: [30, 50],
       ridgelines: 1,
-      poles: 2,
+      poles: 4,
       tiePoints: {
         stakes: 6,
         ridgeline: 2,
         poles: 2,
         guylines: 4
       },
-      foldPoints: "Third, middle and two-thirds"
+      foldPoints: "Third and two-thirds"
     }
   ],
   [
     {
       id: 18,
       name: "Diamond",
-      notes: "Drape over the ridgeline along the tarp diagonal, stake the wings to the ground or with guylines.",
+      notes: "Stake B & C to the ground, tie A & D to the ridgeline.",
       imgUrl: "",
       tarps: "Square",
       angles: [45, 75],
@@ -313,7 +313,7 @@ const configObjects = [
     {
       id: 19,
       name: "Plow Point",
-      notes: "Run the ridgeline along the diagonal from the ground to a tree or branch.",
+      notes: "Stake A, B and C, tie D to a pole guyline or along A-D ridgeline.",
       imgUrl: "",
       tarps: "Square",
       angles: 33,
@@ -330,7 +330,7 @@ const configObjects = [
     {
       id: 20,
       name: "Adirondack",
-      notes: "Lean on the diagonal, bottom and sides folded at the half-way points.",
+      notes: "Stake G & F then side wall points B & C, tie E & H to ridgeline, attach A to guyline or pole.",
       imgUrl: "",
       tarps: "Square",
       angles: 45,
@@ -342,12 +342,12 @@ const configObjects = [
         poles: 0,
         guylines: 1
       },
-      foldPoints: "Diagoanl folds at 3 corners"
+      foldPoints: "F-G, E-F, G-H, E-H"
     },
     {
       id: 21,
       name: "Hex Diamond",
-      notes: "Setup as the Adirondack but don't fold in the bottom. Also, run a ridgeline along the diagonal.",
+      notes: "Stake G & H and E & F, tie A & D to the ridgeline.",
       imgUrl: "",
       tarps: "Square",
       angles: [45, 60],
@@ -359,12 +359,12 @@ const configObjects = [
         poles: 0,
         guylines: 0
       },
-      foldPoints: "Along diagonal"
+      foldPoints: "Main & mid-pt diagonals"
     },
     {
       id: 22,
       name: "Arrowhead Wedge",
-      notes: "Fold from the midpoints back to the diagonal point that is staked to the ground.",
+      notes: "Stake B, D & C, tie E & F to ridgeline, tie A to guyline or pole.",
       imgUrl: "",
       tarps: "Square",
       angles: 30,
@@ -376,14 +376,14 @@ const configObjects = [
         poles: 2,
         guylines: 2
       },
-      foldPoints: "Middle on the sides back to diagonal"
+      foldPoints: "Side midpoints back to opposite corner"
     }
   ],
   [
     {
       id: 23,
       name: "Side Wall LT 1:2",
-      notes: "The lean angle is 33.3-degrees, and the side walls are at a 60-degree angle from the back of the tarp.",
+      notes: "Stake A & B and C & D on each side, tie E & F to ridgeline.",
       imgUrl: "",
       tarps: "Rectangle 1:2",
       angles: [60, 33.3],
@@ -395,12 +395,12 @@ const configObjects = [
         poles: 0,
         guylines: 0
       },
-      foldPoints: "Thirds, and maybe quarters"
+      foldPoints: "1/3 and 2/3 to opposite corner"
     },
     {
       id: 24,
       name: "Side Wall LT 3:5",
-      notes: "The lean angle is 29-degrees, and the side walls are at a 55-degree angle from the back of the tarp.",
+      notes: "Stake A & B and C & D on each side, tie E & F to ridgeline.",
       imgUrl: "",
       tarps: "Rectangle 3:5",
       angles: [55, 29],
@@ -412,12 +412,12 @@ const configObjects = [
         poles: 0,
         guylines: 0
       },
-      foldPoints: "Thirds, and maybe quarters"
+      foldPoints: "1/3 and 2/3 to opposite corner"
     },
     {
       id: 25,
       name: "Side Wall LT 2:3",
-      notes: "The lean angle is 27-degrees, and the side walls are at a 58-degree angle from the back of the tarp.",
+      notes: "Stake A & B and C & D on each side, tie E & F to ridgeline.",
       imgUrl: "",
       tarps: "Rectangle 2:3",
       angles: [58, 27],
@@ -429,12 +429,12 @@ const configObjects = [
         poles: 0,
         guylines: 0
       },
-      foldPoints: "Thirds, and maybe quarters"
+      foldPoints: "1/3 and 2/3 to opposite corner"
     },
     {
       id: 26,
       name: "Holden Tent 1:2",
-      notes: "The lean angle is 45-degrees, and the side walls are at a 50-degree angle from the back of the tarp.",
+      notes: "Stake A & B and C & D on each side, tie E to pole.",
       imgUrl: "",
       tarps: "Rectangle 1:2",
       angles: [50, 45],
@@ -446,12 +446,12 @@ const configObjects = [
         poles: 1,
         guylines: 0
       },
-      foldPoints: "From bottom corner to middle"
+      foldPoints: "From bottom corners to opposite center"
     },
     {
       id: 27,
       name: "Holden Tent 3:5",
-      notes: "The lean angle is 40-degrees, and the side walls are at a 45-degree angle from the back of the tarp.",
+      notes: "Stake A & B and C & D on each side, tie E & F to ridgeline.",
       imgUrl: "",
       tarps: "Rectangle 3:5",
       angles: [45, 40],
@@ -468,7 +468,7 @@ const configObjects = [
     {
       id: 28,
       name: "Holden Tent 2:3",
-      notes: "The lean angle is 38-degrees, and the side walls are at a 56-degree angle from the back of the tarp.",
+      notes: "Stake A & B and C & D on each side, tie E & F to ridgeline.",
       imgUrl: "",
       tarps: "Rectangle 2:3",
       angles: [56, 38],
@@ -485,7 +485,7 @@ const configObjects = [
     {
       id: 29,
       name: "Holden Tent 3:4",
-      notes: "The lean angle is 33-degrees, and the side walls are at a 55-degree angle from the back of the tarp.",
+      notes: "Stake A & B and C & D on each side, tie E & F to ridgeline.",
       imgUrl: "",
       tarps: "Rectangle 3:4",
       angles: [55, 33],
@@ -502,7 +502,7 @@ const configObjects = [
     {
       id: 30,
       name: "Holden Tent 4:5",
-      notes: "The lean angle is 30-degrees, and the side walls are at a 58-degree angle from the back of the tarp.",
+      notes: "Stake A & B and C & D on each side, tie E & F to ridgeline.",
       imgUrl: "",
       tarps: "Rectangle 4:5",
       angles: [58, 30],
@@ -519,7 +519,7 @@ const configObjects = [
     {
       id: 31,
       name: "Miners Tent",
-      notes: "The lean angle is at 67.5-degrees. This design requires a lot of folds and geometry.",
+      notes: "Stake B, C, E, I, H and G, attach E to pole.",
       imgUrl: "",
       tarps: "Rectangle 1:2",
       angles: 67.5,
@@ -531,12 +531,12 @@ const configObjects = [
         poles: 3,
         guylines: 0
       },
-      foldPoints: "Various..."
+      foldPoints: "Various... good luck!"
     },
     {
       id: 32,
       name: "Bakers Wind Shed",
-      notes: "You can fold at the 1/4 and 3/4 or the 1/3 and 2/3 points. Lean angle of 27.5 degrees. Consider sleeping on the diagonal.",
+      notes: "Stake B, D, G & H, tie E and F to ridgeline.",
       imgUrl: "",
       tarps: "Rectangle 1:2",
       angles: 27.5,
@@ -553,7 +553,7 @@ const configObjects = [
     {
       id: 33,
       name: "Lavvu",
-      notes: "Create a tripod with three poles much larger than the short-side spaced evenly for a tetrahedron type structure.",
+      notes: "Stake A, E, G and C, tie D to ridgepole, alow B, F & H to hang.",
       imgUrl: "",
       tarps: "Rectangle 1:2",
       angles: 60,

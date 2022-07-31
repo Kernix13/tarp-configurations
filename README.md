@@ -21,6 +21,7 @@ This is another project for myself since I practice bushcraft and wilderness sur
 IMPORTANT TO DO:
 
 1. DOUBLE-CHECK ALL CSS ESPECIALLY CARDS
+1. get US and Metric xelect buttons on form
 1. button colors need to change
 1. I need additional conditional in the event the user only wants to change the tarp size (Home.js)
 1. Why is Lavvu h3 tag displaying twice? in ConfigLavvu.js

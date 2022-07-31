@@ -45,7 +45,7 @@ function Results() {
     return (
       <div>
         <section>
-          <h1 className="text-5xl mb-6 text-gray-500 text-center">Trap Configuration Results</h1>
+          <h1 className="text-5xl mb-6 text-gray-500 text-center">Tarp Configuration Results</h1>
           <p className="mb-3 text-slate-500 italic text-center">If your tarp is too small you may not see any configurations under a category type.</p>
           <h3 className="mb-3 text-3xl">Your Dimensions</h3>
           <p className="mb-3">

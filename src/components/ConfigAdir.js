@@ -41,13 +41,13 @@ function Config_Adir() {
         const ridgeHeight = Math.min(ridgeHt, state.height);
 
         if (ridgeHeight === state.height) {
-          cover = Math.round(Math.sqrt(Math.pow(diagonal, 2) - Math.pow(ridgeHeight, 2)));
+          cover = Math.round(Math.sqrt(Math.pow(diagonal / 2, 2) - Math.pow(ridgeHeight, 2)));
         } else {
-          cover = Math.round(Math.cos(i * deg2Rad) * diagonal);
+          cover = Math.round((Math.cos(i * deg2Rad) * diagonal) / 2);
         }
 
         const coverClear = Math.round(cover - state.bodyWidth);
-        // These are wrong - recalc
+        // These are wrong - recalc again
         const sitCover = Math.round(cover - (sitDepth + 3));
         const chairCover = Math.round(cover - state.chairDepth - 3);
 
@@ -59,7 +59,7 @@ function Config_Adir() {
 
         outputObj = tarpSize.concat({ sleepClear, cover, coverClear, ridgeHeight, sitTarpHtClear, chairTarpHtClear, angle: i, configName: this.configName, ridgeHt, diagonal, configImg });
 
-        if (sitTarpHtClear < 7 || chairTarpHtClear < 7) {
+        if (sitTarpHtClear < 4 || chairTarpHtClear < 1) {
           break;
         }
       }
@@ -72,19 +72,19 @@ function Config_Adir() {
     Adirondack.calcs();
   }
 
-  // console.log(finalObj);
+  console.log(finalObj);
 
   return (
     <div>
       {finalObj.map((type, index) =>
         type[2].sleepClear <= 0 ? null : (
           <div key={index} className="flex flex-col justify-center items-center my-8 bg-slate-100 border border-solid border-slate-400 sm:flex-row">
-            <img src={type[2].configImg} alt={type[2].configName + ` configuration`} className="w-11/12 border-2 boder-solid border-slate-400 sm:m-4 sm:w-1/3 md:w-1/2" />
+            <img src={type[2].configImg} alt={type[2].configName + ` configuration`} className="w-11/12 border-2 boder-solid border-slate-400 sm:m-4 sm:w-5/12 md:w-1/2" />
             <div className="p-4">
               <h3 className="text-2xl font-bold text-teal-600 mb-4 mt-2 md:text-3xl">{type[2].configName}</h3>
               <p className="mb-1 text-base lg:text-xl">
                 Set your <span className="italic">ridgeline height </span>
-                to <span className="font-bold">{type[2].ridgeHeight}</span> inches. The resulting <span className="italic">lean angle</span> is {type[2].angle}&deg;. <span className="text-sm text-red-700 font-bold italic">THE CALCS BELOW ARE WRONG!</span>
+                to <span className="font-bold">{type[2].ridgeHeight}</span> inches. The resulting <span className="italic">lean angle</span> is {type[2].angle}&deg;.
               </p>
               <p className="mb-1 text-base lg:text-xl">
                 Sit under tarp?{" "}

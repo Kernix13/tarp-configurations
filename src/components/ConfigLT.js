@@ -9,6 +9,8 @@ import BWLT33Img from "../assets/images/BWLT33.png";
 function ConfigLT() {
   const state = useContext(TarpContext);
 
+  // const uom = state.unitOfMeasure;
+  // const uomMult = [12, 100];
   const sitHeight = state.height / 2;
   const sitDepth = (state.height * 7) / 32;
 
@@ -56,7 +58,6 @@ function ConfigLT() {
         const sitCover = Math.round(cover - (sitDepth + 3));
         const chairCover = Math.round(cover - state.chairDepth - 3);
 
-        // Where is ridgeline in this equation?
         const sitTarpHt = Math.round(Math.tan(i * deg2Rad) * sitCover);
         const chairTarpHt = Math.round(Math.tan(i * deg2Rad) * chairCover);
 
@@ -93,7 +94,7 @@ function ConfigLT() {
       {finalObj.map((type, index) =>
         type[2].sleepClear <= 0 && type[2].sleepDiagClr < 6 ? null : (
           <div key={index} className="flex flex-col justify-center items-center my-8 bg-slate-100 border border-solid border-slate-400 sm:flex-row">
-            <img src={type[2].configImg} alt={type[2].configName + ` configuration`} className="w-11/12 border-2 boder-solid border-slate-400 sm:m-4 sm:w-1/3 md:w-1/2" />
+            <img src={type[2].configImg} alt={type[2].configName + ` configuration`} className="w-11/12 border-2 boder-solid border-slate-400 sm:m-4 sm:w-5/12 md:w-1/2" />
             <div className="p-4">
               <h3 className="text-2xl font-bold text-teal-600 mb-4 mt-2 md:text-3xl">{type[2].configName}</h3>
               <p className="mb-1 text-base lg:text-xl">

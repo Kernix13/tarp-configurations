@@ -4,7 +4,7 @@ function Footer() {
   const footerYear = new Date().getFullYear();
 
   return (
-    <footer className="footer p-10 bg-gradient-to-br from-teal-900 to-teal-500 text-primary-content footer-center">
+    <footer className="footer pt-6 pb-6 bg-gradient-to-br from-teal-900 to-teal-500 text-primary-content footer-center">
       <div className="container">
         <p className="text-center">
           Copyright &copy; {footerYear} | Open source project by{" "}

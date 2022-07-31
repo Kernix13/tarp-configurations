@@ -66,11 +66,13 @@ function Config_Lavvu() {
       <div>
         {finalObj.map((type, index) => (
           <div key={index} className="flex flex-col justify-center items-center my-8 bg-slate-100 border border-solid border-slate-400 sm:flex-row">
-            <img src={type[2].configImg} alt={type[2].configName + ` configuration`} className="w-11/12 border-2 boder-solid border-slate-400 sm:m-4 sm:w-1/3 md:w-1/2" />
+            <img src={type[2].configImg} alt={type[2].configName + ` configuration`} className="w-9/12 border-2 boder-solid border-slate-400 sm:m-4 sm:w-1/3 md:w-5/12" />
             <div className="p-4">
-              <h3 className="text-2xl font-bold mb-4 mt-2 md:text-3xl">{type[2].configName}</h3>
               {type[2].sleepClear <= 0 ? (
-                <p className="mb-3 text-base lg:text-xl">Tarp length is too small for sleeping based on your height.</p>
+                <>
+                  <h3 className="text-2xl font-bold text-teal-600 mb-4 mt-2 md:text-3xl">{type[2].configName}</h3>
+                  <p className="mb-3 text-base lg:text-xl">Tarp length is too small for sleeping based on your height.</p>
+                </>
               ) : (
                 <>
                   {" "}

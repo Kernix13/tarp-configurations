@@ -72,7 +72,7 @@ function Config_Adir() {
     Adirondack.calcs();
   }
 
-  console.log(finalObj);
+  // console.log(finalObj);
 
   return (
     <div>

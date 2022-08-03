@@ -12,7 +12,6 @@ function Config_Lavvu() {
   const deg2Rad = Math.PI / 180;
   let outputObj = [];
   let finalObj = [];
-  let cover = 0;
 
   const userTarp = [state.tarpLength, state.tarpWidth];
 

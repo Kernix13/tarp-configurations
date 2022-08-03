@@ -1,6 +1,7 @@
 import React, { useContext, useState } from "react";
 import { HashLink as Link } from "react-router-hash-link";
 import TarpContext from "../TarpContext";
+import ScrollToTop from "../components/ScrollToTop";
 
 import Config_LT from "../components/ConfigLT";
 import Config_FR from "../components/ConfigFR";
@@ -131,6 +132,7 @@ function Results() {
             </Link>
           </button>
         </div>
+        <ScrollToTop />
       </div>
     );
   }

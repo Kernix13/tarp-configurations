@@ -91,29 +91,8 @@ function Home() {
               {state.buttonText}
             </button>
           </div>
-
-          {/* <div className="text-center sm:text-left">
-            <div className="user-dims flex justify-between items-center">
-              <div>
-                <label htmlFor="uom" className="text-black text-xl sm:text-base" checked={state.unitOfMeasure}>
-                  {" "}
-                  <input type="radio" id="us" name="uom" value="us" className="w-8" />
-                  US
-                </label>
-
-                <label htmlFor="uom" className="text-black text-xl sm:text-base">
-                  {" "}
-                  <input type="radio" id="metric" name="uom" value="metric" className="w-8" />
-                  Metric
-                </label>
-              </div>
-
-              <button id="user-submit" type="submit" className="bg-transparent hover:bg-cyan-700 text-cyan-700 font-semibold hover:text-white py-2 px-4 mr-4 my-2 border border-cyan-700 hover:border-transparent rounded">
-                {state.buttonText}
-              </button>
-            </div>
-          </div> */}
         </form>
+
         <div className="basis-8/12 px-2 ml-4 xl:basis-7/12">
           <p className="mb-3">Enter your dimensions in inches and tarp size in feet to get the ridgeline height in inches for 33 different tarp configurations.</p>
           <ul className="list-disc mt-4 ml-4">

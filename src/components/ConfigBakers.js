@@ -43,9 +43,8 @@ function Config_Bakers() {
         cover = Math.round(Math.cos(this.alpha * deg2Rad) * l);
       }
 
-      const innerDiag = Math.round(Math.sqrt(Math.pow(w / 2, 2) + Math.pow(cover, 2)));
-      // const sleepClear = w / 2 - state.height;
-      const sleepClear = innerDiag - state.height;
+      const sleepDiagClr = Math.floor(Math.sqrt(Math.pow(l, 2) + Math.pow(cover, 2))) - state.height;
+      const sleepClear = w / 2 - state.height;
 
       const sitCover = Math.round(cover - (sitDepth + 3));
       const chairCover = Math.round(cover - state.chairDepth - 3);
@@ -57,7 +56,7 @@ function Config_Bakers() {
       const sitTarpHtClear = sitTarpHt - sitHeight;
       const chairTarpHtClear = chairTarpHt - state.chairHeight;
 
-      outputObj = tarpSize.concat({ sleepClear, cover, coverClear, ridgeHeight, sitTarpHtClear, chairTarpHtClear, angle: this.alpha, configName: this.configName, innerDiag, configImg });
+      outputObj = tarpSize.concat({ sleepClear, cover, coverClear, ridgeHeight, sitTarpHtClear, chairTarpHtClear, angle: this.alpha, configName: this.configName, sleepDiagClr, configImg });
 
       finalObj.push(outputObj);
     }
@@ -127,7 +126,7 @@ function Config_Bakers() {
               </p>
               {type[2].sleepDiagClr <= 0 && type[2].sleepClear <= 0 && <p className="mb-3 text-base lg:text-xl">Tarp length is too small for sleeping based on your height.</p>}
               {/* This one is more accurate */}
-              {type[2].sleepClear <= 0 && type[2].sleepDiagClr < 6 && (
+              {type[2].sleepClear <= 0 && type[2].sleepDiagClr > 6 && (
                 <p className="mb-3">
                   <span className="font-semibold">Note</span>: You have to sleep along the diagonal of the tarp shadow because the length is too small.
                 </p>

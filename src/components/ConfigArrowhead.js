@@ -13,7 +13,6 @@ function Config_Arrowhead() {
   const deg2Rad = Math.PI / 180;
   let outputObj = [];
   let finalObj = [];
-  let cover = 0;
 
   const userTarp = [state.tarpLength, state.tarpWidth];
 
@@ -76,7 +75,7 @@ function Config_Arrowhead() {
               <h3 className="text-2xl font-bold text-teal-600 mb-4 mt-2 md:text-3xl">{type[2].configName}</h3>
               <p className="mb-1 text-base lg:text-xl">
                 Set your <span className="italic">ridgeline height </span>
-                to <span className="font-bold">{type[2].ridgeHeight}</span> inches. The shelter has a {type[2].angle}&deg; <span className="italic">lean angle</span>.
+                to <span className="font-bold">{type[2].ridgeHeight}</span> inches. The shelter has a fixed {type[2].angle}&deg; <span className="italic">lean angle</span>.
               </p>
               <p className="mb-1 text-base lg:text-xl">
                 Sit under tarp?{" "}

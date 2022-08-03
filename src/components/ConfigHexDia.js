@@ -60,7 +60,7 @@ function Config_HexDia() {
     Hex_Diamond.calcs();
   }
 
-  console.log(finalObj);
+  // console.log(finalObj);
 
   return (
     <div>

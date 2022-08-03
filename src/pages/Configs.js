@@ -1,5 +1,6 @@
 import AllConfigs from "../data/AllConfigs";
 import ConfigTypes from "../data/ConfigTypes";
+import ScrollToTop from "../components/ScrollToTop";
 
 import ltfold0 from "../assets/images/Fold_LT.png";
 import ltfold1 from "../assets/images/Fold_FRLT50.png";
@@ -26,7 +27,6 @@ const aframeimages = [ltfold1, ltfold2, ltfold3, swaf25, swaf33, ltfold4, ltfold
 const diagonalimages = [diamond, diamond, adirondack, hexd, arrowhead];
 const tentimages = [swlt, swlt, swlt, holden, holden, holden, holden, holden, miners, bakers, ltfold4];
 
-console.log(AllConfigs[0][1]);
 function Configs() {
   const categories = ["Lean-To", " A-Frame", " Diagonal", " Tent"];
 
@@ -347,8 +347,13 @@ function Configs() {
         <a href="https://www.ddhammocks.com/explore/modifications/tarp_tutorial" className="text-blue-500 hover:underline hover:underline-offset-2 hover:text-blue-700">
           DD Hammocks Tarp Tutorial
         </a>{" "}
-        for help with some of the more difficult set-ups and with dozens of additional tarp configurations.
+        for help with some of the more difficult set-ups and with dozens of additional tarp configurations. Another useful resource is
+        <a href="http://www.equipped.com/tarp-shelters.htm" className="text-blue-500 hover:underline hover:underline-offset-2 hover:text-blue-700">
+          Tarp Shelters
+        </a>
+        by David B. Macpherson.
       </p>
+      <ScrollToTop />
     </div>
   );
 }

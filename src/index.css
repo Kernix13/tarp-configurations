@@ -6,6 +6,7 @@
 
 body {
   font-family: "Poppins", sans-serif;
+  scroll-behavior: smooth;
 }
 
 .custom-card-image .card.image-full:before {

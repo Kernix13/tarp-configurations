@@ -114,16 +114,6 @@ function Config_FR_CFly() {
                   <span className="font-semibold">Note</span>: You have to sleep along the diagonal of the tarp shadow because the length is too small.
                 </p>
               )}
-              {/* {type[2].sleepDiagClr <= 0 && type[2].sleepClear <= 0 ? (
-                <p className="mb-3 text-base lg:text-xl">Tarp length too small for sleeping based on your height.</p>
-              ) : (
-                <p className="mb-3 text-base lg:text-xl">
-                  Set your <span className="font-bold">ridgeline height </span>
-                  to {type[2].ridgeHeight} inches which results in a <span className="italic">lean angle</span> of {type[2].angle}-degrees. {type[2].sitTarpHtClear > 0 ? " You can sit under the tarp on the ground" : "There is not enough height to sit in this design"}
-                  {type[2].chairTarpHtClear > 0 ? " and in your chair." : "."}
-                  <br />{" "}
-                </p>
-              )} */}
             </div>
           </div>
         )

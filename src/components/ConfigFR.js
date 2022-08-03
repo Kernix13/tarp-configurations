@@ -15,7 +15,6 @@ function Config_FR() {
 
   let outputObj = [];
   let finalObj = [];
-  // Why do I need this? Because of if statement?
   let cover = 0;
 
   const userTarp = [state.tarpLength, state.tarpWidth];

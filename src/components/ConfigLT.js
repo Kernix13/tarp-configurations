@@ -18,7 +18,6 @@ function ConfigLT() {
 
   let outputObj = [];
   let finalObj = [];
-  // Why do I need this? Because of if statement?
   let cover = 0;
 
   const userTarp = [state.tarpLength, state.tarpWidth];
@@ -85,7 +84,7 @@ function ConfigLT() {
   const BWLT_33 = new Config_LT("Back-Wall LT 33", userTarp[0], userTarp[1], 0.667, 0.333, BWLT33Img);
   BWLT_33.calcs();
 
-  console.log(finalObj);
+  // console.log(finalObj);
 
   // Old jsx at bottom of NOTES.md but this is good
   return (

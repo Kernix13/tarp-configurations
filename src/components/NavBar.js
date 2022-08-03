@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
+import { FaBars } from "react-icons/fa";
 
 function NavBar({ title }) {
   return (

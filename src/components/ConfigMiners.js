@@ -13,7 +13,6 @@ function Config_Miners() {
   const deg2Rad = Math.PI / 180;
   let outputObj = [];
   let finalObj = [];
-  let cover = 0;
 
   const userTarp = [state.tarpLength, state.tarpWidth];
 
@@ -30,12 +29,13 @@ function Config_Miners() {
     calcs() {
       const l = this.len * 12;
       const w = this.width * 12;
-      const sleepClear = Math.round(0.75 * w - state.height);
+      const sleepClear = Math.round(0.5 * w - state.height);
       const tarpSize = [this.len, this.width];
       const configImg = this.img;
 
-      const ridgeHeight = Math.round(0.857 * l);
-      const cover = Math.round(0.678 * l);
+      // These values give the same results as DD Hamocks has for a 10 x 20
+      const ridgeHeight = Math.round(0.91 * l);
+      const cover = Math.round(0.8125 * l);
 
       const sitCover = Math.round(cover - (sitDepth + 3));
       const chairCover = Math.round(cover - state.chairDepth - 3);
@@ -58,7 +58,7 @@ function Config_Miners() {
     Miners_tent.calcs();
   }
 
-  // console.log(finalObj);
+  console.log(finalObj);
 
   if (finalObj.length === 0) {
     return (

@@ -64,10 +64,70 @@ img {
 
 .config-heading {
   background-color: rgba(255, 255, 255, 0.7);
-  border-radius: 0.5rem;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  padding: 1rem 100%;
+  padding: 1rem 2em;
+}
+
+.nav-menu {
+  position: fixed;
+  left: -100%;
+  top: 3.375em;
+  flex-direction: column;
+  background-color: #262626;
+  width: 100%;
+  text-align: center;
+  transition: 750ms;
+}
+
+.nav-menu.active {
+  left: 0;
+}
+
+.nav-link {
+  transition: 400ms ease;
+}
+
+.hamburger {
+  cursor: pointer;
+}
+
+.bar {
+  display: block;
+  background-color: #fff;
+
+  width: 24px;
+  height: 2px;
+  margin: 6px auto;
+
+  -webkit-transition: all 300ms ease;
+  transition: all 300ms ease-in-out;
+}
+
+.hamburger.active .bar:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.active .bar:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+.hamburger.active .bar:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+@media (min-width: 768px) {
+  .nav-menu {
+    position: static;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1em;
+    width: auto;
+  }
+
+  .hamburger {
+    display: none;
+  }
 }

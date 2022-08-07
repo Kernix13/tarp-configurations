@@ -13,10 +13,10 @@ import ltfold7 from "../assets/images/Fold_BWFRLT25.png";
 import ltfold8 from "../assets/images/Fold_BWFRLT33.png";
 import swaf25 from "../assets/images/Fold_SWAF25.png";
 import swaf33 from "../assets/images/Fold_SWAF33.png";
-import diamond from "../assets/images/Fold_DiaPP.png";
-import adirondack from "../assets/images/Fold_Adir.png";
-import hexd from "../assets/images/Fold_HexD.png";
-import arrowhead from "../assets/images/Fold_Arrow.png";
+import diamond from "../assets/images/fold-diapp.png";
+import adirondack from "../assets/images/fold-adir.png";
+import hexd from "../assets/images/fold-hexd.png";
+import arrowhead from "../assets/images/fold-arrow.png";
 import swlt from "../assets/images/Fold_SWLT.png";
 import holden from "../assets/images/Fold_Holden.png";
 import miners from "../assets/images/Fold_Miners.png";
@@ -158,7 +158,7 @@ function Configs() {
         {AllConfigs[0].map((config, i) => (
           <div key={i} className="flex flex-col justify-center items-center border border-solid border-slate-400 bg-slate-100 p-4 shadow-md shadow-slate-500 md:flex-row xl:items-start">
             <div className="w-3/4 sm:w-5/8 xl:w-1/2 self-center mb-8 xl:mb-0 xl:self-start">
-              {/* <img src={config.imgUrl} alt={config.name} /> */}
+              {/* <img src={config.imgUrl} alt={config.name} className="w-full m-0 p-0" /> */}
               <img src={leantoimages[i]} alt={config.name} className="w-full m-0 p-0" />
             </div>
             <div className="w-full px-4 ml-4 xl:w-1/2 border-l border-gray-400">
@@ -274,7 +274,8 @@ function Configs() {
         {AllConfigs[2].map((config, i) => (
           <div key={i} className="flex flex-col justify-center items-center border border-solid border-slate-400 bg-slate-100 p-4 shadow-md shadow-slate-500 md:flex-row xl:items-start">
             <div className="w-3/4 sm:w-5/8 xl:w-1/2 self-center mb-8 xl:mb-0 xl:self-start">
-              <img src={diagonalimages[i]} alt={config.name} className="w-full m-0 p-0 " />
+              {/* <img src={config.imgUrl} alt={config.name} className="w-full m-0 p-0" /> */}
+              <img src={diagonalimages[i]} alt={config.name} className="w-full m-0 p-0" />
             </div>
             <div className="w-full px-4 ml-4 xl:w-1/2 border-l border-gray-400">
               <h4 id="lean-to" className="text-2xl font-semibold mt-0 mb-2 text-teal-600">

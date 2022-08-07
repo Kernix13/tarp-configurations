@@ -19,6 +19,7 @@ This is personal project since I practice bushcraft and wilderness survival tech
 
 IMPORTANT TO-DO's:
 
+1. **config-heading** over the bg image in results is messing up the page width!!!!
 1. **JS: 1) hamburger icon**
 1. Need US and Metric radio buttons on the form
 1. The import of all the tarp designs in Configs.js to get the `src` to work - have to find a better way

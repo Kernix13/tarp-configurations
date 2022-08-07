@@ -31,8 +31,7 @@ function Results() {
   if (state.height === "") {
     return (
       <div>
-        <h2 className="text-3xl m-6 text-gray-500 text-center sm:text-4xl">Lean-To Configurations</h2>
-        <p className="mb-3 text-center">Please submit the form to see the configurations.</p>
+        <p className="text-xl mb-3 text-center">Please submit the form to see the configuration results.</p>
         <div className="mt-6 text-center">
           <button id="user-submit" type="submit" className="bg-transparent hover:bg-cyan-700 text-cyan-700 font-semibold hover:text-white py-2 px-4 mr-4 border border-cyan-700 hover:border-transparent rounded">
             <Link to="/" className="btn btn-ghost btn-sm rounded-btn">
@@ -45,8 +44,8 @@ function Results() {
   } else {
     return (
       <div>
-        <section>
-          <h1 className="text-5xl mb-6 text-gray-500 text-center">Tarp Configuration Results</h1>
+        <section className="relative">
+          <h1 className="text-4xl md:text-5xl mb-6 text-gray-500 text-center">Tarp Configuration Results</h1>
           <p className="mb-3 text-slate-500 italic text-center">If your tarp is too small you may not see any configurations under a category type.</p>
           <h3 className="mb-3 text-3xl">Your Dimensions</h3>
           <p className="mb-3">
@@ -61,7 +60,7 @@ function Results() {
             </span>
           </p>
           <div className="bg-img lt-bg-img">
-            <h2 className="config-heading text-3xl m-6 text-teal-700 font-semibold text-center sm:text-4xl">Lean-To Configurations</h2>
+            <h2 className="config-heading text-3xl m-6 p-0 text-teal-700 font-semibold text-center sm:text-4xl">Lean-To Configurations</h2>
           </div>
           <Config_LT />
           <Config_FR />

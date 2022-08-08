@@ -15,7 +15,7 @@ function Home() {
     e.preventDefault();
 
     if (state.height === "" || state.bodyWidth === "" || state.chairHeight === "" || state.chairDepth === "" || state.tarpLength === "" || state.tarpWidth === "") {
-      // need to use toastify or custom
+      // need to use toastify or custom CSS
       alert("Please fill out ALL the fields");
     } else {
       console.log(state.height, state.bodyWidth, state.chairHeight, state.chairDepth, state.tarpLength, state.tarpWidth);

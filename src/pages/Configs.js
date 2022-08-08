@@ -36,7 +36,6 @@ function Configs() {
       <p>
         All <span className="italic">practical</span> tarp configurations fall into 1 of 4 categories: 1. <span className="text-lg font-semibold">{categories[0]}</span>, 2. <span className="text-lg font-semibold">{categories[1]}</span>, 3. <span className="text-lg font-semibold">{categories[2]}</span>, or 4. <span className="text-lg font-semibold">{categories[3]}</span>. There are 33 total tarp variations on this page for the following 21 types:
       </p>
-
       <div className="grid grid-cols-1 gap-4 justify-items-center items-start sm:grid-cols-2 md:grid-cols-4">
         <div>
           <p className="text-2xl mt-6 mb-4 text-gray-500">Lean-To</p>
@@ -117,19 +116,16 @@ function Configs() {
         For almost every configuration on this page, an alternate ridgeline height is calculated for large tarps. In that case the ridgeline height is set to <span className="italic font-bold">your height.</span>.
       </p>
       <p className="mb-3">Also, some configurations require either more than one ridgeline or one ridgeline and poles. It's up to you what combination of poles and ridgelines you want to use, but if you do not have tie-out points where required then you will need an additional ridgeline or two. </p>
-
       <h2 id="lean-to-configuration" className="text-3xl mt-12 mb-4 text-gray-500 text-center">
         <span className="font-bold">Lean-To</span> Configurations
       </h2>
       <p className="mb-3">The configurations ("configs") in this section are variations of the standard Lean-To set-up. All "configs" in this category:</p>
-
       <ul className="list-disc ml-4 mt-2 mb-6">
         <li>
           Are calculated with a <em>lean</em> between 30 and 50-degrees.
         </li>
         <li>They can all use either square or rectagular tarps.</li>
       </ul>
-
       <h3 id="lean-to" className="text-2xl mb-4 text-gray-500 font-semibold">
         Lean-To
       </h3>
@@ -146,14 +142,11 @@ function Configs() {
         Back-Wall Lean-To
       </h3>
       <p className="mb-3">This config is the opposite of a Flat Roof Lean-To: a vertical wall into the lean vs. the lean into a horizontal roof. The back-wall folds occur at the bottom 1/4 or 1/3 points of the tarp. This design gets you to a sitting height faster than other configs.</p>
-
       <h3 id="bwfr-lt" className="text-2xl mt-6 mb-4 text-gray-500 font-semibold">
         Back-Wall Flat-Roof Lean-To (BWFRLT)
       </h3>
       <p className="mb-3">A Back-Wall / Flat-Roof combination. You need a large tarp for this design since the 'lean' is only 1/3 or 1/2 the width of your tarp There are 2 variations: 1) the folds at the 1/4 and 3/4 points, or 2) the folds at the 1/3 and 2/3 points.</p>
-
       <p className="my-6 text-2xl">Here are the details and fold lines for the types listed above:</p>
-
       <div className="grid grid-cols-1 gap-12 xl:gap-6 xl:grid-cols-2">
         {AllConfigs[0].map((config, i) => (
           <div key={i} className="flex flex-col justify-center items-center border border-solid border-slate-400 bg-slate-100 p-4 shadow-md shadow-slate-500 md:flex-row xl:items-start">
@@ -178,19 +171,16 @@ function Configs() {
           </div>
         ))}
       </div>
-
       <h2 id="aframe-configuration" className="text-3xl mt-12 mb-4 text-gray-500 text-center">
         <span className="font-bold">A-Frame</span> Configurations
       </h2>
       <p className="mb-3">The classic "pup" tent is another name for the A-Frame set-up.</p>
-
       <ul className="list-disc ml-4 mt-2 mb-8">
         <li>
           The first 3 configs are calculated with an A-Frame <em>lean</em> between 37 and 75-degrees.
         </li>
         <li>The A-Frame, AF LEan-To and Open Stall can use a square or rectangular tape, the Tube tent and A-Frame C-Fly requires a 1:2 ratio rectangle tarp.</li>
       </ul>
-
       <h3 id="aframe" className="text-2xl mt-6 mb-4 text-gray-500 font-semibold">
         A-Frame
       </h3>
@@ -216,7 +206,6 @@ function Configs() {
       </h3>
       <p className="mb-3">You can look at this design as either an A-Frame Lean-To with a back-wall or a BWFRLT with the "roof" at an angle. The 2nd lean for this design, and for the A-Frame Lean-To designs, are set to the first lean angle. Vary that 2nd angle to whatever you want.</p>
       <p className="my-6 text-2xl">Here are the details and fold lines for the types listed above:</p>
-
       <div className="grid grid-cols-1 gap-12 xl:gap-6 xl:grid-cols-2">
         {AllConfigs[1].map((config, i) => (
           <div key={i} className="flex flex-col justify-center items-center border border-solid border-slate-400 bg-slate-100 p-4 shadow-md shadow-slate-500 md:flex-row xl:items-start">
@@ -240,7 +229,6 @@ function Configs() {
           </div>
         ))}
       </div>
-
       <h2 id="diagonal-configuration" className="text-3xl mt-12 mb-4 text-gray-500 text-center">
         <span className="font-bold">Diagonal</span> Configurations
       </h2>
@@ -269,7 +257,6 @@ function Configs() {
       </h3>
       <p className="mb-3">This is a variation of the Plow Point. You can use a guyline to pull the front flap out, or use a ridgeline in the opposite direction to let it droop over. The recomendation is to set the guyline to slightly above your head. The lean angle is 30-degrees for this config.</p>
       <p className="my-6 text-2xl">Here are the details and fold lines for the configs listed above:</p>
-
       <div className="grid grid-cols-1 gap-12 xl:gap-6 xl:grid-cols-2">
         {AllConfigs[2].map((config, i) => (
           <div key={i} className="flex flex-col justify-center items-center border border-solid border-slate-400 bg-slate-100 p-4 shadow-md shadow-slate-500 md:flex-row xl:items-start">
@@ -294,7 +281,6 @@ function Configs() {
           </div>
         ))}
       </div>
-
       <h2 id="tent-configuration" className="text-3xl mt-12 mb-4 text-gray-500 text-center">
         <span className="font-bold">Tent</span> Configurations
       </h2>
@@ -320,7 +306,6 @@ function Configs() {
       </h3>
       <p className="mb-3">This design also requires a 1:2 rectangle tarp with the long side being at least 3x's you height. This config looks like a Native American tipi, but it is from the Sami people in Northern Europe.</p>
       <p className="my-6 text-2xl">Here are the details and fold lines for the configs listed above:</p>
-
       <div className="grid grid-cols-1 gap-12 xl:gap-6 lg:grid-cols-2">
         {AllConfigs[3].map((config, i) => (
           <div key={i} className="flex flex-col justify-center items-center border border-solid border-slate-400 bg-slate-100 p-4 shadow-md shadow-slate-500 md:flex-row xl:items-start">
@@ -348,10 +333,10 @@ function Configs() {
         <a href="https://www.ddhammocks.com/explore/modifications/tarp_tutorial" className="text-blue-500 hover:underline hover:underline-offset-2 hover:text-blue-700">
           DD Hammocks Tarp Tutorial
         </a>{" "}
-        for help with some of the more difficult set-ups and with dozens of additional tarp configurations. Another useful resource is
+        for help with some of the more difficult set-ups and with dozens of additional tarp configurations. Another useful resource is{" "}
         <a href="http://www.equipped.com/tarp-shelters.htm" className="text-blue-500 hover:underline hover:underline-offset-2 hover:text-blue-700">
           Tarp Shelters
-        </a>
+        </a>{" "}
         by David B. Macpherson.
       </p>
       <ScrollToTop />

@@ -1,9 +1,10 @@
 import AllCalcs from "../data/AllCalcs";
+import ScrollToTop from "../components/ScrollToTop";
 
 function Calcs() {
   return (
-    <div>
-      <h1 className="text-5xl text-center mb-12">Calculations used in the JavaScript Files</h1>
+    <div className="mb-16">
+      <h1 className="text-4xl md:text-5xl text-gray-500 text-center mb-12">Calculations used in the JavaScript Files</h1>
       <p className="mb-2">My Javascript variable names do not match the names in the equations on this page.</p>
       <p className="font-bold mb-2">Equations common to nearly all configurations:</p>
       <p className="mb-4">
@@ -100,6 +101,14 @@ function Calcs() {
           </div>
         ))}
       </div>
+      <p className="m-8">
+        Feel free to{" "}
+        <a href="https://kernixwebdesign.com/contact/" className="text-blue-500 hover:underline hover:underline-offset-2 hover:text-blue-700">
+          contact me
+        </a>{" "}
+        if you feel any of these calculations are inaccurate.
+      </p>
+      <ScrollToTop />
     </div>
   );
 }

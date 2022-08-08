@@ -19,18 +19,20 @@ This is personal project since I practice bushcraft and wilderness survival tech
 
 IMPORTANT TO-DO's:
 
-1. **JS: 1) hamburger icon**
+1. **MERGE BRANCH TO MASTER LOCALLY**
 1. Need US and Metric radio buttons on the form
 1. The import of all the tarp designs in Configs.js to get the `src` to work - have to find a better way
-   1. Why doesn't my img src work in Configs.js? My working solution sucks
+   1. Why doesn't my img src work in Configs.js?
 1. useEffect **cleanup!!!** - yes, stop the focus when you are on another page? https://dmitripavlutin.com/react-useref-guide/ -
 1. A page reload loses state and therefore `/configs` content - `localStorage`?
 1. Double check the 2 angles for all Side-Wall LT and Holden Tent configs.
 1. Double check Miners tent constants since it has 3D geometry (Geek37).
+1. Update portfolio page
+1. Contact DD Hammocks about the app and my redesign of their page.
 
 FORM TO-DO's:
 
-1. if user does not enter `bodyWidth`, `chairHeight` and `chairDpeth` fields, then calculate them and make a note to the user maybe - ned async/await, see notes in App.js
+1. if user does not enter `bodyWidth`, `chairHeight` and `chairDpeth` fields, then calculate them and make a note to the user maybe - need async/await, see notes in App.js
 1. I need additional conditional in the event the user only wants to change the tarp size (Home.js) but keep user dimensions
 1. Consider changing Sleep Clearance conditional to negative to be able to push out the side walls for Adirondack, SWLT, Bakers & Holden, maybe `-12`.
 

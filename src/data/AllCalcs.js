@@ -140,9 +140,9 @@ const AllCalcs = [
     },
     {
       name: "Miners Tent",
-      "Ridge Height": "0.857 * tarp length",
-      "Overhead Cover": "0.678 * tarp length",
-      "Sleep Clearance": "0.75 * tarp length - height"
+      "Ridge Height": "0.91 * tarp length",
+      "Overhead Cover": "0.8125 * tarp length",
+      "Sleep Clearance": "0.5 * tarp width - height"
     },
     {
       name: "Bakers Wind Shed",

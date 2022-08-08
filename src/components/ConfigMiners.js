@@ -29,12 +29,15 @@ function Config_Miners() {
     calcs() {
       const l = this.len * 12;
       const w = this.width * 12;
+      // I did have 0.75 * w for sleepClear, double-check
       const sleepClear = Math.round(0.5 * w - state.height);
       const tarpSize = [this.len, this.width];
       const configImg = this.img;
 
       // These values give the same results as DD Hamocks has for a 10 x 20
+      // was 0.857
       const ridgeHeight = Math.round(0.91 * l);
+      // was 0.678
       const cover = Math.round(0.8125 * l);
 
       const sitCover = Math.round(cover - (sitDepth + 3));

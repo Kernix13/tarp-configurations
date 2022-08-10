@@ -3,23 +3,41 @@ import { HashLink as Link } from "react-router-hash-link";
 import TarpContext from "../TarpContext";
 import ScrollToTop from "../components/ScrollToTop";
 
+// eslint-disable-next-line
 import Config_LT from "../components/ConfigLT";
+// eslint-disable-next-line
 import Config_FR from "../components/ConfigFR";
+// eslint-disable-next-line
 import Config_BWFR from "../components/ConfigBWFR";
+// eslint-disable-next-line
 import Config_AF from "../components/ConfigAF";
+// eslint-disable-next-line
 import Config_SWAF from "../components/ConfigSWAF";
+// eslint-disable-next-line
 import Config_OS from "../components/ConfigOS";
+// eslint-disable-next-line
 import Config_TT from "../components/ConfigTT";
+// eslint-disable-next-line
 import Config_FR_CFly from "../components/ConfigFRCFly";
+// eslint-disable-next-line
 import Config_AF_CFly from "../components/ConfigAFCFly";
+// eslint-disable-next-line
 import Config_Dia from "../components/ConfigDia";
+// eslint-disable-next-line
 import Config_HexDia from "../components/ConfigHexDia";
+// eslint-disable-next-line
 import Config_Arrowhead from "../components/ConfigArrowhead";
+// eslint-disable-next-line
 import Config_PP from "../components/ConfigPP";
+// eslint-disable-next-line
 import Config_Adir from "../components/ConfigAdir";
+// eslint-disable-next-line
 import Config_SWLT from "../components/ConfigSWLT";
+// eslint-disable-next-line
 import Config_Lavvu from "../components/ConfigLavvu";
+// eslint-disable-next-line
 import Config_Miners from "../components/ConfigMiners";
+// eslint-disable-next-line
 import Config_Bakers from "../components/ConfigBakers";
 
 function Results() {
